@@ -1,0 +1,72 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<AssemblyName>castle_defenders.editor</AssemblyName>
+		<PackageId>castle_defenders.editor</PackageId>
+		<LangVersion>13</LangVersion>
+		<NoWarn>1701;1702;1591;</NoWarn>
+		<WarningsAsErrors></WarningsAsErrors>
+		<TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<DefineConstants>SANDBOX;ADDON;DEBUG</DefineConstants>
+		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+
+		<DesignTimeBuild Condition="'$(DesignTimeBuild)' == 'true'">true</DesignTimeBuild>
+	</PropertyGroup>
+
+	<ItemGroup>
+		
+		<CompilerVisibleProperty Include="DesignTimeBuild" />
+		<None Update="**\*.cs.scss" DependentUpon="%(Filename)" />
+		<Compile Update="**\*.razor.cs" DependentUpon="%(Filename)" />
+		<None Update="**\*.razor.scss" DependentUpon="%(Filename)" />
+
+	</ItemGroup>
+
+	<ItemGroup>
+		<AdditionalFiles Include="**/*.razor" />
+	</ItemGroup>
+
+
+
+	<ItemGroup>
+		<Using Include="Sandbox.Internal.GlobalToolsNamespace" Static="true" />
+		<Using Include="Sandbox.Internal.GlobalGameNamespace" Static="true" />
+	</ItemGroup>
+
+  <PropertyGroup>
+	<OutputPath>..\..\..\steamlibrary\steamapps\common\sbox/.vs/output/</OutputPath>
+	<DocumentationFile>..\..\..\steamlibrary\steamapps\common\sbox/.vs/output/castle_defenders.editor.xml</DocumentationFile>
+	<RootNamespace>Sandbox</RootNamespace>
+	<Nullable>disable</Nullable>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<Analyzer Include="..\..\..\steamlibrary\steamapps\common\sbox\bin\managed\Sandbox.CodeUpgrader.dll"/>
+		<Analyzer Include="..\..\..\steamlibrary\steamapps\common\sbox\bin\managed\Sandbox.Generator.dll" Condition="$(DesignTimeBuild) != 'true'"/>
+		<Reference Include="..\..\..\steamlibrary\steamapps\common\sbox\bin\managed/Sandbox.System.dll" />
+		<Reference Include="..\..\..\steamlibrary\steamapps\common\sbox\bin\managed/Sandbox.Engine.dll" />
+		<Reference Include="..\..\..\steamlibrary\steamapps\common\sbox\bin\managed/Sandbox.Filesystem.dll" />
+		<Reference Include="..\..\..\steamlibrary\steamapps\common\sbox\bin\managed/Sandbox.Reflection.dll" />
+		<Reference Include="..\..\..\steamlibrary\steamapps\common\sbox\bin\managed/Sandbox.Mounting.dll" />
+		<Reference Include="..\..\..\steamlibrary\steamapps\common\sbox\bin\managed/Sandbox.Tools.dll" />
+		<Reference Include="..\..\..\steamlibrary\steamapps\common\sbox\bin\managed/Sandbox.Compiling.dll" />
+		<Reference Include="..\..\..\steamlibrary\steamapps\common\sbox\bin\managed/Microsoft.CodeAnalysis.dll" />
+		<Reference Include="..\..\..\steamlibrary\steamapps\common\sbox\bin\managed/Microsoft.CodeAnalysis.CSharp.dll" />
+		<Reference Include="..\..\..\steamlibrary\steamapps\common\sbox\bin\managed/Sandbox.Bind.dll" />
+		<Reference Include="..\..\..\steamlibrary\steamapps\common\sbox\bin\managed/Facepunch.ActionGraphs.dll" />
+		<Reference Include="..\..\..\steamlibrary\steamapps\common\sbox\bin\managed/SkiaSharp.dll" />
+	</ItemGroup>
+
+  <ItemGroup>
+		<ProjectReference Include="D:\SteamLibrary\steamapps\common\sbox\editor\ActionGraph\Code\actiongraph.csproj" />
+		<ProjectReference Include="D:\S&amp;boxProjects\castle_defenders\Code\castle_defenders.csproj" />
+		<ProjectReference Include="D:\SteamLibrary\steamapps\common\sbox\editor\Hammer\Code\hammer.csproj" />
+		<ProjectReference Include="D:\SteamLibrary\steamapps\common\sbox\addons\tools\Code\Base Editor Library.csproj" />
+		<ProjectReference Include="D:\SteamLibrary\steamapps\common\sbox\editor\ShaderGraph\Code\shadergraph.csproj" />
+
+  </ItemGroup>
+
+</Project>
