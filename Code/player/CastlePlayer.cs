@@ -1,4 +1,5 @@
 using Sandbox;
+using Sandbox.ModelEditor.Nodes;
 using System;
 
 public sealed class CastlePlayer : Component
@@ -29,7 +30,8 @@ public sealed class CastlePlayer : Component
 
 	void HandleInputs()
 	{
-		if( GetSlotPressed() != -1 )
+		#region Selection
+		if ( GetSlotPressed() != -1 )
 			currentSelection = GetSlotPressed();
 
 		if ( lastSelection != currentSelection )
@@ -38,12 +40,16 @@ public sealed class CastlePlayer : Component
 			
 			if ( currentSelection != -1 && currentSelection != 0 )
 			{
+				Rotation lastRot = previewTower?.WorldRotation ?? Rotation.Identity;
+
 				previewTower?.Destroy();
 				previewTower = null;
 
 				GameObject newTower = GetTower();
 				previewTower = newTower.Clone();
+				previewTower.WorldRotation = lastRot;
 
+				previewTower.Tags.Add("Preview");
 			}
 			else if ( currentSelection == 0 )
 			{
@@ -53,6 +59,12 @@ public sealed class CastlePlayer : Component
 			else
 				previewTower = null;
 		}
+		#endregion
+
+		#region Placement
+		if ( Input.Pressed( "PrimMouse" ) )
+			TryPlacement();
+		#endregion
 	}
 
 	int GetSlotPressed()
@@ -76,6 +88,20 @@ public sealed class CastlePlayer : Component
 
 	float snapCooldown = 0.05f;
     float snapTimer = 0.0f;
+	float snapAngle = 15.0f;
+
+	SceneTraceResult DoTrace()
+	{
+		Vector3 camPos = camera.WorldPosition;
+		Vector3 camForward = camPos + camera.WorldRotation.Forward * previewDist;
+
+		var trace = Scene.Trace.Ray( camPos, camForward )
+			.UseHitboxes()
+			.WithoutTags( "Player", "tower" )
+			.Run();
+
+		return trace;
+	}
 
     void HandlePreview()
     {
@@ -84,21 +110,18 @@ public sealed class CastlePlayer : Component
         Vector3 camPos = camera.WorldPosition;
         Vector3 camForward = camPos + camera.WorldRotation.Forward * previewDist;
 
-        var trace = Scene.Trace.Ray(camPos, camForward)
+		var trace = DoTrace();
 
-            .UseHitboxes()
-            .WithoutTags("Player", "tower")
-            .Run();
+		previewTower.WorldPosition = trace.EndPosition;
 
-        previewTower.WorldPosition = trace.EndPosition;
-
-        bool isRotating = Input.Down("SecMouse");
+		#region Rotation
+		bool isRotating = Input.Down("SecMouse");
         controller.UseLookControls = !isRotating;
 
         // Tower Rotation
         if (isRotating)
         {
-            float rotationSpeed = 90.0f;
+            float rotationSpeed = 250.0f;
             float delta = Time.Delta;
             float rotateAmount = 0.0f;
 
@@ -110,11 +133,10 @@ public sealed class CastlePlayer : Component
             {
                 snapTimer -= delta;
 
-                if (snapTimer <= 0.0f && MathF.Abs(mouseX) > 0.001f)
+                if (snapTimer <= 0.0f)
                 {
-                    // Accumulate rotation and snap
                     var currentYaw = previewTower.WorldRotation.Yaw();
-                    var targetYaw = MathF.Round((currentYaw + rotateAmount) / 15.0f) * 15.0f;
+                    var targetYaw = MathF.Round( (currentYaw + rotateAmount) / snapAngle ) * snapAngle;
                     previewTower.WorldRotation = Rotation.FromYaw(targetYaw);
 
                     snapTimer = snapCooldown;
@@ -126,13 +148,50 @@ public sealed class CastlePlayer : Component
                 previewTower.WorldRotation *= Rotation.FromYaw(rotateAmount);
             }
         }
-        else
-            snapTimer = 0.0f;
-    }
+		#endregion
 
-	void HandlePlacement()
+		#region Valid Placements
+		Color validColor = ValidPlacement() ? Color.Green : Color.Red;
+		validColor = validColor.WithAlpha(0.5f);
+
+		previewTower.GetComponent<ModelRenderer>().Tint = validColor;
+		#endregion
+	}
+
+	void TryPlacement()
 	{
+		if(previewTower == null || !ValidPlacement()) return;
+		
+		var tower = GetTower().Clone();
 
+		tower.WorldPosition = previewTower.WorldPosition;
+		tower.WorldRotation = previewTower.WorldRotation;
+	}
+
+	bool ValidPlacement()
+	{
+		if ( previewTower == null ) return false;
+
+		var trace = DoTrace();
+
+		//Non-flat surface
+		if ( trace.Normal != Vector3.Up ) return false;
+
+		if (trace.Hit)
+		{
+			GameObject hitObject = trace.GameObject;
+
+			if ( hitObject.Tags.Has( "noPlace" ) ) return false;
+
+			var sphereTrace = Scene.Trace.Sphere( 16.0f, trace.EndPosition, trace.EndPosition )
+				.WithoutTags( "Player", "Preview" )
+				.RunAll();
+
+			//At least one other tower is too close for placement
+			if ( sphereTrace.Count() >= 2 ) return false;
+		}
+
+		return true;
 	}
 
 	GameObject GetTower()
@@ -157,7 +216,6 @@ public sealed class CastlePlayer : Component
 	/// </summary>
 	/// <param name="amt">How much to add</param>
 	public void AddMoney(int amt) => Money += amt;
-
 
 	/// <summary>
 	/// Takes money from the player
