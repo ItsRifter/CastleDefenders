@@ -24,4 +24,11 @@ public sealed class CastleGame : Component
 		await GameTask.DelaySeconds(time);
 		action?.Invoke();
 	}
+
+	[ConCmd("cd.npc.spawn", ConVarFlags.Cheat)]
+	public static void CMD_SpawnNPC(string name = "Dummy")
+	{
+		var npc = PrefabScene.GetPrefab($"prefabs/Enemy/{name}.prefab");
+		npc.Clone();
+	}
 }

@@ -625,15 +625,15 @@
           "OnComponentUpdate": null,
           "PistolPrefab": {
             "_type": "gameobject",
-            "prefab": "prefabs/towerpistol.prefab"
+            "prefab": "prefabs/towers/towerpistol.prefab"
           },
           "ShotgunPrefab": {
             "_type": "gameobject",
-            "prefab": "prefabs/towershotgun.prefab"
+            "prefab": "prefabs/towers/towershotgun.prefab"
           },
           "SmgPrefab": {
             "_type": "gameobject",
-            "prefab": "prefabs/towersmg.prefab"
+            "prefab": "prefabs/towers/towersmg.prefab"
           }
         }
       ],
@@ -1053,7 +1053,7 @@
           "__version": 1,
           "Flags": 0,
           "Name": "Path6",
-          "Position": "-100.5416,-137.26,11.2881",
+          "Position": "-100.6379,-137.26,10.92893",
           "Rotation": "-0.09229592,-0.09229595,-0.7010574,-0.7010573",
           "Scale": "0.7052919,1.613386,0.04620483",
           "Tags": "",
@@ -1116,77 +1116,10 @@
           "Children": []
         },
         {
-          "__guid": "788d436a-4e5a-4adc-9c4e-2d8669325c35",
-          "__version": 1,
-          "Flags": 0,
-          "Name": "Path7",
-          "Position": "-257.7791,-137.26,11.4844",
-          "Rotation": "0.09229594,0.09229598,-0.7010573,-0.7010572",
-          "Scale": "0.7052919,1.613386,0.04620483",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "NetworkOrphaned": 0,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "9b908b6e-6e54-4d9e-bdcf-fdfe0b4ce91f",
-              "__enabled": true,
-              "BodyGroups": 18446744073709551615,
-              "CreateAttachments": false,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
-              "Materials": null,
-              "Model": "models/dev/box.vmdl",
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "RenderOptions": {
-                "GameLayer": true,
-                "OverlayLayer": false,
-                "BloomLayer": false,
-                "AfterUILayer": false
-              },
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "Sandbox.BoxCollider",
-              "__guid": "a0fbaf57-3db8-44f5-bed6-dea4d8928f78",
-              "__enabled": true,
-              "Center": "0,0,0",
-              "Elasticity": null,
-              "Friction": null,
-              "IsTrigger": false,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "OnObjectTriggerEnter": null,
-              "OnObjectTriggerExit": null,
-              "OnTriggerEnter": null,
-              "OnTriggerExit": null,
-              "RollingResistance": null,
-              "Scale": "50,50,50",
-              "Static": false,
-              "Surface": null,
-              "SurfaceVelocity": "0,0,0"
-            }
-          ],
-          "Children": []
-        },
-        {
           "__guid": "53ecacb3-28cf-4ffe-bf59-a286112d8a45",
           "__version": 1,
           "Flags": 0,
-          "Name": "Path8",
+          "Name": "Path7",
           "Position": "-336.6411,-137.26,0.9411964",
           "Rotation": "0.00000001580507,-0.00000001580506,0.7071069,0.7071066",
           "Scale": "0.7052919,1.613386,0.04620483",
@@ -1253,10 +1186,10 @@
           "__guid": "d33b3f96-c63a-4bc5-9a4d-ee1788fe3d15",
           "__version": 1,
           "Flags": 0,
-          "Name": "Path9",
-          "Position": "-405.9625,-136.5997,0.9410963",
+          "Name": "Path8",
+          "Position": "-412.9446,-136.5997,0.9410963",
           "Rotation": "0.00000001580507,-0.00000001580506,0.7071069,0.7071066",
-          "Scale": "1.412541,1.189421,0.04620483",
+          "Scale": "1.65019,1.461253,0.04620483",
           "Tags": "",
           "Enabled": true,
           "NetworkMode": 2,
@@ -1320,8 +1253,8 @@
           "__guid": "2e44d63b-e24c-4536-a7ef-0359315935e9",
           "__version": 1,
           "Flags": 0,
-          "Name": "Path10",
-          "Position": "-178.9962,-137.26,21.80644",
+          "Name": "Path9",
+          "Position": "-179.4571,-137.2599,21.36003",
           "Rotation": "0,0.000000007450581,-0.7071069,-0.7071067",
           "Scale": "0.7052919,1.613386,0.04620483",
           "Tags": "",
@@ -1504,124 +1437,6 @@
           "Children": []
         }
       ]
-    },
-    {
-      "__guid": "59187b4c-4b4c-4042-96c7-c3bb8f0acd3a",
-      "__version": 1,
-      "__Prefab": "prefabs/towerpistol.prefab",
-      "__PrefabInstancePatch": {
-        "AddedObjects": [],
-        "RemovedObjects": [],
-        "PropertyOverrides": [
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "409328a6-ba38-4103-a5b2-0c5f0f29bb2f"
-            },
-            "Property": "Position",
-            "Value": "-352,255.9999,0.00002253056"
-          },
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "409328a6-ba38-4103-a5b2-0c5f0f29bb2f"
-            },
-            "Property": "Rotation",
-            "Value": "0,0,-0.7071067,0.7071068"
-          }
-        ],
-        "MovedObjects": []
-      },
-      "__PrefabIdToInstanceId": {
-        "409328a6-ba38-4103-a5b2-0c5f0f29bb2f": "59187b4c-4b4c-4042-96c7-c3bb8f0acd3a",
-        "0c9b167c-d027-4796-a329-d7a7502218c4": "62cfb1d6-4a0f-423b-8322-b6e97e9139a3",
-        "adaf0daf-a16f-462a-94d8-8771e45c0da4": "fd848150-2765-4742-b9e6-3819dfbc0cd6",
-        "c89dcffc-9447-45ff-b92c-5f7c0b5dcb7b": "7961e299-88a6-461b-8ff5-04c1835ef40d"
-      }
-    },
-    {
-      "__guid": "fd8b6259-a7c4-4057-a7ac-7b1304a351c1",
-      "__version": 1,
-      "__Prefab": "prefabs/towersmg.prefab",
-      "__PrefabInstancePatch": {
-        "AddedObjects": [],
-        "RemovedObjects": [],
-        "PropertyOverrides": [
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "409328a6-ba38-4103-a5b2-0c5f0f29bb2f"
-            },
-            "Property": "Name",
-            "Value": "TowerSMG"
-          },
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "409328a6-ba38-4103-a5b2-0c5f0f29bb2f"
-            },
-            "Property": "Position",
-            "Value": "-320,256,0"
-          },
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "409328a6-ba38-4103-a5b2-0c5f0f29bb2f"
-            },
-            "Property": "Rotation",
-            "Value": "0,0,-0.7071066,0.7071068"
-          }
-        ],
-        "MovedObjects": []
-      },
-      "__PrefabIdToInstanceId": {
-        "409328a6-ba38-4103-a5b2-0c5f0f29bb2f": "fd8b6259-a7c4-4057-a7ac-7b1304a351c1",
-        "0c9b167c-d027-4796-a329-d7a7502218c4": "e6dafada-9f15-48c4-bce0-5cf4cfeeec42",
-        "adaf0daf-a16f-462a-94d8-8771e45c0da4": "9ff944fc-7c59-4085-b614-f2ec4cee4074",
-        "b753a810-7f46-432f-9c22-c53d53233653": "612ad334-1397-4b32-9b15-907ece1adfe4"
-      }
-    },
-    {
-      "__guid": "79ef690f-b57f-4674-9825-039595723b72",
-      "__version": 1,
-      "__Prefab": "prefabs/towershotgun.prefab",
-      "__PrefabInstancePatch": {
-        "AddedObjects": [],
-        "RemovedObjects": [],
-        "PropertyOverrides": [
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "409328a6-ba38-4103-a5b2-0c5f0f29bb2f"
-            },
-            "Property": "Name",
-            "Value": "TowerShotgun"
-          },
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "409328a6-ba38-4103-a5b2-0c5f0f29bb2f"
-            },
-            "Property": "Position",
-            "Value": "-288,256,0"
-          },
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "409328a6-ba38-4103-a5b2-0c5f0f29bb2f"
-            },
-            "Property": "Rotation",
-            "Value": "0,0,-0.7071066,0.7071068"
-          }
-        ],
-        "MovedObjects": []
-      },
-      "__PrefabIdToInstanceId": {
-        "409328a6-ba38-4103-a5b2-0c5f0f29bb2f": "79ef690f-b57f-4674-9825-039595723b72",
-        "0c9b167c-d027-4796-a329-d7a7502218c4": "250e7bc1-da0c-4e41-a001-064908e575ce",
-        "adaf0daf-a16f-462a-94d8-8771e45c0da4": "ecdb753f-e20c-42b0-97b8-585f872fbe11",
-        "6d6e6844-7d9f-4842-acf4-5d016d7c98a1": "765d1ccd-9bca-432b-ae90-c470fd119bd3"
-      }
     },
     {
       "__guid": "c751bacd-e3e7-4667-922b-d3a6d21b5bba",
@@ -1823,6 +1638,551 @@
         }
       ],
       "Children": []
+    },
+    {
+      "__guid": "80ca93ef-4609-4fa8-aea2-d442127fd31f",
+      "__version": 1,
+      "__Prefab": "prefabs/towers/towerpistol.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "409328a6-ba38-4103-a5b2-0c5f0f29bb2f"
+            },
+            "Property": "Position",
+            "Value": "-256,256,0"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "409328a6-ba38-4103-a5b2-0c5f0f29bb2f"
+            },
+            "Property": "Rotation",
+            "Value": "0,0,-0.7071067,0.7071068"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "adaf0daf-a16f-462a-94d8-8771e45c0da4"
+            },
+            "Property": "__enabled",
+            "Value": false
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "409328a6-ba38-4103-a5b2-0c5f0f29bb2f": "80ca93ef-4609-4fa8-aea2-d442127fd31f",
+        "0c9b167c-d027-4796-a329-d7a7502218c4": "a14c1170-04d0-49e4-82c1-8cc8b37e5398",
+        "adaf0daf-a16f-462a-94d8-8771e45c0da4": "291c4186-7d50-4267-93b6-c55e58455abd",
+        "c89dcffc-9447-45ff-b92c-5f7c0b5dcb7b": "ec80c1c2-1719-4969-b108-0f938b2f82bc",
+        "ed01bf38-1687-426c-894a-969c19fba33c": "478a98ff-fd40-4514-9fa4-0eeb0828481d"
+      }
+    },
+    {
+      "__guid": "236665d5-a388-46f6-96a2-fb465c80e7bc",
+      "__version": 1,
+      "__Prefab": "prefabs/towers/towershotgun.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "409328a6-ba38-4103-a5b2-0c5f0f29bb2f"
+            },
+            "Property": "Position",
+            "Value": "-192,255.9999,0"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "409328a6-ba38-4103-a5b2-0c5f0f29bb2f"
+            },
+            "Property": "Rotation",
+            "Value": "0,0,-0.7071067,0.7071068"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "adaf0daf-a16f-462a-94d8-8771e45c0da4"
+            },
+            "Property": "__enabled",
+            "Value": false
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "409328a6-ba38-4103-a5b2-0c5f0f29bb2f": "236665d5-a388-46f6-96a2-fb465c80e7bc",
+        "0c9b167c-d027-4796-a329-d7a7502218c4": "8d57e353-5b7a-452e-ae12-c9f15b687142",
+        "adaf0daf-a16f-462a-94d8-8771e45c0da4": "a83c630d-47a7-43da-9876-0dcd5753a5fa",
+        "6d6e6844-7d9f-4842-acf4-5d016d7c98a1": "639bb294-db8d-48cd-8f04-9fbd1d85f863"
+      }
+    },
+    {
+      "__guid": "022f4025-4e47-4dd1-947b-49a33b529a12",
+      "__version": 1,
+      "__Prefab": "prefabs/towers/towersmg.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "409328a6-ba38-4103-a5b2-0c5f0f29bb2f"
+            },
+            "Property": "Position",
+            "Value": "-223.9999,256,0"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "409328a6-ba38-4103-a5b2-0c5f0f29bb2f"
+            },
+            "Property": "Rotation",
+            "Value": "0,0,-0.7071067,0.7071068"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "adaf0daf-a16f-462a-94d8-8771e45c0da4"
+            },
+            "Property": "__enabled",
+            "Value": false
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "409328a6-ba38-4103-a5b2-0c5f0f29bb2f": "022f4025-4e47-4dd1-947b-49a33b529a12",
+        "0c9b167c-d027-4796-a329-d7a7502218c4": "84f8fcfe-2ca8-4446-b496-6993933462e9",
+        "adaf0daf-a16f-462a-94d8-8771e45c0da4": "7319ac5e-fa4b-4e34-8a79-fe536587f2d2",
+        "b753a810-7f46-432f-9c22-c53d53233653": "64faa9bf-662c-402e-8d95-9a1bce3ba1a0"
+      }
+    },
+    {
+      "__guid": "60a89872-c2a2-44f6-a271-6deabadb374c",
+      "__version": 1,
+      "Flags": 0,
+      "Name": "PathNodes",
+      "Position": "160,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "NetworkOrphaned": 0,
+      "OwnerTransfer": 1,
+      "Components": [],
+      "Children": [
+        {
+          "__guid": "eb36425c-0c25-484c-b163-56133eba36c7",
+          "__version": 1,
+          "Flags": 0,
+          "Name": "Node1",
+          "Position": "128,192,-0.000007286668",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "PathNode",
+              "__guid": "fc979b53-3ac7-45b0-982e-5416b2f73f51",
+              "__enabled": true,
+              "IsEndNode": false,
+              "IsStartNode": true,
+              "IsTeleporter": false,
+              "NextNode": {
+                "_type": "component",
+                "component_id": "c60aa69f-d558-4737-87d1-fd340e63efe9",
+                "go": "3a80f18d-7fec-43c3-b9dd-88abec283df8",
+                "component_type": "PathNode"
+              },
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "3a80f18d-7fec-43c3-b9dd-88abec283df8",
+          "__version": 1,
+          "Flags": 0,
+          "Name": "Node2",
+          "Position": "128,20,-0.000007286668",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "PathNode",
+              "__guid": "c60aa69f-d558-4737-87d1-fd340e63efe9",
+              "__enabled": true,
+              "IsEndNode": false,
+              "IsStartNode": false,
+              "IsTeleporter": false,
+              "NextNode": {
+                "_type": "component",
+                "component_id": "abe567e5-5380-40a7-bee7-f2c9102a31b2",
+                "go": "737fba2f-a481-4570-9725-a53b5817d492",
+                "component_type": "PathNode"
+              },
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "737fba2f-a481-4570-9725-a53b5817d492",
+          "__version": 1,
+          "Flags": 0,
+          "Name": "Node3",
+          "Position": "280,20,-0.000007286668",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "PathNode",
+              "__guid": "abe567e5-5380-40a7-bee7-f2c9102a31b2",
+              "__enabled": true,
+              "IsEndNode": false,
+              "IsStartNode": false,
+              "IsTeleporter": true,
+              "NextNode": {
+                "_type": "component",
+                "component_id": "9964fc82-ad53-4c3f-9b01-f094cf7993d2",
+                "go": "bd0d51bb-05ef-454a-9ca4-a695c40580e9",
+                "component_type": "PathNode"
+              },
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "bd0d51bb-05ef-454a-9ca4-a695c40580e9",
+          "__version": 1,
+          "Flags": 0,
+          "Name": "Node4",
+          "Position": "280,-115,-0.000007286668",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "PathNode",
+              "__guid": "9964fc82-ad53-4c3f-9b01-f094cf7993d2",
+              "__enabled": true,
+              "IsEndNode": false,
+              "IsStartNode": false,
+              "IsTeleporter": false,
+              "NextNode": {
+                "_type": "component",
+                "component_id": "9ba27104-2c33-41f1-931a-e8fc33eb2471",
+                "go": "303cb5ae-5e94-458f-ba6b-437c26ad47e7",
+                "component_type": "PathNode"
+              },
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "303cb5ae-5e94-458f-ba6b-437c26ad47e7",
+          "__version": 1,
+          "Flags": 0,
+          "Name": "Node5",
+          "Position": "210,-232.5,-0.00002608635",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "PathNode",
+              "__guid": "9ba27104-2c33-41f1-931a-e8fc33eb2471",
+              "__enabled": true,
+              "IsEndNode": false,
+              "IsStartNode": false,
+              "IsTeleporter": false,
+              "NextNode": {
+                "_type": "component",
+                "component_id": "81c02795-726f-4c1a-b424-5db9b8e9e0aa",
+                "go": "45224246-0e62-4d06-85e6-1bae7e5d3e01",
+                "component_type": "PathNode"
+              },
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "45224246-0e62-4d06-85e6-1bae7e5d3e01",
+          "__version": 1,
+          "Flags": 0,
+          "Name": "Node6",
+          "Position": "67,-232.5,-0.00002608635",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "PathNode",
+              "__guid": "81c02795-726f-4c1a-b424-5db9b8e9e0aa",
+              "__enabled": true,
+              "IsEndNode": false,
+              "IsStartNode": false,
+              "IsTeleporter": false,
+              "NextNode": {
+                "_type": "component",
+                "component_id": "7c9a8ffb-67a2-4b1a-ba8c-2ccef45eadd9",
+                "go": "4b09f44f-b20d-4bb8-b4bc-5d761cb726c8",
+                "component_type": "PathNode"
+              },
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "4b09f44f-b20d-4bb8-b4bc-5d761cb726c8",
+          "__version": 1,
+          "Flags": 0,
+          "Name": "Node7",
+          "Position": "-11,-232.5,22",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "PathNode",
+              "__guid": "7c9a8ffb-67a2-4b1a-ba8c-2ccef45eadd9",
+              "__enabled": true,
+              "IsEndNode": false,
+              "IsStartNode": false,
+              "IsTeleporter": false,
+              "NextNode": {
+                "_type": "component",
+                "component_id": "1d8c72b5-af1d-4bfb-bbff-d8a6eeb7cde7",
+                "go": "b9f8245b-7836-4d0f-8cf4-e0b6d2999fba",
+                "component_type": "PathNode"
+              },
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "b9f8245b-7836-4d0f-8cf4-e0b6d2999fba",
+          "__version": 1,
+          "Flags": 0,
+          "Name": "Node8",
+          "Position": "-89.23179,-232.5,22",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "PathNode",
+              "__guid": "1d8c72b5-af1d-4bfb-bbff-d8a6eeb7cde7",
+              "__enabled": true,
+              "IsEndNode": false,
+              "IsStartNode": false,
+              "IsTeleporter": true,
+              "NextNode": {
+                "_type": "component",
+                "component_id": "c3ae50ce-fcf5-404d-9b3c-7a97b902c693",
+                "go": "87d72415-d237-470f-8c3c-89b0413c1740",
+                "component_type": "PathNode"
+              },
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "87d72415-d237-470f-8c3c-89b0413c1740",
+          "__version": 1,
+          "Flags": 0,
+          "Name": "Node9",
+          "Position": "-172,-232.5,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "PathNode",
+              "__guid": "c3ae50ce-fcf5-404d-9b3c-7a97b902c693",
+              "__enabled": true,
+              "IsEndNode": false,
+              "IsStartNode": false,
+              "IsTeleporter": false,
+              "NextNode": {
+                "_type": "component",
+                "component_id": "5f2a4791-11a4-4ee9-902d-0f1139bf61ef",
+                "go": "d5dbecbd-f0f3-4c80-8d54-6d8abe8bfaab",
+                "component_type": "PathNode"
+              },
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "d5dbecbd-f0f3-4c80-8d54-6d8abe8bfaab",
+          "__version": 1,
+          "Flags": 0,
+          "Name": "Node10",
+          "Position": "-277,-232.5,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "PathNode",
+              "__guid": "5f2a4791-11a4-4ee9-902d-0f1139bf61ef",
+              "__enabled": true,
+              "IsEndNode": true,
+              "IsStartNode": false,
+              "IsTeleporter": false,
+              "NextNode": null,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ],
+          "Children": []
+        }
+      ]
+    },
+    {
+      "__guid": "9ef34bbd-b7be-4831-8c66-5cf310fcaf08",
+      "__version": 1,
+      "__Prefab": "prefabs/castle.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "007d9737-a207-41e0-8bce-513dd872c423"
+            },
+            "Property": "Position",
+            "Value": "-123.3956,-232.3945,1.863528"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "007d9737-a207-41e0-8bce-513dd872c423": "9ef34bbd-b7be-4831-8c66-5cf310fcaf08",
+        "a1ff21e3-4abd-4c52-bfba-150d70a238d1": "86553684-c546-4c5f-8732-8caf03faf83b",
+        "cab95b6c-d37f-42fd-8bda-c556d1d81603": "dd78ee28-c792-4117-9ae5-07f0daadad15"
+      }
     }
   ],
   "SceneProperties": {

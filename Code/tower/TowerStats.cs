@@ -13,6 +13,9 @@ public sealed class TowerStats : Component
 	[Property] public float FireRate { get; set; } = 1.0f;
 	[Property] public float Range { get; set; } = 48.0f;
 
+	[Header("Sounds")]
+	[Property] public SoundEvent FireSound { get; set; }
+
 	public enum AttackMethod
 	{
 		Single, //Attacks one target

@@ -1,0 +1,7 @@
+Reference format -  Asset name / Username / Licence / Link to asset
+
+Sound assets:
+
+Gunshot.wav / Cloud-10 / Creative Commons 0 / https://freesound.org/people/Cloud-10/sounds/632821/
+
+Shotgun fire / hyperix6 / Creative Commons 0 / https://freesound.org/people/hyperix6/sounds/660299/

@@ -47,6 +47,8 @@ public sealed class CastlePlayer : Component
 
 				GameObject newTower = GetTower();
 				previewTower = newTower.Clone();
+
+				previewTower.GetComponent<CastleTower>().Enabled = false;
 				previewTower.WorldRotation = lastRot;
 
 				previewTower.Tags.Add("Preview");
