@@ -272,7 +272,6 @@ public sealed class CastlePlayer : Component
 		if ( amt == 0 ) return;
 
 		Money -= amt;
-		Log.Info( Money );
 	}
 
 	/// <summary>

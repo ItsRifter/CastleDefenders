@@ -55,6 +55,7 @@ public sealed class CastleTower : Component
 		if (target != null) return;
 
 		var trace = DoRangeTrace();
+
 		if ( !trace.Hit ) return;
 
 		if(trace.GameObject.GetComponent<CastleNPC>() != null)
@@ -63,10 +64,13 @@ public sealed class CastleTower : Component
 
 	void ValidateTarget()
 	{
-		if( !target.IsValid || target.GameObject.IsDestroyed || target.Health <= 0.0f)
+		if( !target.IsValid || target.GameObject.IsDestroyed || target.Health <= 0.0f )
 			RemoveTarget();
 
 		if( !IsTargetInRange() )
+			RemoveTarget();
+
+		if ( !CanSeeTarget() )
 			RemoveTarget();
 	}
 
@@ -80,6 +84,18 @@ public sealed class CastleTower : Component
 		if ( target == null || !target.IsValid ) return false;
 
 		return Vector3.DistanceBetween(WorldPosition, target.WorldPosition) < Statistics.Range;
+	}
+
+	bool CanSeeTarget()
+	{
+		if ( target == null || !target.IsValid ) return false;
+
+		var trace = Scene.Trace.Ray( WorldPosition + Vector3.Up * 8, target.WorldPosition + Vector3.Up * 2 )
+			.IgnoreGameObject( GameObject )
+			.UsePhysicsWorld()
+			.Run();
+
+		return trace.Hit && trace.GameObject == target.GameObject;
 	}
 
 	void Attack()

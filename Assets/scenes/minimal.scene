@@ -136,9 +136,9 @@
       "__version": 1,
       "Flags": 0,
       "Name": "Floor",
-      "Position": "0,0,0",
+      "Position": "76.36479,0,0",
       "Rotation": "0,0,0,1",
-      "Scale": "9.924712,5.745687,5",
+      "Scale": "11.76907,8.371242,5",
       "Tags": "",
       "Enabled": true,
       "NetworkMode": 2,
@@ -1676,16 +1676,10 @@
               "Type": "Component",
               "IdValue": "ed01bf38-1687-426c-894a-969c19fba33c"
             },
-            "Property": "ChargesAttack",
-            "Value": false
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "ed01bf38-1687-426c-894a-969c19fba33c"
-            },
-            "Property": "ChargeTime",
-            "Value": 1
+            "Property": "Upgrades",
+            "Value": {
+              "Number1": 0
+            }
           }
         ],
         "MovedObjects": []
@@ -1771,6 +1765,30 @@
             },
             "Property": "__enabled",
             "Value": false
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "0abe4f84-78f4-40e8-883c-df4f9c620d9e"
+            },
+            "Property": "ChargeSound",
+            "Value": null
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "0abe4f84-78f4-40e8-883c-df4f9c620d9e"
+            },
+            "Property": "Upgrades",
+            "Value": null
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "0abe4f84-78f4-40e8-883c-df4f9c620d9e"
+            },
+            "Property": "UpgradeSound",
+            "Value": null
           }
         ],
         "MovedObjects": []
@@ -2200,6 +2218,73 @@
         "a1ff21e3-4abd-4c52-bfba-150d70a238d1": "86553684-c546-4c5f-8732-8caf03faf83b",
         "cab95b6c-d37f-42fd-8bda-c556d1d81603": "dd78ee28-c792-4117-9ae5-07f0daadad15"
       }
+    },
+    {
+      "__guid": "0b4fd556-a453-4cf5-992c-41f85d8fcf65",
+      "__version": 1,
+      "Flags": 0,
+      "Name": "Cube",
+      "Position": "366.6805,-184.5478,21.74155",
+      "Rotation": "0,0,-0.258819,0.9659258",
+      "Scale": "0.2409154,1,1",
+      "Tags": "solid",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "NetworkOrphaned": 0,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "035db301-7112-4679-8720-22bf7c1677c8",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/dev/box.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "52b67f97-3bbf-4efa-ad94-cd01d0487886",
+          "__enabled": true,
+          "Center": "0,0,0",
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ],
+      "Children": []
     }
   ],
   "SceneProperties": {

@@ -1,6 +1,7 @@
 using Sandbox;
 using System;
 
+
 public sealed class TowerStats : Component
 {
 	[Header("Basic")]
@@ -34,8 +35,15 @@ public sealed class TowerStats : Component
 
 	[Property, ShowIf("ChargesAttack", true)] public float ChargeTime { get; set; } = 1.0f;
 
+	[Header("Upgrades")]
+	//[Property] public TowerUpgrade[] Upgrades { get; set; } = new TowerUpgrade[] { };
+
+	public TowerUpgrade Upgrades { get; set; }
+
 	[Header( "Sounds" )]
 	[Property] public SoundEvent FireSound { get; set; }
+	[Property] public SoundEvent ChargeSound { get; set; }
+	[Property] public SoundEvent UpgradeSound { get; set; }
 
 	protected override void DrawGizmos()
 	{

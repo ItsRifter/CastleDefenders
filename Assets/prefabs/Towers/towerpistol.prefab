@@ -79,6 +79,9 @@
         "__guid": "ed01bf38-1687-426c-894a-969c19fba33c",
         "__enabled": true,
         "Abilities": 0,
+        "ChargesAttack": false,
+        "ChargeSound": null,
+        "ChargeTime": 1,
         "Cost": 25,
         "Damage": 5,
         "Description": "A simple tower for eliminating opponents",
@@ -92,7 +95,9 @@
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
-        "Range": 64
+        "Range": 64,
+        "Upgrades": [],
+        "UpgradeSound": null
       }
     ],
     "Children": [],
