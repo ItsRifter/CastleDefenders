@@ -1,32 +1,32 @@
 {
   "AssetBrowser.History": {
-    "Value": "[\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Editor\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Localization\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\ProjectSettings\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Editor\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\materials\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\materials\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\models\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\materials\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\materials\\\\simple\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\materials\\\\simple\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\materials\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\materials\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\models\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\models\\\\towers\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\models\\\\towers\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\models\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\materials\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\materials\\\\simple\u0022]",
-    "Timeout": 1755166351,
+    "Value": "[\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Editor\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Localization\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\ProjectSettings\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Editor\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\materials\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\materials\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\models\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\materials\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\materials\\\\simple\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\materials\\\\simple\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\materials\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\materials\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\models\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\models\\\\towers\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\models\\\\towers\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\models\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\materials\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\materials\\\\simple\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\\\\player\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\\\\tower\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\models\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\\\\tower\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\\\\player\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022,\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\prefabs\u0022]",
+    "Timeout": 1755168230,
     "DeleteAt": 0
   },
   "AssetBrowser.HistoryIdx": {
-    "Value": "25",
-    "Timeout": 1755166351,
+    "Value": "36",
+    "Timeout": 1755168230,
     "DeleteAt": 0
   },
   "scene.lastopened": {
     "Value": "[\u0022scenes/minimal.scene\u0022]",
-    "Timeout": 1755164403,
+    "Timeout": 1755168266,
     "DeleteAt": 0
   },
   "Window.SboxSceneEditor.Dock": {
-    "Value": "{\u0022floatingWindows\u0022:[],\u0022mainWrapper\u0022:{\u0022geometry\u0022:\u0022AdnQywADAAAAAAAAAAAAAAAAB3cAAAPKAAAAAAAAAAAAAAd3AAADygAAAAEAAAAACJIAAAAAAAAAAAAAB3cAAAPK\u0022,\u0022splitter\u0022:{\u0022items\u0022:[{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneTreeWidget\u0022,\u0022name\u0022:\u0022Hierarchy\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022PanelInspectorWidget\u0022,\u0022name\u0022:\u0022UI Panels\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022items\u0022:[{\u0022items\u0022:[{\u0022currentIndex\u0022:1,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022\u0022,\u0022name\u0022:\u0022GameFrame\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:scenes/minimal.scene\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MainAssetBrowser\u0022,\u0022name\u0022:\u0022Asset Browser\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MainCloudBrowser\u0022,\u0022name\u0022:\u0022Cloud Browser\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022ConsoleWidget\u0022,\u0022name\u0022:\u0022Console\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MixerDock\u0022,\u0022name\u0022:\u0022Mixer\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022LibraryManagerDock\u0022,\u0022name\u0022:\u0022Library Manager\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAAD0wAAAjMA/////wEAAAACAA==\u0022,\u0022type\u0022:\u0022splitter\u0022},{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022Inspector\u0022,\u0022name\u0022:\u0022Inspector\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAAFeQAAAPAA/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAABmwAACjQA/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}},\u0022toolWindowManagerStateFormat\u0022:1}",
-    "Timeout": 1755164702,
+    "Value": "{\u0022floatingWindows\u0022:[],\u0022mainWrapper\u0022:{\u0022geometry\u0022:\u0022AdnQywADAAAAAAAAAAAAAAAAB3cAAAOaAAAAAAAAAAAAAAd3AAADmgAAAAAAAAAAB4AAAAAAAAAAAAAAB3cAAAOa\u0022,\u0022splitter\u0022:{\u0022items\u0022:[{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneTreeWidget\u0022,\u0022name\u0022:\u0022Hierarchy\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022PanelInspectorWidget\u0022,\u0022name\u0022:\u0022UI Panels\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022items\u0022:[{\u0022items\u0022:[{\u0022currentIndex\u0022:1,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022\u0022,\u0022name\u0022:\u0022GameFrame\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:scenes/minimal.scene\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MainAssetBrowser\u0022,\u0022name\u0022:\u0022Asset Browser\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MainCloudBrowser\u0022,\u0022name\u0022:\u0022Cloud Browser\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022ConsoleWidget\u0022,\u0022name\u0022:\u0022Console\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MixerDock\u0022,\u0022name\u0022:\u0022Mixer\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022LibraryManagerDock\u0022,\u0022name\u0022:\u0022Library Manager\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAAD0wAAAjMA/////wEAAAACAA==\u0022,\u0022type\u0022:\u0022splitter\u0022},{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022Inspector\u0022,\u0022name\u0022:\u0022Inspector\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAAExgAAAacA/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAABmwAACjQA/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}},\u0022toolWindowManagerStateFormat\u0022:1}",
+    "Timeout": 1755166820,
     "DeleteAt": 0
   },
   "scenes/minimal.scene.Viewport0": {
-    "Value": "{\u0022CameraPosition\u0022:\u0022-420.9266,-337.4534,473.5451\u0022,\u0022CameraRotation\u0022:\u0022-0.1513463,0.326641,0.3922191,0.8465011\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1755166639,
+    "Value": "{\u0022CameraPosition\u0022:\u0022-405.6287,-107.2704,284.9363\u0022,\u0022CameraRotation\u0022:\u0022-0.1483115,0.2663617,0.4633179,0.8321007\u0022,\u0022CameraOrthoHeight\u0022:1000}",
+    "Timeout": 1755168319,
     "DeleteAt": 0
   },
   "SceneView.Viewport0.Settings": {
-    "Value": "{\u0022CameraPosition\u0022:\u0022-420.9266,-337.4534,473.5451\u0022,\u0022CameraRotation\u0022:\u0022-0.1513463,0.326641,0.3922191,0.8465011\u0022,\u0022View\u0022:0,\u0022RenderMode\u0022:0,\u0022WireframeMode\u0022:false,\u0022EnablePostProcessing\u0022:true,\u0022EnablePrefabLighting\u0022:true,\u0022ShowGrid\u0022:true,\u0022GridOpacity\u0022:0.2,\u0022GridAxis\u0022:0,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1755166639,
+    "Value": "{\u0022CameraPosition\u0022:\u0022-405.6287,-107.2704,284.9363\u0022,\u0022CameraRotation\u0022:\u0022-0.1483115,0.2663617,0.4633179,0.8321007\u0022,\u0022View\u0022:0,\u0022RenderMode\u0022:0,\u0022WireframeMode\u0022:false,\u0022EnablePostProcessing\u0022:true,\u0022EnablePrefabLighting\u0022:true,\u0022ShowGrid\u0022:true,\u0022GridOpacity\u0022:0.2,\u0022GridAxis\u0022:0,\u0022CameraOrthoHeight\u0022:1000}",
+    "Timeout": 1755168319,
     "DeleteAt": 0
   },
   "gizmo.settings": {
@@ -36,7 +36,7 @@
   },
   "SceneView.Layout": {
     "Value": "{\u0022Layout\u0022:0,\u0022SplitterState\u0022:[]}",
-    "Timeout": 1755164403,
+    "Timeout": 1755168266,
     "DeleteAt": 0
   },
   "AssetBrowser.Material.History": {
@@ -97,6 +97,51 @@
   "AssetBrowser.DMX File,SMD Source File,FBX Source File.ShowRecursiveFiles": {
     "Value": "false",
     "Timeout": 1755166541,
+    "DeleteAt": 0
+  },
+  ".Viewport0": {
+    "Value": "{\u0022CameraPosition\u0022:\u0022-267.452,-379.653,297.7903\u0022,\u0022CameraRotation\u0022:\u0022-0.1448582,0.2860239,0.4279631,0.8450171\u0022,\u0022CameraOrthoHeight\u0022:1000}",
+    "Timeout": 1755166820,
+    "DeleteAt": 0
+  },
+  "expand.4004ac54-3f41-4820-b6ac-82f675fcd9c6.MoveModeWalk": {
+    "Value": "false",
+    "Timeout": 1755167172,
+    "DeleteAt": 0
+  },
+  "expand.4004ac54-3f41-4820-b6ac-82f675fcd9c6.MoveModeSwim": {
+    "Value": "false",
+    "Timeout": 1755167172,
+    "DeleteAt": 0
+  },
+  "expand.4004ac54-3f41-4820-b6ac-82f675fcd9c6.Dresser": {
+    "Value": "false",
+    "Timeout": 1755167172,
+    "DeleteAt": 0
+  },
+  "expand.4004ac54-3f41-4820-b6ac-82f675fcd9c6.PlayerController": {
+    "Value": "false",
+    "Timeout": 1755167172,
+    "DeleteAt": 0
+  },
+  "prefabs/towershotgun.prefab.Viewport0": {
+    "Value": "{\u0022CameraPosition\u0022:\u0022-22.57074,-28.9053,40.13866\u0022,\u0022CameraRotation\u0022:\u0022-0.1707516,0.2963471,0.4691363,0.8142073\u0022,\u0022CameraOrthoHeight\u0022:1000}",
+    "Timeout": 1755168266,
+    "DeleteAt": 0
+  },
+  "AssetBrowser.Model.History": {
+    "Value": "[\u0022D:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022,\u0022d:\\\\s\\u0026boxprojects\\\\castle_defenders\\\\assets\\\\models\u0022,\u0022d:\\\\s\\u0026boxprojects\\\\castle_defenders\\\\assets\\\\models\u0022]",
+    "Timeout": 1755168262,
+    "DeleteAt": 0
+  },
+  "AssetBrowser.Model.HistoryIdx": {
+    "Value": "2",
+    "Timeout": 1755168262,
+    "DeleteAt": 0
+  },
+  "prefabs/towersmg.prefab.Viewport0": {
+    "Value": "{\u0022CameraPosition\u0022:\u002255.74219,-38.38004,61.72856\u0022,\u0022CameraRotation\u0022:\u0022-0.2818113,0.172694,0.8047224,0.4931339\u0022,\u0022CameraOrthoHeight\u0022:1000}",
+    "Timeout": 1755168266,
     "DeleteAt": 0
   }
 }
