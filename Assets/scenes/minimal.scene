@@ -203,8 +203,8 @@
       "__version": 1,
       "Flags": 0,
       "Name": "Camera",
-      "Position": "-267.452,-379.653,297.7903",
-      "Rotation": "-0.1448582,0.2860239,0.4279631,0.8450171",
+      "Position": "-128,-0.000004801909,64",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
       "Enabled": true,
@@ -297,7 +297,7 @@
       "Position": "96,0,0",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
-      "Tags": "",
+      "Tags": "player",
       "Enabled": true,
       "NetworkMode": 2,
       "NetworkInterpolation": true,
@@ -457,7 +457,7 @@
         },
         {
           "__type": "CastlePlayer",
-          "__guid": "ddc3f0e5-3202-4bc5-8b7a-8bef50fb73cd",
+          "__guid": "fe4869ef-e395-443a-9c4e-58e222465249",
           "__enabled": true,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
@@ -623,9 +623,18 @@
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
-          "PistolPrefab": null,
-          "ShotgunPrefab": null,
-          "SMGPrefab": null
+          "PistolPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/towerpistol.prefab"
+          },
+          "ShotgunPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/towershotgun.prefab"
+          },
+          "SmgPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/towersmg.prefab"
+          }
         }
       ],
       "Children": [
@@ -1290,39 +1299,6 @@
       }
     },
     {
-      "__guid": "79ef690f-b57f-4674-9825-039595723b72",
-      "__version": 1,
-      "__Prefab": "prefabs/towershotgun.prefab",
-      "__PrefabInstancePatch": {
-        "AddedObjects": [],
-        "RemovedObjects": [],
-        "PropertyOverrides": [
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "409328a6-ba38-4103-a5b2-0c5f0f29bb2f"
-            },
-            "Property": "Position",
-            "Value": "-288,256,0"
-          },
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "409328a6-ba38-4103-a5b2-0c5f0f29bb2f"
-            },
-            "Property": "Rotation",
-            "Value": "0,0,-0.7071066,0.7071068"
-          }
-        ],
-        "MovedObjects": []
-      },
-      "__PrefabIdToInstanceId": {
-        "409328a6-ba38-4103-a5b2-0c5f0f29bb2f": "79ef690f-b57f-4674-9825-039595723b72",
-        "0c9b167c-d027-4796-a329-d7a7502218c4": "250e7bc1-da0c-4e41-a001-064908e575ce",
-        "adaf0daf-a16f-462a-94d8-8771e45c0da4": "ecdb753f-e20c-42b0-97b8-585f872fbe11"
-      }
-    },
-    {
       "__guid": "fd8b6259-a7c4-4057-a7ac-7b1304a351c1",
       "__version": 1,
       "__Prefab": "prefabs/towersmg.prefab",
@@ -1330,6 +1306,14 @@
         "AddedObjects": [],
         "RemovedObjects": [],
         "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "409328a6-ba38-4103-a5b2-0c5f0f29bb2f"
+            },
+            "Property": "Name",
+            "Value": "TowerSMG"
+          },
           {
             "Target": {
               "Type": "GameObject",
@@ -1353,6 +1337,47 @@
         "409328a6-ba38-4103-a5b2-0c5f0f29bb2f": "fd8b6259-a7c4-4057-a7ac-7b1304a351c1",
         "0c9b167c-d027-4796-a329-d7a7502218c4": "e6dafada-9f15-48c4-bce0-5cf4cfeeec42",
         "adaf0daf-a16f-462a-94d8-8771e45c0da4": "9ff944fc-7c59-4085-b614-f2ec4cee4074"
+      }
+    },
+    {
+      "__guid": "79ef690f-b57f-4674-9825-039595723b72",
+      "__version": 1,
+      "__Prefab": "prefabs/towershotgun.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "409328a6-ba38-4103-a5b2-0c5f0f29bb2f"
+            },
+            "Property": "Name",
+            "Value": "TowerShotgun"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "409328a6-ba38-4103-a5b2-0c5f0f29bb2f"
+            },
+            "Property": "Position",
+            "Value": "-288,256,0"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "409328a6-ba38-4103-a5b2-0c5f0f29bb2f"
+            },
+            "Property": "Rotation",
+            "Value": "0,0,-0.7071066,0.7071068"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "409328a6-ba38-4103-a5b2-0c5f0f29bb2f": "79ef690f-b57f-4674-9825-039595723b72",
+        "0c9b167c-d027-4796-a329-d7a7502218c4": "250e7bc1-da0c-4e41-a001-064908e575ce",
+        "adaf0daf-a16f-462a-94d8-8771e45c0da4": "ecdb753f-e20c-42b0-97b8-585f872fbe11"
       }
     }
   ],

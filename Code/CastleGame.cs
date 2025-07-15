@@ -1,11 +1,12 @@
 using Sandbox;
+using System;
 
 public sealed class CastleGame : Component
 {
 	public static CastleGame Instance { get; private set; }
 
 	[Property] public GameObject PistolPrefab { get; set; }
-	[Property] public GameObject SMGPrefab { get; set; }
+	[Property, Title("SMG Prefab")] public GameObject SmgPrefab { get; set; }
 	[Property] public GameObject ShotgunPrefab { get; set; }
 
 	protected override void OnAwake()
@@ -16,5 +17,11 @@ public sealed class CastleGame : Component
 	protected override void OnUpdate()
 	{
 
+	}
+
+	public static async void AwaitAction(float time, Action action)
+	{
+		await GameTask.DelaySeconds(time);
+		action?.Invoke();
 	}
 }
