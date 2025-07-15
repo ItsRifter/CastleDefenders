@@ -8,13 +8,10 @@ public sealed class TowerStats : Component
 	[Property] public string Description { get; set; } = "A basic tower that shoots targets";
 	[Property] public int Cost { get; set; } = 1;
 
-	[Header("Statistics")]
+	[Header("Attacks")]
 	[Property] public float Damage { get; set; } = 1.0f;
 	[Property] public float FireRate { get; set; } = 1.0f;
 	[Property] public float Range { get; set; } = 48.0f;
-
-	[Header("Sounds")]
-	[Property] public SoundEvent FireSound { get; set; }
 
 	public enum AttackMethod
 	{
@@ -32,6 +29,13 @@ public sealed class TowerStats : Component
 
 	[Property] public AttackMethod Method { get; set; } = AttackMethod.Single;
 	[Property] public Ability Abilities { get; set; }
+
+	[Property] public bool ChargesAttack { get; set; } = false;
+
+	[Property, ShowIf("ChargesAttack", true)] public float ChargeTime { get; set; } = 1.0f;
+
+	[Header( "Sounds" )]
+	[Property] public SoundEvent FireSound { get; set; }
 
 	protected override void DrawGizmos()
 	{

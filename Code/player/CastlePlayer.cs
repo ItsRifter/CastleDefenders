@@ -4,7 +4,7 @@ using System;
 
 public sealed class CastlePlayer : Component
 {
-	public int Money { get; private set; } = 0;
+	public int Money { get; private set; }
 
 	GameObject previewTower;
 	int currentSelection = -1;
@@ -20,6 +20,8 @@ public sealed class CastlePlayer : Component
 		CastleGame.AwaitAction( 0.1f, () => camera = Scene.Get<CameraComponent>() );
 
 		controller = GetComponent<PlayerController>();
+
+		Money = 50;
 	}
 
 	protected override void OnUpdate()
@@ -30,14 +32,26 @@ public sealed class CastlePlayer : Component
 
 	void HandleInputs()
 	{
-		#region Selection
+		//Tower selection
+		HandleSelections();
+
+		//Tower actions
+		if ( Input.Pressed( "PrimMouse" ) )
+			TryPlacement();
+
+		if (Input.Pressed("Sell"))
+			TrySell();
+	}
+
+	void HandleSelections()
+	{
 		if ( GetSlotPressed() != -1 )
 			currentSelection = GetSlotPressed();
 
 		if ( lastSelection != currentSelection )
 		{
 			lastSelection = currentSelection;
-			
+
 			if ( currentSelection != -1 && currentSelection != 0 )
 			{
 				Rotation lastRot = previewTower?.WorldRotation ?? Rotation.Identity;
@@ -51,7 +65,7 @@ public sealed class CastlePlayer : Component
 				previewTower.GetComponent<CastleTower>().Enabled = false;
 				previewTower.WorldRotation = lastRot;
 
-				previewTower.Tags.Add("Preview");
+				previewTower.Tags.Add( "Preview" );
 			}
 			else if ( currentSelection == 0 )
 			{
@@ -61,12 +75,29 @@ public sealed class CastlePlayer : Component
 			else
 				previewTower = null;
 		}
-		#endregion
+	}
 
-		#region Placement
-		if ( Input.Pressed( "PrimMouse" ) )
-			TryPlacement();
-		#endregion
+	void TrySell()
+	{
+		if ( currentSelection != 0 ) return;
+
+		var trace = DoTrace( "player" );
+
+		if ( trace.Hit && trace.GameObject.GetComponent<CastleTower>() != null )
+		{
+			var tower = trace.GameObject.GetComponent<CastleTower>();
+
+			if ( tower.Owner != null && tower.Owner != this ) return;
+
+			int sellPrice = (int)(tower.Statistics.Cost / 1.75f * tower.Level);
+
+			if ( tower.Owner == null )
+				AddMoney( sellPrice );
+			else
+				tower.Owner.AddMoney( sellPrice );
+
+			tower.GameObject.Destroy();
+		}
 	}
 
 	int GetSlotPressed()
@@ -86,33 +117,15 @@ public sealed class CastlePlayer : Component
 		return -1;
 	}
 
-	float previewDist = 160.0f;
-
 	float snapCooldown = 0.05f;
     float snapTimer = 0.0f;
 	float snapAngle = 15.0f;
-
-	SceneTraceResult DoTrace()
-	{
-		Vector3 camPos = camera.WorldPosition;
-		Vector3 camForward = camPos + camera.WorldRotation.Forward * previewDist;
-
-		var trace = Scene.Trace.Ray( camPos, camForward )
-			.UseHitboxes()
-			.WithoutTags( "Player", "tower" )
-			.Run();
-
-		return trace;
-	}
 
     void HandlePreview()
     {
         if (previewTower == null) return;
 
-        Vector3 camPos = camera.WorldPosition;
-        Vector3 camForward = camPos + camera.WorldRotation.Forward * previewDist;
-
-		var trace = DoTrace();
+		var trace = DoTrace( "player", "tower" );
 
 		previewTower.WorldPosition = trace.EndPosition;
 
@@ -163,18 +176,26 @@ public sealed class CastlePlayer : Component
 	void TryPlacement()
 	{
 		if(previewTower == null || !ValidPlacement()) return;
-		
+
+		int cost = previewTower.GetComponent<TowerStats>().Cost;
+
+		if ( !CanAfford( cost ) ) return;
+
 		var tower = GetTower().Clone();
 
 		tower.WorldPosition = previewTower.WorldPosition;
 		tower.WorldRotation = previewTower.WorldRotation;
+
+		tower.GetComponent<CastleTower>().SetOwner( this );
+
+		TakeMoney( cost );
 	}
 
 	bool ValidPlacement()
 	{
 		if ( previewTower == null ) return false;
 
-		var trace = DoTrace();
+		var trace = DoTrace( "player", "tower" );
 
 		//Non-flat surface
 		if ( trace.Normal != Vector3.Up ) return false;
@@ -213,11 +234,31 @@ public sealed class CastlePlayer : Component
 		}
 	}
 
+	float previewDist = 128.0f;
+
+	SceneTraceResult DoTrace( params string[] ignoreTags )
+	{
+		Vector3 camPos = camera.WorldPosition;
+		Vector3 camForward = camPos + camera.WorldRotation.Forward * previewDist;
+
+		var trace = Scene.Trace.Ray( camPos, camForward )
+			.UseHitboxes()
+			.WithoutTags( ignoreTags )
+			.Run();
+
+		return trace;
+	}
+
+	#region Money
 	/// <summary>
 	/// Adds money to the player
 	/// </summary>
 	/// <param name="amt">How much to add</param>
-	public void AddMoney(int amt) => Money += amt;
+	public void AddMoney(int amt)
+	{
+		Money += amt;
+		Log.Info( Money );
+	}
 
 	/// <summary>
 	/// Takes money from the player
@@ -231,6 +272,7 @@ public sealed class CastlePlayer : Component
 		if ( amt == 0 ) return;
 
 		Money -= amt;
+		Log.Info( Money );
 	}
 
 	/// <summary>
@@ -239,4 +281,5 @@ public sealed class CastlePlayer : Component
 	/// <param name="amt">The amount to check</param>
 	/// <returns>Player has enough money to afford</returns>
 	public bool CanAfford(int amt) => Money >= amt;
+	#endregion
 }

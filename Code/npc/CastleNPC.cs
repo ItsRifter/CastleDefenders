@@ -37,11 +37,14 @@ public sealed class CastleNPC : Component
 
 		if ( IsAtNode() )
 		{
-			if(targetNode.IsTeleporter )
+			if( targetNode.IsEndNode )
 			{
-				// Teleport to next node
-				WorldPosition = targetNode.NextNode.WorldPosition;
+				OnHitGoal();
+				return;
 			}
+
+			if ( targetNode.IsTeleporter )
+				WorldPosition = targetNode.NextNode.WorldPosition;
 
 			targetNode = GetNextNode();
 		}
@@ -50,6 +53,11 @@ public sealed class CastleNPC : Component
 	PathNode GetNextNode() => targetNode.NextNode ?? null;
 
 	bool IsAtNode() => Vector3.DistanceBetween( WorldPosition, targetNode.WorldPosition ) < 0.1f;
+
+	void OnHitGoal()
+	{
+
+	}
 
 	public void TakeDamage(float amount)
 	{

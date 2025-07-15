@@ -3,7 +3,11 @@ using Sandbox;
 public sealed class CastleTower : Component
 {
 	public TowerStats Statistics { get; private set; }
-	
+
+	public CastlePlayer Owner;
+
+	public int Level { get; set; } = 1;
+
 	TimeSince lastAttack;
 	CastleNPC target;
 
@@ -25,6 +29,8 @@ public sealed class CastleTower : Component
 				Attack();
 		}
 	}
+
+	public void SetOwner(CastlePlayer player) => Owner = player;
 
 	SceneTraceResult DoRangeTrace()
 	{
@@ -85,8 +91,5 @@ public sealed class CastleTower : Component
 		target.TakeDamage(Statistics.Damage);
 	}
 
-	bool CanAttack()
-	{
-		return lastAttack >= Statistics.FireRate;
-	}
+	bool CanAttack() => lastAttack >= Statistics.FireRate;
 }

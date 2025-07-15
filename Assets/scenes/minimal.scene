@@ -1670,6 +1670,22 @@
             },
             "Property": "__enabled",
             "Value": false
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "ed01bf38-1687-426c-894a-969c19fba33c"
+            },
+            "Property": "ChargesAttack",
+            "Value": false
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "ed01bf38-1687-426c-894a-969c19fba33c"
+            },
+            "Property": "ChargeTime",
+            "Value": 1
           }
         ],
         "MovedObjects": []
@@ -1763,7 +1779,8 @@
         "409328a6-ba38-4103-a5b2-0c5f0f29bb2f": "022f4025-4e47-4dd1-947b-49a33b529a12",
         "0c9b167c-d027-4796-a329-d7a7502218c4": "84f8fcfe-2ca8-4446-b496-6993933462e9",
         "adaf0daf-a16f-462a-94d8-8771e45c0da4": "7319ac5e-fa4b-4e34-8a79-fe536587f2d2",
-        "b753a810-7f46-432f-9c22-c53d53233653": "64faa9bf-662c-402e-8d95-9a1bce3ba1a0"
+        "b753a810-7f46-432f-9c22-c53d53233653": "64faa9bf-662c-402e-8d95-9a1bce3ba1a0",
+        "0abe4f84-78f4-40e8-883c-df4f9c620d9e": "89095e15-a615-478f-91d1-bd00a3cd8aa9"
       }
     },
     {
@@ -1879,7 +1896,7 @@
               "__enabled": true,
               "IsEndNode": false,
               "IsStartNode": false,
-              "IsTeleporter": true,
+              "IsTeleporter": false,
               "NextNode": {
                 "_type": "component",
                 "component_id": "9964fc82-ad53-4c3f-9b01-f094cf7993d2",

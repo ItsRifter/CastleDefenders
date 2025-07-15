@@ -28,7 +28,7 @@ public sealed class CastleGame : Component
 	[ConCmd("cd.npc.spawn", ConVarFlags.Cheat)]
 	public static void CMD_SpawnNPC(string name = "Dummy")
 	{
-		var npc = PrefabScene.GetPrefab($"prefabs/Enemy/{name}.prefab");
+		var npc = PrefabScene.GetPrefab($"prefabs/enemy/{name}.prefab");
 		npc.Clone();
 	}
 }

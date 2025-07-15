@@ -51,6 +51,28 @@
         "OnComponentUpdate": null
       },
       {
+        "__type": "TowerStats",
+        "__guid": "0abe4f84-78f4-40e8-883c-df4f9c620d9e",
+        "__enabled": true,
+        "Abilities": 0,
+        "ChargesAttack": false,
+        "ChargeTime": 1,
+        "Cost": 35,
+        "Damage": 1,
+        "Description": "Fast shooting tower",
+        "DisplayName": "Sub-Machine Gunner",
+        "FireRate": 1,
+        "FireSound": null,
+        "Method": "Single",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "Range": 48
+      },
+      {
         "__type": "Sandbox.BoxCollider",
         "__guid": "b753a810-7f46-432f-9c22-c53d53233653",
         "__enabled": true,
