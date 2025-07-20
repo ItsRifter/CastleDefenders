@@ -96,7 +96,6 @@
         "OnComponentStart": null,
         "OnComponentUpdate": null,
         "Range": 64,
-        "Upgrades": [],
         "UpgradeSound": null
       }
     ],

@@ -64,6 +64,9 @@ public sealed class CastleNPC : Component
 		Health -= amount;
 
 		if ( Health <= 0 )
+		{
+			WaveManager.Instance.OnEnemyDeath();
 			GameObject.Destroy();
+		}
 	}
 }

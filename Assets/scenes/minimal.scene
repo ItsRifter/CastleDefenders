@@ -635,6 +635,84 @@
             "_type": "gameobject",
             "prefab": "prefabs/towers/towersmg.prefab"
           }
+        },
+        {
+          "__type": "WaveManager",
+          "__guid": "ba145c1f-1424-4dc1-aac6-d3c19b484b02",
+          "__enabled": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Waves": [
+            {
+              "Name": "Wave 1",
+              "EnemyInfo": [
+                {
+                  "Enemy": {
+                    "_type": "gameobject",
+                    "prefab": "prefabs/enemy/dummy.prefab"
+                  },
+                  "SpawnCount": 5,
+                  "SpawnInterval": 1.5,
+                  "InitialSpawnDelay": 1
+                }
+              ]
+            },
+            {
+              "Name": "Wave 2",
+              "EnemyInfo": [
+                {
+                  "Enemy": {
+                    "_type": "gameobject",
+                    "prefab": "prefabs/enemy/dummy.prefab"
+                  },
+                  "SpawnCount": 10,
+                  "SpawnInterval": 1.2,
+                  "InitialSpawnDelay": 0.9
+                }
+              ]
+            },
+            {
+              "Name": "Wave 3",
+              "EnemyInfo": [
+                {
+                  "Enemy": {
+                    "_type": "gameobject",
+                    "prefab": "prefabs/enemy/dummy.prefab"
+                  },
+                  "SpawnCount": 15,
+                  "SpawnInterval": 0.75,
+                  "InitialSpawnDelay": 0.8
+                }
+              ]
+            },
+            {
+              "Name": "Wave 4",
+              "EnemyInfo": [
+                {
+                  "Enemy": {
+                    "_type": "gameobject",
+                    "prefab": "prefabs/enemy/dummy.prefab"
+                  },
+                  "SpawnCount": 10,
+                  "SpawnInterval": 0.85,
+                  "InitialSpawnDelay": 0
+                },
+                {
+                  "Enemy": {
+                    "_type": "gameobject",
+                    "prefab": "prefabs/enemy/peasant.prefab"
+                  },
+                  "SpawnCount": 5,
+                  "SpawnInterval": 1.25,
+                  "InitialSpawnDelay": 5
+                }
+              ]
+            }
+          ]
         }
       ],
       "Children": [
@@ -1677,9 +1755,7 @@
               "IdValue": "ed01bf38-1687-426c-894a-969c19fba33c"
             },
             "Property": "Upgrades",
-            "Value": {
-              "Number1": 0
-            }
+            "Value": []
           }
         ],
         "MovedObjects": []
@@ -1771,23 +1847,7 @@
               "Type": "Component",
               "IdValue": "0abe4f84-78f4-40e8-883c-df4f9c620d9e"
             },
-            "Property": "ChargeSound",
-            "Value": null
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "0abe4f84-78f4-40e8-883c-df4f9c620d9e"
-            },
             "Property": "Upgrades",
-            "Value": null
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "0abe4f84-78f4-40e8-883c-df4f9c620d9e"
-            },
-            "Property": "UpgradeSound",
             "Value": null
           }
         ],

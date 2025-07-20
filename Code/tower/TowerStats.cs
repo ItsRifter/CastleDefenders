@@ -1,6 +1,14 @@
 using Sandbox;
 using System;
 
+public struct TowerUpgrade
+{
+	public int Cost { get; set; }
+	public int AddDamage { get; set; }
+	public int ReduceFireRate { get; set; }
+	public float AddRange { get; set; }
+}
+
 
 public sealed class TowerStats : Component
 {
@@ -36,9 +44,7 @@ public sealed class TowerStats : Component
 	[Property, ShowIf("ChargesAttack", true)] public float ChargeTime { get; set; } = 1.0f;
 
 	[Header("Upgrades")]
-	//[Property] public TowerUpgrade[] Upgrades { get; set; } = new TowerUpgrade[] { };
-
-	public TowerUpgrade Upgrades { get; set; }
+	[Property, InlineEditor] public TowerUpgrade[] Upgrades { get; set; }
 
 	[Header( "Sounds" )]
 	[Property] public SoundEvent FireSound { get; set; }
