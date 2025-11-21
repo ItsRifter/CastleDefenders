@@ -14,6 +14,8 @@ public sealed class CastlePlayer : Component
 
 	PlayerController controller;
 
+	bool topdownMode;
+
 	protected override void OnStart()
 	{
 		//Delay a bit before getting the camera (while things are loading) so it isn't null
@@ -22,6 +24,7 @@ public sealed class CastlePlayer : Component
 		controller = GetComponent<PlayerController>();
 
 		Money = 50;
+		topdownMode = false;
 	}
 
 	protected override void OnUpdate()
@@ -41,12 +44,64 @@ public sealed class CastlePlayer : Component
 
 		if (Input.Pressed("Sell"))
 			TrySell();
+
+		if(Input.Pressed("View"))
+			ChangeCameraMode();
+
+		if(topdownMode)
+			HandleTopDownControls();
+	}
+
+	void ChangeCameraMode()
+	{
+		topdownMode = !topdownMode;
+		if ( topdownMode )
+		{
+			controller.Enabled = false;
+
+			camera.WorldPosition = controller.WorldPosition + new Vector3( 0, 0, 450 );
+			camera.WorldRotation = controller.WorldRotation * Rotation.FromPitch( 75 );
+		}
+		else
+		{
+			controller.Enabled = true;
+
+			camera.WorldPosition = Vector3.Zero;
+			camera.WorldRotation = Rotation.Identity;
+
+		}
+	}
+
+	float moveTopdDownSpeed = 500.0f;
+
+	void HandleTopDownControls()
+	{
+		Vector3 moveDir = Vector3.Zero;
+		
+		if ( Input.Down( "Forward" ) )
+			moveDir += Vector3.Forward;
+		
+		if ( Input.Down( "Backward" ) )
+			moveDir += Vector3.Backward;
+		
+		if ( Input.Down( "Left" ) )
+			moveDir += Vector3.Left;
+		
+		if ( Input.Down( "Right" ) )
+			moveDir += Vector3.Right;
+
+		moveDir = camera.WorldRotation * moveDir;
+		moveDir.z = 0;
+		moveDir = moveDir.Normal * moveTopdDownSpeed * Time.Delta;
+		camera.WorldPosition += moveDir;
 	}
 
 	void HandleSelections()
 	{
-		if ( GetSlotPressed() != -1 )
-			currentSelection = GetSlotPressed();
+		int lastSlot = GetSlotPressed();
+
+		if ( lastSlot != -1 )
+			currentSelection = lastSlot;
 
 		if ( lastSelection != currentSelection )
 		{
@@ -60,6 +115,12 @@ public sealed class CastlePlayer : Component
 				previewTower = null;
 
 				GameObject newTower = GetTower();
+				if( newTower == null )
+				{
+					Log.Error( "Missing tower prefab for selection index: " + currentSelection );
+					return;
+				}
+
 				previewTower = newTower.Clone();
 
 				previewTower.GetComponent<CastleTower>().Enabled = false;
@@ -111,15 +172,19 @@ public sealed class CastlePlayer : Component
 		if ( Input.Pressed( "Slot3" ) )
 			return 3;
 
+		if ( Input.Pressed( "Slot4" ) )
+			return 4;
+
 		if ( Input.Pressed( "Holster" ) )
 			return 0;
 
 		return -1;
 	}
 
+	float snapGrid = 4.0f;
 	float snapCooldown = 0.05f;
     float snapTimer = 0.0f;
-	float snapAngle = 15.0f;
+	float snapAngle = 45.0f;
 
     void HandlePreview()
     {
@@ -127,7 +192,13 @@ public sealed class CastlePlayer : Component
 
 		var trace = DoTrace( "player", "tower" );
 
-		previewTower.WorldPosition = trace.EndPosition;
+		#region Position
+		previewTower.WorldPosition = new Vector3(
+			MathF.Round( trace.EndPosition.x / snapGrid ) * snapGrid,
+			MathF.Round( trace.EndPosition.y / snapGrid ) * snapGrid,
+			trace.EndPosition.z
+		);
+		#endregion
 
 		#region Rotation
 		bool isRotating = Input.Down("SecMouse");
@@ -143,25 +214,17 @@ public sealed class CastlePlayer : Component
             float mouseX = Input.MouseDelta.x;
             rotateAmount = mouseX * rotationSpeed * delta;
 
-            // Snapping rotation, kept to 15 degree increments
-            if (Input.Down("SnapRotate"))
-            {
-                snapTimer -= delta;
+            snapTimer -= delta;
 
-                if (snapTimer <= 0.0f)
-                {
-                    var currentYaw = previewTower.WorldRotation.Yaw();
-                    var targetYaw = MathF.Round( (currentYaw + rotateAmount) / snapAngle ) * snapAngle;
-                    previewTower.WorldRotation = Rotation.FromYaw(targetYaw);
-
-                    snapTimer = snapCooldown;
-                }
-            }
-            else
+            if (snapTimer <= 0.0f)
             {
-                snapTimer = 0.0f;
-                previewTower.WorldRotation *= Rotation.FromYaw(rotateAmount);
+                var currentYaw = previewTower.WorldRotation.Yaw();
+                var targetYaw = MathF.Round( (currentYaw + rotateAmount) / snapAngle ) * snapAngle;
+                previewTower.WorldRotation = Rotation.FromYaw(targetYaw);
+
+                snapTimer = snapCooldown;
             }
+            
         }
 		#endregion
 
@@ -175,7 +238,7 @@ public sealed class CastlePlayer : Component
 
 	void TryPlacement()
 	{
-		if(previewTower == null || !ValidPlacement()) return;
+		if(previewTower is null || !ValidPlacement()) return;
 
 		int cost = previewTower.GetComponent<TowerStats>().Cost;
 
@@ -229,6 +292,9 @@ public sealed class CastlePlayer : Component
 
 			case 3:
 				return CastleGame.Instance.ShotgunPrefab;
+
+			case 4:
+				return CastleGame.Instance.ElectricPrefab;
 
 			default: return null;
 		}

@@ -8,6 +8,7 @@ public sealed class CastleGame : Component
 	[Property] public GameObject PistolPrefab { get; set; }
 	[Property, Title("SMG Prefab")] public GameObject SmgPrefab { get; set; }
 	[Property] public GameObject ShotgunPrefab { get; set; }
+	[Property] public GameObject ElectricPrefab { get; set; }
 
 	protected override void OnAwake()
 	{
@@ -26,9 +27,23 @@ public sealed class CastleGame : Component
 	}
 
 	[ConCmd("cd.npc.spawn", ConVarFlags.Cheat)]
-	public static void CMD_SpawnNPC(string name = "Dummy")
+	public static void CMD_SpawnNPC(string name = "Dummy", int count = 1, float delay = 1.0f)
 	{
 		var npc = PrefabScene.GetPrefab($"prefabs/enemy/{name}.prefab");
-		npc.Clone();
+
+		for ( int i = 0; i < count; i++ )
+		{
+			AwaitAction( i * delay, () => npc.Clone() );
+		}
+	}
+
+	[ConCmd("cd.player.money", ConVarFlags.Cheat)]
+	public static void CMD_GiveMoney(int amount = 1)
+	{
+		foreach ( var ply in Instance.Scene.GetAllObjects(true).Where(p => p.GetComponent<CastlePlayer>() != null).ToList())
+		{
+			ply.GetComponent<CastlePlayer>().AddMoney( amount );
+			Log.Info( $"Added {amount} money to {ply.Network?.Owner?.DisplayName ?? "HOST"}" );
+		}
 	}
 }

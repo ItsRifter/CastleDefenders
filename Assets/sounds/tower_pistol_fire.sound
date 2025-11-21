@@ -5,7 +5,7 @@
   "Decibels": 70,
   "SelectionMode": "Random",
   "Sounds": [
-    "sounds/pistol_fire.vsnd"
+    "sounds/files/pistol_fire.vsnd"
   ],
   "Occlusion": true,
   "AirAbsorption": true,

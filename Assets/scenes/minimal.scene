@@ -14,6 +14,7 @@
       "NetworkMode": 2,
       "NetworkInterpolation": true,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [
         {
@@ -50,6 +51,7 @@
       "NetworkMode": 2,
       "NetworkInterpolation": true,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [
         {
@@ -84,6 +86,7 @@
       "NetworkMode": 2,
       "NetworkInterpolation": true,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [
         {
@@ -144,6 +147,7 @@
       "NetworkMode": 2,
       "NetworkInterpolation": true,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [
         {
@@ -152,6 +156,7 @@
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "CreateAttachments": false,
+          "LodOverride": null,
           "MaterialGroup": null,
           "MaterialOverride": "materials/default.vmat",
           "Materials": null,
@@ -176,6 +181,7 @@
           "__guid": "0715cb55-1733-4f5e-8560-c288b8695631",
           "__enabled": true,
           "Center": "0,0,-5",
+          "ColliderFlags": 0,
           "Elasticity": null,
           "Friction": null,
           "IsTrigger": false,
@@ -211,6 +217,7 @@
       "NetworkMode": 2,
       "NetworkInterpolation": true,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [
         {
@@ -219,6 +226,7 @@
           "__enabled": true,
           "BackgroundColor": "0.33333,0.46275,0.52157,1",
           "ClearFlags": "All",
+          "EnablePostProcessing": false,
           "FieldOfView": 60,
           "FovAxis": "Horizontal",
           "IsMainCamera": true,
@@ -230,9 +238,11 @@
           "OnComponentUpdate": null,
           "Orthographic": false,
           "OrthographicHeight": 1204,
+          "PostProcessAnchor": null,
           "Priority": 1,
           "RenderExcludeTags": "",
           "RenderTags": "",
+          "RenderTexture": null,
           "TargetEye": "None",
           "Viewport": "0,0,1,1",
           "ZFar": 10000,
@@ -243,6 +253,7 @@
           "__guid": "d73ef723-c888-41d4-802e-f797c79318be",
           "__enabled": true,
           "__version": 1,
+          "Filter": "Bilinear",
           "Gamma": 2.2,
           "Mode": "Additive",
           "OnComponentDestroy": null,
@@ -284,7 +295,8 @@
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
-          "Scale": 0.2
+          "Scale": 0.2,
+          "TexelSize": 1
         }
       ],
       "Children": []
@@ -302,6 +314,7 @@
       "NetworkMode": 2,
       "NetworkInterpolation": true,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [
         {
@@ -381,6 +394,7 @@
           "__enabled": true,
           "AngularDamping": 1,
           "Gravity": true,
+          "GravityScale": 1,
           "LinearDamping": 0.1,
           "Locking": {
             "X": false,
@@ -481,6 +495,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -492,6 +507,7 @@
               "BoneMergeTarget": null,
               "CreateAttachments": false,
               "CreateBoneObjects": false,
+              "LodOverride": null,
               "MaterialGroup": "default",
               "MaterialOverride": null,
               "Materials": null,
@@ -542,14 +558,16 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.CapsuleCollider",
               "__guid": "430bcfd0-6634-4e7e-9b34-ab2f373bd0de",
               "__enabled": true,
+              "ColliderFlags": 0,
               "Elasticity": null,
-              "End": "0,0,45.05097",
+              "End": "0,0,36",
               "Friction": 0,
               "IsTrigger": false,
               "OnComponentDestroy": null,
@@ -574,6 +592,7 @@
               "__guid": "0d8d634c-552d-4493-8469-205056e2974a",
               "__enabled": true,
               "Center": "0,0,18",
+              "ColliderFlags": 0,
               "Elasticity": null,
               "Friction": 0,
               "IsTrigger": false,
@@ -611,12 +630,17 @@
       "NetworkMode": 2,
       "NetworkInterpolation": true,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [
         {
           "__type": "CastleGame",
           "__guid": "9fd9c379-6e22-4e92-b63f-37313a316444",
           "__enabled": true,
+          "ElectricPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/towers/towerelectric.prefab"
+          },
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -657,7 +681,8 @@
                   },
                   "SpawnCount": 5,
                   "SpawnInterval": 1.5,
-                  "InitialSpawnDelay": 1
+                  "InitialSpawnDelay": 1,
+                  "IsFinished": false
                 }
               ]
             },
@@ -671,7 +696,8 @@
                   },
                   "SpawnCount": 10,
                   "SpawnInterval": 1.2,
-                  "InitialSpawnDelay": 0.9
+                  "InitialSpawnDelay": 0.9,
+                  "IsFinished": false
                 }
               ]
             },
@@ -685,7 +711,8 @@
                   },
                   "SpawnCount": 15,
                   "SpawnInterval": 0.75,
-                  "InitialSpawnDelay": 0.8
+                  "InitialSpawnDelay": 0.8,
+                  "IsFinished": false
                 }
               ]
             },
@@ -699,7 +726,8 @@
                   },
                   "SpawnCount": 10,
                   "SpawnInterval": 0.85,
-                  "InitialSpawnDelay": 0
+                  "InitialSpawnDelay": 0,
+                  "IsFinished": false
                 },
                 {
                   "Enemy": {
@@ -708,7 +736,8 @@
                   },
                   "SpawnCount": 5,
                   "SpawnInterval": 1.25,
-                  "InitialSpawnDelay": 5
+                  "InitialSpawnDelay": 5,
+                  "IsFinished": false
                 }
               ]
             }
@@ -729,6 +758,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -788,6 +818,7 @@
       "NetworkMode": 2,
       "NetworkInterpolation": true,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [],
       "Children": [
@@ -804,6 +835,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -812,6 +844,7 @@
               "__enabled": true,
               "BodyGroups": 18446744073709551615,
               "CreateAttachments": false,
+              "LodOverride": null,
               "MaterialGroup": null,
               "MaterialOverride": null,
               "Materials": null,
@@ -836,6 +869,7 @@
               "__guid": "8efb8d80-f0e9-4070-9627-019760eec7e3",
               "__enabled": true,
               "Center": "0,0,0",
+              "ColliderFlags": 0,
               "Elasticity": null,
               "Friction": null,
               "IsTrigger": false,
@@ -871,6 +905,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -879,6 +914,7 @@
               "__enabled": true,
               "BodyGroups": 18446744073709551615,
               "CreateAttachments": false,
+              "LodOverride": null,
               "MaterialGroup": null,
               "MaterialOverride": null,
               "Materials": null,
@@ -903,6 +939,7 @@
               "__guid": "e893ddfe-ae7d-497f-8a31-812fb2d787d2",
               "__enabled": true,
               "Center": "0,0,0",
+              "ColliderFlags": 0,
               "Elasticity": null,
               "Friction": null,
               "IsTrigger": false,
@@ -938,6 +975,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -946,6 +984,7 @@
               "__enabled": true,
               "BodyGroups": 18446744073709551615,
               "CreateAttachments": false,
+              "LodOverride": null,
               "MaterialGroup": null,
               "MaterialOverride": null,
               "Materials": null,
@@ -970,6 +1009,7 @@
               "__guid": "723412f0-eddf-42f4-b2b8-1e4130ac4b59",
               "__enabled": true,
               "Center": "0,0,0",
+              "ColliderFlags": 0,
               "Elasticity": null,
               "Friction": null,
               "IsTrigger": false,
@@ -1005,6 +1045,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -1013,6 +1054,7 @@
               "__enabled": true,
               "BodyGroups": 18446744073709551615,
               "CreateAttachments": false,
+              "LodOverride": null,
               "MaterialGroup": null,
               "MaterialOverride": null,
               "Materials": null,
@@ -1037,6 +1079,7 @@
               "__guid": "55d2612e-cc4f-4077-bff9-c1428f54870c",
               "__enabled": true,
               "Center": "0,0,0",
+              "ColliderFlags": 0,
               "Elasticity": null,
               "Friction": null,
               "IsTrigger": false,
@@ -1072,6 +1115,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -1080,6 +1124,7 @@
               "__enabled": true,
               "BodyGroups": 18446744073709551615,
               "CreateAttachments": false,
+              "LodOverride": null,
               "MaterialGroup": null,
               "MaterialOverride": null,
               "Materials": null,
@@ -1104,6 +1149,7 @@
               "__guid": "4ad9f77f-618b-4e05-95af-e77d353fd8cf",
               "__enabled": true,
               "Center": "0,0,0",
+              "ColliderFlags": 0,
               "Elasticity": null,
               "Friction": null,
               "IsTrigger": false,
@@ -1139,6 +1185,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -1147,6 +1194,7 @@
               "__enabled": true,
               "BodyGroups": 18446744073709551615,
               "CreateAttachments": false,
+              "LodOverride": null,
               "MaterialGroup": null,
               "MaterialOverride": null,
               "Materials": null,
@@ -1171,6 +1219,7 @@
               "__guid": "ca2718aa-933f-433d-8932-ab5778f3464c",
               "__enabled": true,
               "Center": "0,0,0",
+              "ColliderFlags": 0,
               "Elasticity": null,
               "Friction": null,
               "IsTrigger": false,
@@ -1206,6 +1255,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -1214,6 +1264,7 @@
               "__enabled": true,
               "BodyGroups": 18446744073709551615,
               "CreateAttachments": false,
+              "LodOverride": null,
               "MaterialGroup": null,
               "MaterialOverride": null,
               "Materials": null,
@@ -1238,6 +1289,7 @@
               "__guid": "086a202e-d7f6-42cb-a442-6856457e8dd7",
               "__enabled": true,
               "Center": "0,0,0",
+              "ColliderFlags": 0,
               "Elasticity": null,
               "Friction": null,
               "IsTrigger": false,
@@ -1273,6 +1325,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -1281,6 +1334,7 @@
               "__enabled": true,
               "BodyGroups": 18446744073709551615,
               "CreateAttachments": false,
+              "LodOverride": null,
               "MaterialGroup": null,
               "MaterialOverride": null,
               "Materials": null,
@@ -1305,6 +1359,7 @@
               "__guid": "ef1f5e35-530f-4c90-8505-bb973e4dbc8c",
               "__enabled": true,
               "Center": "0,0,0",
+              "ColliderFlags": 0,
               "Elasticity": null,
               "Friction": null,
               "IsTrigger": false,
@@ -1340,6 +1395,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -1348,6 +1404,7 @@
               "__enabled": true,
               "BodyGroups": 18446744073709551615,
               "CreateAttachments": false,
+              "LodOverride": null,
               "MaterialGroup": null,
               "MaterialOverride": null,
               "Materials": null,
@@ -1372,6 +1429,7 @@
               "__guid": "a9d99fe6-672f-4085-8bf6-0bc66876272e",
               "__enabled": true,
               "Center": "0,0,0",
+              "ColliderFlags": 0,
               "Elasticity": null,
               "Friction": null,
               "IsTrigger": false,
@@ -1409,6 +1467,7 @@
       "NetworkMode": 2,
       "NetworkInterpolation": true,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [],
       "Children": [
@@ -1425,6 +1484,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [],
           "Children": []
@@ -1442,6 +1502,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [],
           "Children": []
@@ -1459,6 +1520,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [],
           "Children": []
@@ -1476,6 +1538,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [],
           "Children": []
@@ -1493,6 +1556,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [],
           "Children": []
@@ -1510,6 +1574,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [],
           "Children": []
@@ -1529,6 +1594,7 @@
       "NetworkMode": 2,
       "NetworkInterpolation": true,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [
         {
@@ -1537,6 +1603,7 @@
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "CreateAttachments": false,
+          "LodOverride": null,
           "MaterialGroup": null,
           "MaterialOverride": "materials/simple/red.vmat",
           "Materials": null,
@@ -1561,6 +1628,7 @@
           "__guid": "bea3fd13-4be5-414d-b198-170a83c93ebb",
           "__enabled": true,
           "Center": "0,0,0",
+          "ColliderFlags": 0,
           "Elasticity": null,
           "Friction": null,
           "IsTrigger": false,
@@ -1596,6 +1664,7 @@
       "NetworkMode": 2,
       "NetworkInterpolation": true,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [
         {
@@ -1604,6 +1673,7 @@
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "CreateAttachments": false,
+          "LodOverride": null,
           "MaterialGroup": null,
           "MaterialOverride": "materials/simple/red.vmat",
           "Materials": null,
@@ -1628,6 +1698,7 @@
           "__guid": "bbe7351d-193c-4ebf-a0ca-178f09c47f94",
           "__enabled": true,
           "Center": "0,0,0",
+          "ColliderFlags": 0,
           "Elasticity": null,
           "Friction": null,
           "IsTrigger": false,
@@ -1663,6 +1734,7 @@
       "NetworkMode": 2,
       "NetworkInterpolation": true,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [
         {
@@ -1671,6 +1743,7 @@
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "CreateAttachments": false,
+          "LodOverride": null,
           "MaterialGroup": null,
           "MaterialOverride": "materials/simple/green.vmat",
           "Materials": null,
@@ -1695,6 +1768,7 @@
           "__guid": "6fec5224-5cb5-409e-bdf9-62c984c4fee4",
           "__enabled": true,
           "Center": "0,0,0",
+          "ColliderFlags": 0,
           "Elasticity": null,
           "Friction": null,
           "IsTrigger": false,
@@ -1744,18 +1818,18 @@
           {
             "Target": {
               "Type": "Component",
-              "IdValue": "adaf0daf-a16f-462a-94d8-8771e45c0da4"
+              "IdValue": "ed01bf38-1687-426c-894a-969c19fba33c"
             },
-            "Property": "__enabled",
-            "Value": false
+            "Property": "FireRate",
+            "Value": 1.4
           },
           {
             "Target": {
               "Type": "Component",
-              "IdValue": "ed01bf38-1687-426c-894a-969c19fba33c"
+              "IdValue": "adaf0daf-a16f-462a-94d8-8771e45c0da4"
             },
-            "Property": "Upgrades",
-            "Value": []
+            "Property": "__enabled",
+            "Value": false
           }
         ],
         "MovedObjects": []
@@ -1799,15 +1873,73 @@
             },
             "Property": "__enabled",
             "Value": false
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "bd1423f0-4adf-4a6e-8011-b11424ee395f"
+            },
+            "Property": "FireRate",
+            "Value": 1.85
           }
         ],
-        "MovedObjects": []
+        "MovedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "adaf0daf-a16f-462a-94d8-8771e45c0da4"
+            },
+            "NewParent": {
+              "Type": "GameObject",
+              "IdValue": "409328a6-ba38-4103-a5b2-0c5f0f29bb2f"
+            },
+            "NewContainerProperty": "Components",
+            "IsNewContainerArray": true,
+            "NewPreviousElement": {
+              "Type": "Component",
+              "IdValue": "0c9b167c-d027-4796-a329-d7a7502218c4"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "bd1423f0-4adf-4a6e-8011-b11424ee395f"
+            },
+            "NewParent": {
+              "Type": "GameObject",
+              "IdValue": "409328a6-ba38-4103-a5b2-0c5f0f29bb2f"
+            },
+            "NewContainerProperty": "Components",
+            "IsNewContainerArray": true,
+            "NewPreviousElement": {
+              "Type": "Component",
+              "IdValue": "adaf0daf-a16f-462a-94d8-8771e45c0da4"
+            }
+          },
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "6d6e6844-7d9f-4842-acf4-5d016d7c98a1"
+            },
+            "NewParent": {
+              "Type": "GameObject",
+              "IdValue": "409328a6-ba38-4103-a5b2-0c5f0f29bb2f"
+            },
+            "NewContainerProperty": "Components",
+            "IsNewContainerArray": true,
+            "NewPreviousElement": {
+              "Type": "Component",
+              "IdValue": "bd1423f0-4adf-4a6e-8011-b11424ee395f"
+            }
+          }
+        ]
       },
       "__PrefabIdToInstanceId": {
         "409328a6-ba38-4103-a5b2-0c5f0f29bb2f": "236665d5-a388-46f6-96a2-fb465c80e7bc",
         "0c9b167c-d027-4796-a329-d7a7502218c4": "8d57e353-5b7a-452e-ae12-c9f15b687142",
         "adaf0daf-a16f-462a-94d8-8771e45c0da4": "a83c630d-47a7-43da-9876-0dcd5753a5fa",
-        "6d6e6844-7d9f-4842-acf4-5d016d7c98a1": "639bb294-db8d-48cd-8f04-9fbd1d85f863"
+        "6d6e6844-7d9f-4842-acf4-5d016d7c98a1": "639bb294-db8d-48cd-8f04-9fbd1d85f863",
+        "bd1423f0-4adf-4a6e-8011-b11424ee395f": "3475084f-bb82-4dbf-84df-bb25176b4840"
       }
     },
     {
@@ -1824,7 +1956,7 @@
               "IdValue": "409328a6-ba38-4103-a5b2-0c5f0f29bb2f"
             },
             "Property": "Position",
-            "Value": "-223.9999,256,0"
+            "Value": "-224,256,0"
           },
           {
             "Target": {
@@ -1847,8 +1979,24 @@
               "Type": "Component",
               "IdValue": "0abe4f84-78f4-40e8-883c-df4f9c620d9e"
             },
+            "Property": "Damage",
+            "Value": 2
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "0abe4f84-78f4-40e8-883c-df4f9c620d9e"
+            },
+            "Property": "FireRate",
+            "Value": 0.9
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "0abe4f84-78f4-40e8-883c-df4f9c620d9e"
+            },
             "Property": "Upgrades",
-            "Value": null
+            "Value": []
           }
         ],
         "MovedObjects": []
@@ -1859,6 +2007,58 @@
         "adaf0daf-a16f-462a-94d8-8771e45c0da4": "7319ac5e-fa4b-4e34-8a79-fe536587f2d2",
         "b753a810-7f46-432f-9c22-c53d53233653": "64faa9bf-662c-402e-8d95-9a1bce3ba1a0",
         "0abe4f84-78f4-40e8-883c-df4f9c620d9e": "89095e15-a615-478f-91d1-bd00a3cd8aa9"
+      }
+    },
+    {
+      "__guid": "5cad617d-7dc8-4c35-807d-c59f4dcbce9e",
+      "__version": 1,
+      "__Prefab": "prefabs/towers/towerelectric.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "6c2d8858-02e0-49c9-972f-a1f963c732ba"
+            },
+            "Property": "Position",
+            "Value": "-160,256,0"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "6c2d8858-02e0-49c9-972f-a1f963c732ba": "5cad617d-7dc8-4c35-807d-c59f4dcbce9e",
+        "1e54c144-8d76-43de-a6e2-612a6a95678a": "03d16c00-07b4-48f1-9791-a17560c21263",
+        "d565c2b6-6bbf-4502-a48d-5f05d5985933": "cf7a2612-69fd-4f24-9935-78a5040947c8",
+        "50a14efb-9bb6-4634-b309-e47da70b442a": "acf90ecd-df9b-448c-8278-4cba0146f2cc",
+        "871ac5a0-747c-41e3-ba72-76a4bd21359e": "51d2e51c-78ee-4975-b408-53e3c3e0c00b"
+      }
+    },
+    {
+      "__guid": "9ef34bbd-b7be-4831-8c66-5cf310fcaf08",
+      "__version": 1,
+      "__Prefab": "prefabs/castle.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "007d9737-a207-41e0-8bce-513dd872c423"
+            },
+            "Property": "Position",
+            "Value": "-123.3956,-232.3945,1.863528"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "007d9737-a207-41e0-8bce-513dd872c423": "9ef34bbd-b7be-4831-8c66-5cf310fcaf08",
+        "a1ff21e3-4abd-4c52-bfba-150d70a238d1": "86553684-c546-4c5f-8732-8caf03faf83b",
+        "cab95b6c-d37f-42fd-8bda-c556d1d81603": "dd78ee28-c792-4117-9ae5-07f0daadad15"
       }
     },
     {
@@ -1874,6 +2074,7 @@
       "NetworkMode": 2,
       "NetworkInterpolation": true,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [],
       "Children": [
@@ -1890,6 +2091,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -1928,6 +2130,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -1966,6 +2169,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -2004,6 +2208,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -2042,6 +2247,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -2080,6 +2286,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -2118,6 +2325,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -2156,6 +2364,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -2194,6 +2403,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -2232,6 +2442,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -2255,31 +2466,6 @@
       ]
     },
     {
-      "__guid": "9ef34bbd-b7be-4831-8c66-5cf310fcaf08",
-      "__version": 1,
-      "__Prefab": "prefabs/castle.prefab",
-      "__PrefabInstancePatch": {
-        "AddedObjects": [],
-        "RemovedObjects": [],
-        "PropertyOverrides": [
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "007d9737-a207-41e0-8bce-513dd872c423"
-            },
-            "Property": "Position",
-            "Value": "-123.3956,-232.3945,1.863528"
-          }
-        ],
-        "MovedObjects": []
-      },
-      "__PrefabIdToInstanceId": {
-        "007d9737-a207-41e0-8bce-513dd872c423": "9ef34bbd-b7be-4831-8c66-5cf310fcaf08",
-        "a1ff21e3-4abd-4c52-bfba-150d70a238d1": "86553684-c546-4c5f-8732-8caf03faf83b",
-        "cab95b6c-d37f-42fd-8bda-c556d1d81603": "dd78ee28-c792-4117-9ae5-07f0daadad15"
-      }
-    },
-    {
       "__guid": "0b4fd556-a453-4cf5-992c-41f85d8fcf65",
       "__version": 1,
       "Flags": 0,
@@ -2292,6 +2478,7 @@
       "NetworkMode": 2,
       "NetworkInterpolation": true,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [
         {
@@ -2300,6 +2487,7 @@
           "__enabled": true,
           "BodyGroups": 18446744073709551615,
           "CreateAttachments": false,
+          "LodOverride": null,
           "MaterialGroup": null,
           "MaterialOverride": null,
           "Materials": null,
@@ -2324,6 +2512,7 @@
           "__guid": "52b67f97-3bbf-4efa-ad94-cd01d0487886",
           "__enabled": true,
           "Center": "0,0,0",
+          "ColliderFlags": 0,
           "Elasticity": null,
           "Friction": null,
           "IsTrigger": false,

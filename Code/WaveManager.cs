@@ -7,8 +7,7 @@ public struct EnemyInfo
 	[Property] public int SpawnCount { get; set; }
 	[Property] public float SpawnInterval { get; set; }
 	[Property] public float InitialSpawnDelay { get; set; }
-
-	public bool IsFinished { get; set; }
+	[Hide] public bool IsFinished { get; set; }
 }
 
 public struct WaveInfo

@@ -5,8 +5,11 @@ public struct TowerUpgrade
 {
 	public int Cost { get; set; }
 	public int AddDamage { get; set; }
-	public int ReduceFireRate { get; set; }
+	public int IncreaseFireRate { get; set; }
 	public float AddRange { get; set; }
+
+
+	[Description("Adds an additional target for a chain attack")] public int AddChainAttacks { get; set; }
 }
 
 
@@ -25,7 +28,7 @@ public sealed class TowerStats : Component
 	public enum AttackMethod
 	{
 		Single, //Attacks one target
-		Area, //Attacks in area
+		Area, //Attacks in area, ideal for explosions
 		Chained //Attacks one then to the other
 	}
 
@@ -36,7 +39,7 @@ public sealed class TowerStats : Component
 		CanTargetFlying = 1 << 1, //Can target flying enemies
 	}
 
-	[Property] public AttackMethod Method { get; set; } = AttackMethod.Single;
+	[Property] public AttackMethod FireType { get; set; } = AttackMethod.Single;
 	[Property] public Ability Abilities { get; set; }
 
 	[Property] public bool ChargesAttack { get; set; } = false;
@@ -48,7 +51,7 @@ public sealed class TowerStats : Component
 
 	[Header( "Sounds" )]
 	[Property] public SoundEvent FireSound { get; set; }
-	[Property] public SoundEvent ChargeSound { get; set; }
+	[Property, ShowIf( "ChargesAttack", true )] public SoundEvent ChargeSound { get; set; }
 	[Property] public SoundEvent UpgradeSound { get; set; }
 
 	protected override void DrawGizmos()

@@ -5,3 +5,7 @@ Sound assets:
 Gunshot.wav / Cloud-10 / Creative Commons 0 / https://freesound.org/people/Cloud-10/sounds/632821/
 
 Shotgun fire / hyperix6 / Creative Commons 0 / https://freesound.org/people/hyperix6/sounds/660299/
+
+GASP_Power Up / Rob_Marion / Creative Commons 0 / https://freesound.org/people/Rob_Marion/sounds/541998
+
+Energy Bounce 1 / magnuswaker / Creative Commons 0 / https://freesound.org/people/magnuswaker/sounds/523088

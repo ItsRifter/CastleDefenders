@@ -1,18 +1,18 @@
 {
   "UI": false,
-  "Volume": "0.5",
+  "Volume": "0.4",
   "Pitch": "1",
   "Decibels": 70,
   "SelectionMode": "Random",
   "Sounds": [
-    "sounds/files/shotgun_fire.vsnd"
+    "sounds/files/electric_charge.vsnd"
   ],
   "Occlusion": true,
   "AirAbsorption": true,
   "Transmission": true,
-  "OcclusionRadius": 32,
+  "OcclusionRadius": 16,
   "DistanceAttenuation": true,
-  "Distance": 20000,
+  "Distance": 12500,
   "Falloff": [
     {
       "x": 0,
@@ -44,8 +44,8 @@
     }
   ],
   "DefaultMixer": {
-    "Name": "game",
-    "Id": "b362fcf3-8125-45f1-be2c-10bee3a9b5d0"
+    "Name": "unknown",
+    "Id": "00000000-0000-0000-0000-000000000000"
   },
   "__references": [],
   "__version": 1
