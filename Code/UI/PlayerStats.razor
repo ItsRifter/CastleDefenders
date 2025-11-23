@@ -1,0 +1,24 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Sandbox
+
+<root>
+	<div class="cash">
+        <p>@player.Money coins</p>
+        
+    </div>
+</root>
+@code
+{
+
+    [Property] CastlePlayer player { get; set; }
+
+    protected override void OnStart()
+    {
+        base.OnStart();
+    }
+
+
+	protected override int BuildHash() => System.HashCode.Combine( player.Money );
+}

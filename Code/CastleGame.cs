@@ -8,7 +8,9 @@ public sealed class CastleGame : Component
 	[Property] public GameObject PistolPrefab { get; set; }
 	[Property, Title("SMG Prefab")] public GameObject SmgPrefab { get; set; }
 	[Property] public GameObject ShotgunPrefab { get; set; }
+	[Property] public GameObject CannonPrefab { get; set; }
 	[Property] public GameObject ElectricPrefab { get; set; }
+	[Property] public GameObject RadarPrefab { get; set; }
 
 	protected override void OnAwake()
 	{

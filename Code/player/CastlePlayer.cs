@@ -45,8 +45,8 @@ public sealed class CastlePlayer : Component
 		if (Input.Pressed("Sell"))
 			TrySell();
 
-		if(Input.Pressed("View"))
-			ChangeCameraMode();
+		//if(Input.Pressed("View"))
+		//	ChangeCameraMode();
 
 		if(topdownMode)
 			HandleTopDownControls();
@@ -61,6 +61,8 @@ public sealed class CastlePlayer : Component
 
 			camera.WorldPosition = controller.WorldPosition + new Vector3( 0, 0, 450 );
 			camera.WorldRotation = controller.WorldRotation * Rotation.FromPitch( 75 );
+
+			Mouse.Visibility = MouseVisibility.Visible;
 		}
 		else
 		{
@@ -69,6 +71,7 @@ public sealed class CastlePlayer : Component
 			camera.WorldPosition = Vector3.Zero;
 			camera.WorldRotation = Rotation.Identity;
 
+			Mouse.Visibility = MouseVisibility.Auto;
 		}
 	}
 
@@ -190,18 +193,23 @@ public sealed class CastlePlayer : Component
     {
         if (previewTower == null) return;
 
-		var trace = DoTrace( "player", "tower" );
+		Vector3 endPos = Vector3.Zero;
+
+		if ( !topdownMode )
+			endPos = DoTrace( "player", "tower" ).EndPosition;
+		else
+			endPos = DoTraceMouse( "player", "tower" ).EndPosition;
 
 		#region Position
 		previewTower.WorldPosition = new Vector3(
-			MathF.Round( trace.EndPosition.x / snapGrid ) * snapGrid,
-			MathF.Round( trace.EndPosition.y / snapGrid ) * snapGrid,
-			trace.EndPosition.z
+			MathF.Round( endPos.x / snapGrid ) * snapGrid,
+			MathF.Round( endPos.y / snapGrid ) * snapGrid,
+			endPos.z
 		);
 		#endregion
 
 		#region Rotation
-		bool isRotating = Input.Down("SecMouse");
+			bool isRotating = Input.Down( "SecMouse" );
         controller.UseLookControls = !isRotating;
 
         // Tower Rotation
@@ -306,6 +314,22 @@ public sealed class CastlePlayer : Component
 	{
 		Vector3 camPos = camera.WorldPosition;
 		Vector3 camForward = camPos + camera.WorldRotation.Forward * previewDist;
+
+		var trace = Scene.Trace.Ray( camPos, camForward )
+			.UseHitboxes()
+			.WithoutTags( ignoreTags )
+			.Run();
+
+		return trace;
+	}
+
+	SceneTraceResult DoTraceMouse(params string[] ignoreTags)
+	{
+		Vector3 camPos = camera.WorldPosition;
+		Vector3 camForward = camPos + camera.WorldRotation.Forward * 999;
+		Vector3 mouseWorld = camera.ScreenToWorld( Mouse.Position );
+
+		camPos += (mouseWorld - camPos).Normal.WithZ(0) * 500.0f;
 
 		var trace = Scene.Trace.Ray( camPos, camForward )
 			.UseHitboxes()

@@ -1,11 +1,18 @@
 Reference format -  Asset name / Username / Licence / Link to asset
 
+----------------------------------------------------
+
 Sound assets:
 
 Gunshot.wav / Cloud-10 / Creative Commons 0 / https://freesound.org/people/Cloud-10/sounds/632821/
 
 Shotgun fire / hyperix6 / Creative Commons 0 / https://freesound.org/people/hyperix6/sounds/660299/
 
-GASP_Power Up / Rob_Marion / Creative Commons 0 / https://freesound.org/people/Rob_Marion/sounds/541998
 
-Energy Bounce 1 / magnuswaker / Creative Commons 0 / https://freesound.org/people/magnuswaker/sounds/523088
+----------------------------------------------------
+
+Image assets:
+
+Bullet free icon (pistol) / Smashicons / Flaticon License (Attribution) / https://www.flaticon.com/free-icon/bullet_225817?term=bullet&page=1&position=20&origin=search&related_id=225817
+
+Bullets free icon (shotgun + rifle) / Nsit / Flaticon Licence (Attribution) / https://www.flaticon.com/free-icon/bullets_12873853?term=shotgun+shell&page=1&position=8&origin=search&related_id=12873853

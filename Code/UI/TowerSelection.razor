@@ -1,0 +1,33 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Sandbox
+
+<root>
+	<div class="title">Tee</div>
+</root>
+
+@code
+{
+
+    int selectionIndex = -1;
+    int lastSelect = -1;
+
+    protected override void OnUpdate()
+    {
+        HandleSelection();
+    }
+
+    void HandleSelection()
+    {
+        if (Input.Pressed("Slot1")) selectionIndex = 1;
+        if (Input.Pressed("Slot2")) selectionIndex = 2;
+        if (Input.Pressed("Slot3")) selectionIndex = 3;
+        //if (Input.Pressed("Slot4")) selectionIndex = 1;
+        //if (Input.Pressed("Slot5")) selectionIndex = 1;
+
+        if (Input.Pressed("Holster")) selectionIndex = 0;
+    }
+
+    protected override int BuildHash() => System.HashCode.Combine(selectionIndex.GetHashCode());
+}

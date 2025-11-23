@@ -3,7 +3,7 @@
     "__guid": "16758019-1155-4cbf-bb7b-ab33193929bf",
     "__version": 1,
     "Flags": 0,
-    "Name": "peasant",
+    "Name": "splitter",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "0.5,0.5,0.5",
@@ -15,6 +15,28 @@
     "NetworkTransmit": true,
     "OwnerTransfer": 1,
     "Components": [
+      {
+        "__type": "EnemyStats",
+        "__guid": "437c7c69-2e21-4538-b2b1-cf3d12eefbe1",
+        "__enabled": true,
+        "Abilities": "SplitsOnDeath",
+        "ArmouredClothing": [],
+        "ArmourValue": 5,
+        "CashReward": 10,
+        "Damage": 5,
+        "Description": "Some sort of abomination that can split into lesser forms of itself on death, be wary of this one.",
+        "DisplayName": "Splitter",
+        "Health": 5,
+        "IsBossType": false,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "Speed": 17.5,
+        "SplitCount": 2
+      },
       {
         "__type": "Sandbox.SkinnedModelRenderer",
         "__guid": "cfd74f6c-9cca-48f6-a1a6-bfcce812d322",
@@ -56,41 +78,8 @@
           "Looping": true,
           "Blending": false
         },
-        "Tint": "1,1,1,1",
+        "Tint": "0.29674,0.61395,0,1",
         "UseAnimGraph": true
-      },
-      {
-        "__type": "CastleNPC",
-        "__guid": "b5b3f3d0-1f54-4742-a762-3f1dd8c6474b",
-        "__enabled": true,
-        "OnComponentDestroy": null,
-        "OnComponentDisabled": null,
-        "OnComponentEnabled": null,
-        "OnComponentFixedUpdate": null,
-        "OnComponentStart": null,
-        "OnComponentUpdate": null
-      },
-      {
-        "__type": "EnemyStats",
-        "__guid": "437c7c69-2e21-4538-b2b1-cf3d12eefbe1",
-        "__enabled": true,
-        "Abilities": 0,
-        "ArmouredClothing": null,
-        "ArmourValue": 5,
-        "CashReward": 10,
-        "Damage": 3,
-        "Description": "A basic enemy whose purpose is to destroy the castle",
-        "DisplayName": "Peasant",
-        "Health": 5,
-        "IsBossType": false,
-        "OnComponentDestroy": null,
-        "OnComponentDisabled": null,
-        "OnComponentEnabled": null,
-        "OnComponentFixedUpdate": null,
-        "OnComponentStart": null,
-        "OnComponentUpdate": null,
-        "Speed": 17.5,
-        "SplitCount": 2
       },
       {
         "__type": "Sandbox.BoxCollider",
@@ -128,11 +117,7 @@
           "go": "16758019-1155-4cbf-bb7b-ab33193929bf",
           "component_type": "SkinnedModelRenderer"
         },
-        "Clothing": [
-          {
-            "Clothing": "varsity_jacket/varsity_jacket.clothing"
-          }
-        ],
+        "Clothing": [],
         "ManualAge": 0.5,
         "ManualHeight": 0.5,
         "ManualTint": 0.5,
@@ -144,78 +129,20 @@
         "OnComponentUpdate": null,
         "Source": "Manual",
         "WorkshopItems": []
-      }
-    ],
-    "Children": [
+      },
       {
-        "__guid": "cc94dab5-06af-45c2-99d0-1c313f5fb31c",
-        "__version": 1,
-        "Flags": 0,
-        "Name": "Clothing - varsity_jacket",
-        "Position": "0,0,0",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
-        "Tags": "clothing",
-        "Enabled": true,
-        "NetworkMode": 2,
-        "NetworkInterpolation": true,
-        "NetworkOrphaned": 0,
-        "NetworkTransmit": true,
-        "OwnerTransfer": 1,
-        "Components": [
-          {
-            "__type": "Sandbox.SkinnedModelRenderer",
-            "__guid": "9f553577-7afe-4a49-8545-5a90e8f94d0a",
-            "__enabled": true,
-            "AnimationGraph": null,
-            "BodyGroups": 18446744073709551615,
-            "BoneMergeTarget": {
-              "_type": "component",
-              "component_id": "cfd74f6c-9cca-48f6-a1a6-bfcce812d322",
-              "go": "16758019-1155-4cbf-bb7b-ab33193929bf",
-              "component_type": "SkinnedModelRenderer"
-            },
-            "CreateAttachments": false,
-            "CreateBoneObjects": false,
-            "LodOverride": null,
-            "MaterialGroup": null,
-            "MaterialOverride": null,
-            "Materials": null,
-            "Model": "varsity_jacket/varsity_jacket_terry.vmdl",
-            "Morphs": {},
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null,
-            "Parameters": {
-              "bools": {},
-              "ints": {},
-              "floats": {},
-              "vectors": {},
-              "rotations": {}
-            },
-            "PlaybackRate": 1,
-            "RenderOptions": {
-              "GameLayer": true,
-              "OverlayLayer": false,
-              "BloomLayer": false,
-              "AfterUILayer": false
-            },
-            "RenderType": "On",
-            "Sequence": {
-              "Name": null,
-              "Looping": true,
-              "Blending": false
-            },
-            "Tint": "1,1,1,1",
-            "UseAnimGraph": true
-          }
-        ],
-        "Children": []
+        "__type": "CastleNPC",
+        "__guid": "b5b3f3d0-1f54-4742-a762-3f1dd8c6474b",
+        "__enabled": true,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null
       }
     ],
+    "Children": [],
     "__properties": {
       "NetworkInterpolation": true,
       "TimeScale": 1,
@@ -241,8 +168,6 @@
   "MenuPath": null,
   "MenuIcon": null,
   "DontBreakAsTemplate": false,
-  "__references": [
-    "luke.varsityjacket#91481"
-  ],
+  "__references": [],
   "__version": 2
 }

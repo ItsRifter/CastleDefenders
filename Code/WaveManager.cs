@@ -135,7 +135,7 @@ public sealed class WaveManager : Component
 		}
 	}
 
-	public void OnEnemyDeath()
+	public void OnEnemyDeath(CastleNPC npc)
 	{
 		bool test = Waves.All(wave => wave.EnemyInfo.All(enemy => !enemy.IsFinished));
 		Log.Info( test );

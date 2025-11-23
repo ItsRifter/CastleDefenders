@@ -8,8 +8,15 @@ public struct TowerUpgrade
 	public int IncreaseFireRate { get; set; }
 	public float AddRange { get; set; }
 
+	[Description("Adds an additional target for a chain attack")] 
+	public int AddChainAttacks { get; set; }
 
-	[Description("Adds an additional target for a chain attack")] public int AddChainAttacks { get; set; }
+	[Description("Adds an additional target for a chain attack")] 
+	public int AddExplosionRadius { get; set; }
+
+	#region Radar
+	[Property] public float AddRadarRange { get; set; }
+	#endregion
 }
 
 
@@ -17,13 +24,23 @@ public sealed class TowerStats : Component
 {
 	[Header("Basic")]
 	[Property] public string DisplayName { get; set; } = "Basic Tower";
-	[Property] public string Description { get; set; } = "A basic tower that shoots targets";
+	[Property] public string Description { get; set; } = "A basic tower that attacks targets";
 	[Property] public int Cost { get; set; } = 1;
 
+	[Property, Description("Is this tower a radar scanning type? this will lock the tower from performing attacks")] public bool IsRadar { get; set; } = false;
+
 	[Header("Attacks")]
-	[Property] public float Damage { get; set; } = 1.0f;
-	[Property] public float FireRate { get; set; } = 1.0f;
-	[Property] public float Range { get; set; } = 48.0f;
+	[Property, HideIf( "IsRadar", true )] public int Damage { get; set; } = 1;
+	[Property, HideIf( "IsRadar", true )] public float FireRate { get; set; } = 1.0f;
+	[Property, HideIf( "IsRadar", true )] public float Range { get; set; } = 48.0f;
+	[Property, HideIf( "IsRadar", true ), Description("The attack explosion radius of this tower, provided its attack method is 'Area'")] 
+	public float ExplosionRange { get; set; } = 48.0f;
+
+	[Property, HideIf( "IsRadar", true ), Description("How many chain attacks can this tower initially perform, provided its attack method is 'Chained'")] 
+	public int ChainCount { get; set; } = 0;
+	
+	[Property, HideIf( "IsRadar", true ), Description( "The range of each chained attack, provided its attack method is 'Chained'" )] 
+	public int ChainRange { get; set; } = 0;
 
 	public enum AttackMethod
 	{
@@ -35,8 +52,10 @@ public sealed class TowerStats : Component
 	[Flags]
 	public enum Ability
 	{
-		CanSeeHidden = 1 << 0, //Can see cloaked targets
-		CanTargetFlying = 1 << 1, //Can target flying enemies
+		CanSeeHidden = 1 << 0,
+		CanRevealHidden = 1 << 1,
+
+		//CanTargetFlying = 1 << 1,
 	}
 
 	[Property] public AttackMethod FireType { get; set; } = AttackMethod.Single;
@@ -45,6 +64,7 @@ public sealed class TowerStats : Component
 	[Property] public bool ChargesAttack { get; set; } = false;
 
 	[Property, ShowIf("ChargesAttack", true)] public float ChargeTime { get; set; } = 1.0f;
+	[Property, ShowIf("IsRadar", true)] public float AddRadarRange { get; set; }
 
 	[Header("Upgrades")]
 	[Property, InlineEditor] public TowerUpgrade[] Upgrades { get; set; }
@@ -53,7 +73,6 @@ public sealed class TowerStats : Component
 	[Property] public SoundEvent FireSound { get; set; }
 	[Property, ShowIf( "ChargesAttack", true )] public SoundEvent ChargeSound { get; set; }
 	[Property] public SoundEvent UpgradeSound { get; set; }
-
 	protected override void DrawGizmos()
 	{
 		DebugOverlay.Sphere(new Sphere(WorldPosition, Range), Color.White);

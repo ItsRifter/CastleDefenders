@@ -3,7 +3,7 @@
     "__guid": "16758019-1155-4cbf-bb7b-ab33193929bf",
     "__version": 1,
     "Flags": 0,
-    "Name": "peasant",
+    "Name": "knight",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "0.5,0.5,0.5",
@@ -60,28 +60,21 @@
         "UseAnimGraph": true
       },
       {
-        "__type": "CastleNPC",
-        "__guid": "b5b3f3d0-1f54-4742-a762-3f1dd8c6474b",
-        "__enabled": true,
-        "OnComponentDestroy": null,
-        "OnComponentDisabled": null,
-        "OnComponentEnabled": null,
-        "OnComponentFixedUpdate": null,
-        "OnComponentStart": null,
-        "OnComponentUpdate": null
-      },
-      {
         "__type": "EnemyStats",
         "__guid": "437c7c69-2e21-4538-b2b1-cf3d12eefbe1",
         "__enabled": true,
-        "Abilities": 0,
-        "ArmouredClothing": null,
-        "ArmourValue": 5,
+        "Abilities": "Armoured",
+        "ArmouredClothing": [
+          {
+            "Clothing": "models/ranger_helmet/models/ranger_helmet.clothing"
+          }
+        ],
+        "ArmourValue": 8,
         "CashReward": 10,
-        "Damage": 3,
-        "Description": "A basic enemy whose purpose is to destroy the castle",
-        "DisplayName": "Peasant",
-        "Health": 5,
+        "Damage": 5,
+        "Description": "A servant of the enemy, this ones tough with its armor so you'll need some heavy firepower to break it",
+        "DisplayName": "Knight",
+        "Health": 15,
         "IsBossType": false,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
@@ -89,8 +82,8 @@
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
-        "Speed": 17.5,
-        "SplitCount": 2
+        "Speed": 15,
+        "SplitCount": 0
       },
       {
         "__type": "Sandbox.BoxCollider",
@@ -130,7 +123,7 @@
         },
         "Clothing": [
           {
-            "Clothing": "varsity_jacket/varsity_jacket.clothing"
+            "Clothing": "models/ranger_helmet/models/ranger_helmet.clothing"
           }
         ],
         "ManualAge": 0.5,
@@ -144,14 +137,25 @@
         "OnComponentUpdate": null,
         "Source": "Manual",
         "WorkshopItems": []
+      },
+      {
+        "__type": "CastleNPC",
+        "__guid": "b5b3f3d0-1f54-4742-a762-3f1dd8c6474b",
+        "__enabled": true,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null
       }
     ],
     "Children": [
       {
-        "__guid": "cc94dab5-06af-45c2-99d0-1c313f5fb31c",
+        "__guid": "8dc25e95-65ad-4784-a506-8294528ad9a8",
         "__version": 1,
         "Flags": 0,
-        "Name": "Clothing - varsity_jacket",
+        "Name": "Clothing - ranger_helmet",
         "Position": "0,0,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
@@ -165,7 +169,7 @@
         "Components": [
           {
             "__type": "Sandbox.SkinnedModelRenderer",
-            "__guid": "9f553577-7afe-4a49-8545-5a90e8f94d0a",
+            "__guid": "8531c2ac-c3f7-4009-a0b1-bce3b12f52b2",
             "__enabled": true,
             "AnimationGraph": null,
             "BodyGroups": 18446744073709551615,
@@ -181,7 +185,7 @@
             "MaterialGroup": null,
             "MaterialOverride": null,
             "Materials": null,
-            "Model": "varsity_jacket/varsity_jacket_terry.vmdl",
+            "Model": "models/ranger_helmet/models/ranger_helmet_citizen.vmdl",
             "Morphs": {},
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
@@ -242,7 +246,7 @@
   "MenuIcon": null,
   "DontBreakAsTemplate": false,
   "__references": [
-    "luke.varsityjacket#91481"
+    "bulldog.rangerhelmet#117380"
   ],
   "__version": 2
 }

@@ -145,7 +145,20 @@ public sealed class CastleTower : Component
 
 		if(Statistics.FireType == TowerStats.AttackMethod.Area)
 		{
+			var areaTargets = new List<CastleNPC>();
+			var nearbyTraces = Scene.Trace.Sphere( Statistics.ExplosionRange, target.WorldPosition, target.WorldPosition )
+				.WithTag( "Enemy" )
+				.RunAll();
 
+			foreach ( var trace in nearbyTraces )
+			{
+				var npc = trace.GameObject.GetComponent<CastleNPC>();
+				
+				if ( npc != null )
+					areaTargets.Add( npc );
+			}
+
+			areaTargets.ForEach(npc => npc.TakeDamage( Statistics.Damage ));
 		} 
 		else if ( Statistics.FireType == TowerStats.AttackMethod.Chained )
 		{
@@ -184,5 +197,5 @@ public sealed class CastleTower : Component
 		}
 	}
 
-	bool CanAttack() => lastAttack >= (1.0f / Statistics.FireRate);
+	bool CanAttack() => lastAttack > (1.0f / Statistics.FireRate);
 }
