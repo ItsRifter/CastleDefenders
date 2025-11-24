@@ -34,6 +34,12 @@ public sealed class CastleTower : Component
 
 	protected override void OnUpdate()
 	{
+		if(Statistics.IsRadar)
+		{
+			DoRadarScanning();
+			return;
+		}
+
 		if( target == null )
 			ScanForTarget();
 		else
@@ -92,6 +98,23 @@ public sealed class CastleTower : Component
 			.RunAll();
 
 		return trace;
+	}
+
+	void DoRadarScanning()
+	{
+		var traces = DoRangeTraceList();
+		
+		foreach ( var trace in traces )
+		{
+			if ( !trace.Hit ) continue;
+			var npc = trace.GameObject.GetComponent<CastleNPC>();
+			
+			if ( npc != null )
+			{
+				if ( npc.HasAbility( EnemyStats.EnemyAbility.Cloaked ) && !npc.IsRevealed )
+					npc.Reveal();
+			}
+		}
 	}
 
 	void ScanForTarget()
@@ -162,7 +185,8 @@ public sealed class CastleTower : Component
 	{
 		lastAttack = 0;
 
-		if(Statistics.FireType == TowerStats.AttackMethod.Area)
+		#region Area
+		if ( Statistics.FireType == TowerStats.AttackMethod.Area)
 		{
 			var areaTargets = new List<CastleNPC>();
 			var nearbyTraces = Scene.Trace.Sphere( Statistics.ExplosionRange, target.WorldPosition, target.WorldPosition )
@@ -178,7 +202,9 @@ public sealed class CastleTower : Component
 			}
 
 			areaTargets.ForEach(npc => npc.TakeDamage( Statistics.Damage ));
-		} 
+		}
+		#endregion
+		#region Chained
 		else if ( Statistics.FireType == TowerStats.AttackMethod.Chained )
 		{
 			var hitTargets = new List<CastleNPC>();
@@ -209,11 +235,23 @@ public sealed class CastleTower : Component
 				}
 			}
 		}
+		#endregion
 		else
 		{
 			GameObject.PlaySound( Statistics.FireSound );
-			target.TakeDamage(Statistics.Damage);
+			target.TakeDamage( Statistics.Damage );
 		}
+
+		if( HasAbility(TowerStats.Ability.CanFreezeTargets) )
+		{
+			target.Freeze( 3.0f );
+		}
+	}
+
+	public bool HasAbility(TowerStats.Ability ability)
+	{
+		if ( Statistics == null ) return false;
+		return Statistics.Abilities.HasFlag( ability );
 	}
 
 	bool CanAttack() => lastAttack > (1.0f / Statistics.FireRate);
