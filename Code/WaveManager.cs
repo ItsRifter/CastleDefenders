@@ -13,7 +13,7 @@ public struct EnemyInfo
 public struct WaveInfo
 {
 	[Description("Helper field to identify this wave")] public string Name { get; set; } = "[Wave Identifier here]";
-	[Property, InlineEditor] public EnemyInfo[] EnemyInfo { get; set; }
+	[Property, Title("Enemies"), Group("", StartFolded = true)] public EnemyInfo[] EnemyInfo { get; set; }
 
 	public WaveInfo()
 	{
@@ -22,8 +22,8 @@ public struct WaveInfo
 
 public sealed class WaveManager : Component
 {
-	[Property, InlineEditor] public WaveInfo[] Waves { get; set; } = new WaveInfo[0];
-
+	[Property, InlineEditor(Label = false)] public WaveInfo[] Waves { get; set; } = new WaveInfo[0];
+	
 	public static WaveManager Instance { get; private set; }
 
 	TimeUntil timer;
