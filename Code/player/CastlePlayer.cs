@@ -1,6 +1,7 @@
 using Sandbox;
 using Sandbox.ModelEditor.Nodes;
 using System;
+using System.Threading;
 
 public sealed class CastlePlayer : Component
 {
@@ -48,8 +49,8 @@ public sealed class CastlePlayer : Component
 		//if(Input.Pressed("View"))
 		//	ChangeCameraMode();
 
-		if(topdownMode)
-			HandleTopDownControls();
+		//if(topdownMode)
+		//	HandleTopDownControls();
 	}
 
 	void ChangeCameraMode()
@@ -195,7 +196,7 @@ public sealed class CastlePlayer : Component
     float snapTimer = 0.0f;
 	float snapAngle = 45.0f;
 
-    void HandlePreview()
+	void HandlePreview()
     {
         if (previewTower == null) return;
 
@@ -215,31 +216,21 @@ public sealed class CastlePlayer : Component
 		#endregion
 
 		#region Rotation
-			bool isRotating = Input.Down( "SecMouse" );
-        controller.UseLookControls = !isRotating;
+		float scroll = Input.MouseWheel.y;
+		
+		if(scroll != 0.0f)
+		{
+			float rotationAmount = scroll * snapAngle;
+			snapTimer -= Time.Delta;
 
-        // Tower Rotation
-        if (isRotating)
-        {
-            float rotationSpeed = 250.0f;
-            float delta = Time.Delta;
-            float rotateAmount = 0.0f;
-
-            float mouseX = Input.MouseDelta.x;
-            rotateAmount = mouseX * rotationSpeed * delta;
-
-            snapTimer -= delta;
-
-            if (snapTimer <= 0.0f)
-            {
-                var currentYaw = previewTower.WorldRotation.Yaw();
-                var targetYaw = MathF.Round( (currentYaw + rotateAmount) / snapAngle ) * snapAngle;
-                previewTower.WorldRotation = Rotation.FromYaw(targetYaw);
-
-                snapTimer = snapCooldown;
-            }
-            
-        }
+			if ( snapTimer <= 0.0f )
+			{
+				var currentYaw = previewTower.WorldRotation.Yaw();
+				var targetYaw = MathF.Round( (currentYaw + rotationAmount) / snapAngle ) * snapAngle;
+				previewTower.WorldRotation = Rotation.FromYaw( targetYaw );
+				snapTimer = snapCooldown;
+			}
+		}
 		#endregion
 
 		#region Valid Placements
