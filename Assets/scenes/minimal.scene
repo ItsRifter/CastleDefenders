@@ -637,7 +637,10 @@
           "__type": "CastleGame",
           "__guid": "9fd9c379-6e22-4e92-b63f-37313a316444",
           "__enabled": true,
-          "CannonPrefab": null,
+          "CannonPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/towers/towercannon.prefab"
+          },
           "ElectricPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/towers/towerelectric.prefab"
@@ -652,7 +655,10 @@
             "_type": "gameobject",
             "prefab": "prefabs/towers/towerpistol.prefab"
           },
-          "RadarPrefab": null,
+          "RadarPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/towers/towerradar.prefab"
+          },
           "ShotgunPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/towers/towershotgun.prefab"
@@ -679,7 +685,7 @@
                 {
                   "Enemy": {
                     "_type": "gameobject",
-                    "prefab": "prefabs/enemy/dummy.prefab"
+                    "prefab": "prefabs/enemy/peasant.prefab"
                   },
                   "SpawnCount": 5,
                   "SpawnInterval": 1.5,
@@ -694,11 +700,11 @@
                 {
                   "Enemy": {
                     "_type": "gameobject",
-                    "prefab": "prefabs/enemy/dummy.prefab"
+                    "prefab": "prefabs/enemy/peasant.prefab"
                   },
-                  "SpawnCount": 10,
+                  "SpawnCount": 8,
                   "SpawnInterval": 1.2,
-                  "InitialSpawnDelay": 0.9,
+                  "InitialSpawnDelay": 0.8,
                   "IsFinished": false
                 }
               ]
@@ -709,36 +715,21 @@
                 {
                   "Enemy": {
                     "_type": "gameobject",
-                    "prefab": "prefabs/enemy/dummy.prefab"
-                  },
-                  "SpawnCount": 15,
-                  "SpawnInterval": 0.75,
-                  "InitialSpawnDelay": 0.8,
-                  "IsFinished": false
-                }
-              ]
-            },
-            {
-              "Name": "Wave 4",
-              "EnemyInfo": [
-                {
-                  "Enemy": {
-                    "_type": "gameobject",
-                    "prefab": "prefabs/enemy/dummy.prefab"
+                    "prefab": "prefabs/enemy/peasant.prefab"
                   },
                   "SpawnCount": 10,
-                  "SpawnInterval": 0.85,
-                  "InitialSpawnDelay": 0,
+                  "SpawnInterval": 0.9,
+                  "InitialSpawnDelay": 0.7,
                   "IsFinished": false
                 },
                 {
                   "Enemy": {
                     "_type": "gameobject",
-                    "prefab": "prefabs/enemy/peasant.prefab"
+                    "prefab": "prefabs/enemy/knight.prefab"
                   },
                   "SpawnCount": 5,
-                  "SpawnInterval": 1.25,
-                  "InitialSpawnDelay": 5,
+                  "SpawnInterval": 1.8,
+                  "InitialSpawnDelay": 8,
                   "IsFinished": false
                 }
               ]
@@ -1822,14 +1813,6 @@
               "Type": "Component",
               "IdValue": "ed01bf38-1687-426c-894a-969c19fba33c"
             },
-            "Property": "AddRadarRange",
-            "Value": 0
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "ed01bf38-1687-426c-894a-969c19fba33c"
-            },
             "Property": "Damage",
             "Value": 1
           },
@@ -1838,24 +1821,8 @@
               "Type": "Component",
               "IdValue": "ed01bf38-1687-426c-894a-969c19fba33c"
             },
-            "Property": "ExplosionRange",
-            "Value": 48
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "ed01bf38-1687-426c-894a-969c19fba33c"
-            },
             "Property": "FireRate",
             "Value": 1.4
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "ed01bf38-1687-426c-894a-969c19fba33c"
-            },
-            "Property": "IsRadar",
-            "Value": false
           },
           {
             "Target": {
@@ -2026,32 +1993,8 @@
               "Type": "Component",
               "IdValue": "0abe4f84-78f4-40e8-883c-df4f9c620d9e"
             },
-            "Property": "AddRadarRange",
-            "Value": 0
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "0abe4f84-78f4-40e8-883c-df4f9c620d9e"
-            },
-            "Property": "ExplosionRange",
-            "Value": 48
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "0abe4f84-78f4-40e8-883c-df4f9c620d9e"
-            },
             "Property": "FireRate",
             "Value": 0.9
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "0abe4f84-78f4-40e8-883c-df4f9c620d9e"
-            },
-            "Property": "IsRadar",
-            "Value": false
           },
           {
             "Target": {
@@ -2090,6 +2033,14 @@
           },
           {
             "Target": {
+              "Type": "GameObject",
+              "IdValue": "44c29cfd-a075-404b-b30d-af02a6aa9cac"
+            },
+            "Property": "Scale",
+            "Value": "1.5,1.5,1.5"
+          },
+          {
+            "Target": {
               "Type": "Component",
               "IdValue": "507aa701-04f6-429d-81a8-f14ebe248dba"
             },
@@ -2105,6 +2056,49 @@
         "ca3428ad-5e88-40c4-88f7-b3054344be64": "f4341c9c-8ef7-41a7-9476-fff3ac6c511a",
         "2ce6cdaf-f65a-4eb5-957b-f4897664a86a": "953b2216-7988-4c84-9b52-6f86ed712eb4",
         "39b03f70-f443-46d2-9821-bb335478173b": "2e3ab229-a614-43cb-bb7c-e9d34597fdea"
+      }
+    },
+    {
+      "__guid": "951f41ba-38d5-4ff5-8fd5-fcdcb2018c98",
+      "__version": 1,
+      "__Prefab": "prefabs/towers/towerelectric.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "0391eef2-8e93-4e58-b8ec-96db043f5eb1"
+            },
+            "Property": "Position",
+            "Value": "-128,256,0.0000000322284"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "0391eef2-8e93-4e58-b8ec-96db043f5eb1"
+            },
+            "Property": "Scale",
+            "Value": "0.8,0.8,0.8"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "16e3136c-6d94-498b-9b09-e7b32aad746a"
+            },
+            "Property": "Damage",
+            "Value": 1
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "0391eef2-8e93-4e58-b8ec-96db043f5eb1": "951f41ba-38d5-4ff5-8fd5-fcdcb2018c98",
+        "16e3136c-6d94-498b-9b09-e7b32aad746a": "d09389fc-37b9-47eb-b3a9-32543e83f86a",
+        "0d5af278-e41b-4e49-b977-ad60b4136289": "45e04268-a675-47a9-bbb6-1a9c415d05f4",
+        "9811a297-6edc-4537-b7d2-ef9c46f7c29a": "1a086a5d-19b0-474f-af4e-421f29f6c01a",
+        "04b48c81-721c-4798-8b0b-cb9cd66f24b5": "c755088d-6547-4339-b851-c253a2f870df"
       }
     },
     {
@@ -2632,41 +2626,6 @@
         }
       ],
       "Children": []
-    },
-    {
-      "__guid": "951f41ba-38d5-4ff5-8fd5-fcdcb2018c98",
-      "__version": 1,
-      "__Prefab": "prefabs/towers/towerelectric.prefab",
-      "__PrefabInstancePatch": {
-        "AddedObjects": [],
-        "RemovedObjects": [],
-        "PropertyOverrides": [
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "0391eef2-8e93-4e58-b8ec-96db043f5eb1"
-            },
-            "Property": "Position",
-            "Value": "-128,256,0"
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "16e3136c-6d94-498b-9b09-e7b32aad746a"
-            },
-            "Property": "Damage",
-            "Value": 1
-          }
-        ],
-        "MovedObjects": []
-      },
-      "__PrefabIdToInstanceId": {
-        "0391eef2-8e93-4e58-b8ec-96db043f5eb1": "951f41ba-38d5-4ff5-8fd5-fcdcb2018c98",
-        "16e3136c-6d94-498b-9b09-e7b32aad746a": "d09389fc-37b9-47eb-b3a9-32543e83f86a",
-        "0d5af278-e41b-4e49-b977-ad60b4136289": "45e04268-a675-47a9-bbb6-1a9c415d05f4",
-        "9811a297-6edc-4537-b7d2-ef9c46f7c29a": "1a086a5d-19b0-474f-af4e-421f29f6c01a",
-        "04b48c81-721c-4798-8b0b-cb9cd66f24b5": "c755088d-6547-4339-b851-c253a2f870df"
-      }
     }
   ],
   "SceneProperties": {
