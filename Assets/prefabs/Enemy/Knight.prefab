@@ -16,6 +16,30 @@
     "OwnerTransfer": 1,
     "Components": [
       {
+        "__type": "EnemyStats",
+        "__guid": "437c7c69-2e21-4538-b2b1-cf3d12eefbe1",
+        "__enabled": true,
+        "Abilities": "Armoured",
+        "ArmouredClothing": [
+          {}
+        ],
+        "ArmourValue": 8,
+        "CashReward": 15,
+        "Damage": 5,
+        "Description": "A servant of the enemy, you'll need strong firepower to take it down with its armor",
+        "DisplayName": "Knight",
+        "Health": 10,
+        "IsBossType": false,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "Speed": 14,
+        "SplitCount": 0
+      },
+      {
         "__type": "Sandbox.SkinnedModelRenderer",
         "__guid": "cfd74f6c-9cca-48f6-a1a6-bfcce812d322",
         "__enabled": true,
@@ -60,30 +84,15 @@
         "UseAnimGraph": true
       },
       {
-        "__type": "EnemyStats",
-        "__guid": "437c7c69-2e21-4538-b2b1-cf3d12eefbe1",
+        "__type": "CastleNPC",
+        "__guid": "b5b3f3d0-1f54-4742-a762-3f1dd8c6474b",
         "__enabled": true,
-        "Abilities": "Armoured",
-        "ArmouredClothing": [
-          {
-            "Clothing": "models/ranger_helmet/models/ranger_helmet.clothing"
-          }
-        ],
-        "ArmourValue": 8,
-        "CashReward": 10,
-        "Damage": 5,
-        "Description": "A servant of the enemy, this ones tough with its armor so you'll need some heavy firepower to break it",
-        "DisplayName": "Knight",
-        "Health": 15,
-        "IsBossType": false,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
-        "OnComponentUpdate": null,
-        "Speed": 15,
-        "SplitCount": 0
+        "OnComponentUpdate": null
       },
       {
         "__type": "Sandbox.BoxCollider",
@@ -137,22 +146,11 @@
         "OnComponentUpdate": null,
         "Source": "Manual",
         "WorkshopItems": []
-      },
-      {
-        "__type": "CastleNPC",
-        "__guid": "b5b3f3d0-1f54-4742-a762-3f1dd8c6474b",
-        "__enabled": true,
-        "OnComponentDestroy": null,
-        "OnComponentDisabled": null,
-        "OnComponentEnabled": null,
-        "OnComponentFixedUpdate": null,
-        "OnComponentStart": null,
-        "OnComponentUpdate": null
       }
     ],
     "Children": [
       {
-        "__guid": "8dc25e95-65ad-4784-a506-8294528ad9a8",
+        "__guid": "572da3e8-fc93-47ac-af11-565a98741d77",
         "__version": 1,
         "Flags": 0,
         "Name": "Clothing - ranger_helmet",
@@ -169,7 +167,7 @@
         "Components": [
           {
             "__type": "Sandbox.SkinnedModelRenderer",
-            "__guid": "8531c2ac-c3f7-4009-a0b1-bce3b12f52b2",
+            "__guid": "1ccbb9c6-7bf1-4b2a-82a9-6a0f19a9c099",
             "__enabled": true,
             "AnimationGraph": null,
             "BodyGroups": 18446744073709551615,

@@ -32,7 +32,7 @@ public sealed class TowerStats : Component
 	[Header("Attacks")]
 	[Property, HideIf( "IsRadar", true )] public int Damage { get; set; } = 1;
 	[Property, HideIf( "IsRadar", true )] public float FireRate { get; set; } = 1.0f;
-	[Property, HideIf( "IsRadar", true )] public float Range { get; set; } = 48.0f;
+	[Property] public float Range { get; set; } = 48.0f;
 	[Property, HideIf( "IsRadar", true ), Description("The attack explosion radius of this tower, provided its attack method is 'Area'")] 
 	public float ExplosionRange { get; set; } = 48.0f;
 

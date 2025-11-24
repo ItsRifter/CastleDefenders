@@ -14,6 +14,9 @@ public sealed class CastleTower : Component
 	bool chargeReady;
 	bool isCharging;
 
+	bool canRevealCloaked;
+	bool canSpotCloaked;
+
 	CastleNPC target;
 
 	protected override void OnStart()
@@ -24,6 +27,9 @@ public sealed class CastleTower : Component
 		chargeReady = false;
 
 		Statistics = GetComponent<TowerStats>();
+
+		canRevealCloaked = Statistics.Abilities.HasFlag( TowerStats.Ability.CanRevealHidden );
+		canSpotCloaked = Statistics.Abilities.HasFlag( TowerStats.Ability.CanSeeHidden );
 	}
 
 	protected override void OnUpdate()
@@ -59,7 +65,7 @@ public sealed class CastleTower : Component
 						chargeReady = false;
 						isCharging = false;
 					}
-				} 
+				}
 				else
 				{
 					Attack();
@@ -97,7 +103,20 @@ public sealed class CastleTower : Component
 		if ( !trace.Hit ) return;
 
 		if(trace.GameObject.GetComponent<CastleNPC>() != null)
-			target = trace.GameObject.GetComponent<CastleNPC>();
+		{
+			CastleNPC npc = trace.GameObject.GetComponent<CastleNPC>();
+
+			if ( npc.HasAbility( EnemyStats.EnemyAbility.Cloaked ) && !npc.IsRevealed )
+			{	
+				if (canRevealCloaked)
+					npc.Reveal();
+
+				//Can't shoot cloaked targets
+				if ( !canSpotCloaked ) return;
+			}
+
+			target = npc;
+		}
 	}
 
 	void ValidateTarget()

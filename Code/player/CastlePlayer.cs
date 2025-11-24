@@ -178,6 +178,12 @@ public sealed class CastlePlayer : Component
 		if ( Input.Pressed( "Slot4" ) )
 			return 4;
 
+		if ( Input.Pressed( "Slot5" ) )
+			return 5;
+
+		if ( Input.Pressed( "Slot6" ) )
+			return 6;
+
 		if ( Input.Pressed( "Holster" ) )
 			return 0;
 
@@ -302,7 +308,13 @@ public sealed class CastlePlayer : Component
 				return CastleGame.Instance.ShotgunPrefab;
 
 			case 4:
+				return CastleGame.Instance.CannonPrefab;
+
+			case 5:
 				return CastleGame.Instance.ElectricPrefab;
+
+			case 6:
+				return CastleGame.Instance.RadarPrefab;
 
 			default: return null;
 		}

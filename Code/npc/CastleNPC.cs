@@ -7,12 +7,19 @@ public sealed class CastleNPC : Component
 	public EnemyStats Statistics { get; private set; }
 	public string DisplayName;
 
+	public bool IsSplitted;
+	public bool IsRevealed;
+
 	PathNode targetNode;
 	float speed;
 
 	int armorPoints;
 	int splitCount;
-	public bool IsSplitted;
+
+	TimeUntil timeTillCloaked;
+	float timeToCloak = 3.0f;
+
+	float cloakAlpha;
 
 	protected override void OnStart()
 	{
@@ -29,11 +36,18 @@ public sealed class CastleNPC : Component
 
 		splitCount = Statistics.SplitCount;
 		armorPoints = Statistics.ArmourValue;
+
+		IsRevealed = false;
+
+		cloakAlpha = GetComponent<ModelRenderer>().Tint.a;
 	}
 
 	protected override void OnUpdate()
 	{
 		MoveToNode();
+
+		if ( IsRevealed && timeTillCloaked <= 0.0f )
+			Cloak();
 	}
 
 	void MoveToNode()
@@ -105,7 +119,7 @@ public sealed class CastleNPC : Component
 
 	void OnDeath()
 	{
-		if( Statistics != null && Statistics.Abilities.HasFlag( EnemyStats.EnemyAbility.SplitsOnDeath ) && !IsSplitted )
+		if( Statistics != null && HasAbility( EnemyStats.EnemyAbility.SplitsOnDeath ) && !IsSplitted )
 		{	
 			for( int i = 0; i < splitCount; i++ )
 			{
@@ -131,9 +145,25 @@ public sealed class CastleNPC : Component
 		}
 	}
 
+	public void Reveal()
+	{
+		timeTillCloaked = timeToCloak;
+		IsRevealed = true;
+
+		ModelRenderer model = GetComponent<ModelRenderer>();
+		model.Tint = model.Tint.WithAlpha( 1.0f );
+	}
+
+	public void Cloak()
+	{
+		IsRevealed = false;
+		ModelRenderer model = GetComponent<ModelRenderer>();
+		model.Tint = model.Tint.WithAlpha( cloakAlpha );
+	}
+
 	public void TakeDamage(int amount)
 	{
-		if( Statistics != null && Statistics.Abilities.HasFlag( EnemyStats.EnemyAbility.Armoured ) && armorPoints > 0 )
+		if( Statistics != null && HasAbility( EnemyStats.EnemyAbility.Armoured ) && armorPoints > 0 )
 		{
 			armorPoints -= amount;
 			
@@ -150,5 +180,11 @@ public sealed class CastleNPC : Component
 
 		if ( Health <= 0 )
 			OnDeath();
+	}
+
+	public bool HasAbility(EnemyStats.EnemyAbility ability )
+	{
+		if ( Statistics == null ) return false;
+		return Statistics.Abilities.HasFlag( ability );
 	}
 }
