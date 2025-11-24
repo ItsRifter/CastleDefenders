@@ -76,7 +76,7 @@ public sealed class CastlePlayer : Component
 		}
 	}
 
-	float moveTopdDownSpeed = 500.0f;
+	float moveTopDownSpeed = 500.0f;
 
 	void HandleTopDownControls()
 	{
@@ -96,7 +96,7 @@ public sealed class CastlePlayer : Component
 
 		moveDir = camera.WorldRotation * moveDir;
 		moveDir.z = 0;
-		moveDir = moveDir.Normal * moveTopdDownSpeed * Time.Delta;
+		moveDir = moveDir.Normal * moveTopDownSpeed * Time.Delta;
 		camera.WorldPosition += moveDir;
 	}
 
@@ -185,6 +185,9 @@ public sealed class CastlePlayer : Component
 		if ( Input.Pressed( "Slot6" ) )
 			return 6;
 
+		if ( Input.Pressed( "Slot7" ) )
+			return 7;
+
 		if ( Input.Pressed( "Holster" ) )
 			return 0;
 
@@ -192,8 +195,6 @@ public sealed class CastlePlayer : Component
 	}
 
 	float snapGrid = 4.0f;
-	float snapCooldown = 0.05f;
-    float snapTimer = 0.0f;
 	float snapAngle = 45.0f;
 
 	void HandlePreview()
@@ -221,15 +222,11 @@ public sealed class CastlePlayer : Component
 		if(scroll != 0.0f)
 		{
 			float rotationAmount = scroll * snapAngle;
-			snapTimer -= Time.Delta;
 
-			if ( snapTimer <= 0.0f )
-			{
-				var currentYaw = previewTower.WorldRotation.Yaw();
-				var targetYaw = MathF.Round( (currentYaw + rotationAmount) / snapAngle ) * snapAngle;
-				previewTower.WorldRotation = Rotation.FromYaw( targetYaw );
-				snapTimer = snapCooldown;
-			}
+			var currentYaw = previewTower.WorldRotation.Yaw();
+			var targetYaw = MathF.Round( (currentYaw + rotationAmount) / snapAngle ) * snapAngle;
+			
+			previewTower.WorldRotation = Rotation.FromYaw( targetYaw );
 		}
 		#endregion
 
@@ -302,10 +299,16 @@ public sealed class CastlePlayer : Component
 				return CastleGame.Instance.CannonPrefab;
 
 			case 5:
-				return CastleGame.Instance.ElectricPrefab;
+				return CastleGame.Instance.IcePrefab;
 
 			case 6:
+				return CastleGame.Instance.ElectricPrefab;
+
+			case 7:
 				return CastleGame.Instance.RadarPrefab;
+
+			//case 8:
+			//	return CastleGame.Instance. Sniper; (Maybe?)
 
 			default: return null;
 		}

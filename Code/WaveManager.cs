@@ -7,7 +7,6 @@ public struct EnemyInfo
 	[Property] public int SpawnCount { get; set; }
 	[Property] public float SpawnInterval { get; set; }
 	[Property] public float InitialSpawnDelay { get; set; }
-	[Hide] public bool IsFinished { get; set; }
 }
 
 public struct WaveInfo
@@ -33,23 +32,28 @@ public sealed class WaveManager : Component
 
 	public enum WaveState
 	{
+		Inactive,
 		Idle,
 		Active,
 		Completed
 	}
 
-	WaveState waveState;
+	public WaveState Wave;
 	WaveState lastWaveState;
+
+	int curWave;
 
 	protected override void OnStart()
 	{
 		Instance = this;
 
-		waveState = WaveState.Idle;
-		lastWaveState = waveState;
+		Wave = WaveState.Inactive;
+		lastWaveState = Wave;
 
 		startNode = Scene.GetAll<PathNode>().FirstOrDefault(p => p.IsStartNode);
-		
+
+		curWave = -1;
+
 		if (startNode == null)
 		{
 			Log.Error("[Castle Defenders] No start node found");
@@ -59,50 +63,81 @@ public sealed class WaveManager : Component
 
 	protected override void OnUpdate()
 	{
-		if(lastWaveState != waveState)
-		{
-			timeSinceLastState = 0;
-			lastWaveState = waveState;
+		if ( Wave == WaveState.Inactive ) return;
 
+		if( lastWaveState != Wave )
+		{
+			Log.Info( $"Updating wave from {lastWaveState} to {Wave}" );
+			timeSinceLastState = 0;
+			lastWaveState = Wave;
+
+			UpdateGame();
 			timer = GetNewTime();
 		}
 
-		switch ( waveState )
+		if( timer <= 0.0f )
+			ChangeState();
+	}
+
+	void ChangeState()
+	{
+		switch ( Wave )
 		{
 			case WaveState.Idle:
-				HandleIdleState();
+				Wave = WaveState.Active;
 				break;
-
-			case WaveState.Active:
-				HandleActiveState();
-				break;
-
 			case WaveState.Completed:
-				HandleCompletedState();
+				Wave = WaveState.Idle;
 				break;
 		}
 	}
 
-	void HandleIdleState()
+	void UpdateGame()
 	{
-		if(timer <= 0.0f )
-			waveState = WaveState.Active;
+		switch ( Wave )
+		{
+			case WaveState.Idle:
+				WaveIdle();
+				break;
+
+			case WaveState.Active:
+				WaveActive();
+				break;
+
+			case WaveState.Completed:
+				WaveFinish();
+				break;
+		}
 	}
 
-	void HandleActiveState()
+	void WaveIdle()
 	{
-
+		curWave++;
 	}
 
-	void HandleCompletedState()
+	int spawnsLeft = 0;
+
+	void WaveActive()
+	{
+		WaveInfo waveInfo = Waves[curWave];
+
+		spawnsLeft += waveInfo.EnemyInfo.Sum( enemy => enemy.SpawnCount );
+		Log.Info( spawnsLeft );
+		foreach ( var enemyInfo in waveInfo.EnemyInfo )
+		{
+			SpawnEnemy( enemyInfo );
+		}
+	}
+
+	void WaveFinish()
 	{
 		if ( timer <= 0.0f )
-			waveState = WaveState.Idle;
+			Wave = WaveState.Idle;
 	}
 
 	float GetNewTime()
 	{
-		switch( waveState )
+		switch( Wave )
 		{
 			case WaveState.Idle:
 				return 45.0f;
@@ -128,16 +163,19 @@ public sealed class WaveManager : Component
 			enemy.WorldPosition = startNode.WorldPosition;
 			enemy.WorldRotation = Rotation.LookAt(Vector3.Forward, Vector3.Up);
 
-			await GameTask.DelaySeconds(enemyInfo.SpawnInterval);
+			spawnsLeft--;
 
-			if(i == enemyInfo.SpawnCount-1)
-				enemyInfo.IsFinished = true;
+			await GameTask.DelaySeconds(enemyInfo.SpawnInterval);
 		}
 	}
 
 	public void OnEnemyDeath(CastleNPC npc)
 	{
-		bool test = Waves.All(wave => wave.EnemyInfo.All(enemy => !enemy.IsFinished));
-		Log.Info( test );
+		if ( Wave == WaveState.Inactive ) return;
+
+		bool finished = spawnsLeft <= 0 && Scene.GetAll<CastleNPC>().Count() <= 1;
+
+		if( finished )
+			Wave = WaveState.Completed;
 	}
 }

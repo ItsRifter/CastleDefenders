@@ -9,6 +9,7 @@ public sealed class CastleGame : Component
 	[Property, Title("SMG Prefab")] public GameObject SmgPrefab { get; set; }
 	[Property] public GameObject ShotgunPrefab { get; set; }
 	[Property] public GameObject CannonPrefab { get; set; }
+	[Property] public GameObject IcePrefab { get; set; }
 	[Property] public GameObject ElectricPrefab { get; set; }
 	[Property] public GameObject RadarPrefab { get; set; }
 
@@ -47,5 +48,19 @@ public sealed class CastleGame : Component
 			ply.GetComponent<CastlePlayer>().AddMoney( amount );
 			Log.Info( $"Added {amount} money to {ply.Network?.Owner?.DisplayName ?? "HOST"}" );
 		}
+	}
+
+	[ConCmd("cd.game.start", ConVarFlags.Cheat)]
+	public static void CMD_StartGame()
+	{
+		WaveManager.Instance.Wave = WaveManager.WaveState.Idle;
+	}
+
+	[ConCmd("cd.game.wave.start", ConVarFlags.Cheat)]
+	public static void CMD_StartWave()
+	{
+		if ( WaveManager.Instance.Wave == WaveManager.WaveState.Inactive ) return;
+
+		WaveManager.Instance.Wave = WaveManager.WaveState.Active;
 	}
 }
