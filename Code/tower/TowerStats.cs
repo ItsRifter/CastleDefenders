@@ -14,9 +14,8 @@ public struct TowerUpgrade
 	[Description("Adds an additional target for a chain attack")] 
 	public int AddExplosionRadius { get; set; }
 
-	#region Radar
-	[Property] public float AddRadarRange { get; set; }
-	#endregion
+	[Description("Adds additional time to freeze duration")]
+	public float AddFreezeDuration { get; set; }
 }
 
 
@@ -54,6 +53,7 @@ public sealed class TowerStats : Component
 	{
 		CanSeeHidden = 1 << 0,
 		CanRevealHidden = 1 << 1,
+		CanFreezeTargets = 2 << 1,
 
 		//CanTargetFlying = 1 << 1,
 	}

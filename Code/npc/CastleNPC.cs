@@ -21,6 +21,11 @@ public sealed class CastleNPC : Component
 
 	float cloakAlpha;
 
+	Color orgColor;
+	TimeUntil timeTillThaw;
+
+	ModelRenderer modelRenderer;
+
 	protected override void OnStart()
 	{
 		Statistics = GetComponent<EnemyStats>();
@@ -39,6 +44,7 @@ public sealed class CastleNPC : Component
 
 		IsRevealed = false;
 
+		modelRenderer = GetComponent<ModelRenderer>();
 		cloakAlpha = GetComponent<ModelRenderer>().Tint.a;
 	}
 
@@ -98,10 +104,8 @@ public sealed class CastleNPC : Component
 
 		var npcModel = splitEnemy.AddComponent<ModelRenderer>();
 
-		var baseModel = GameObject.GetComponent<ModelRenderer>();
-
-		npcModel.Model = baseModel.Model;
-		npcModel.Tint = baseModel.Tint;
+		npcModel.Model = modelRenderer.Model;
+		npcModel.Tint = modelRenderer.Tint;
 
 		var npcComponent = splitEnemy.AddComponent<CastleNPC>();
 		npcComponent.IsSplitted = true;
@@ -150,15 +154,27 @@ public sealed class CastleNPC : Component
 		timeTillCloaked = timeToCloak;
 		IsRevealed = true;
 
-		ModelRenderer model = GetComponent<ModelRenderer>();
-		model.Tint = model.Tint.WithAlpha( 1.0f );
+		modelRenderer.Tint = modelRenderer.Tint.WithAlpha( 1.0f );
 	}
 
 	public void Cloak()
 	{
 		IsRevealed = false;
-		ModelRenderer model = GetComponent<ModelRenderer>();
-		model.Tint = model.Tint.WithAlpha( cloakAlpha );
+		modelRenderer.Tint = modelRenderer.Tint.WithAlpha( cloakAlpha );
+	}
+
+	public void Freeze( float duration )
+	{
+		timeTillThaw = duration;
+		speed = 0.0f;
+
+		modelRenderer.Tint = Color.Cyan;
+	}
+
+	public void Thaw()
+	{
+		speed = Statistics.Speed;
+		modelRenderer.Tint = orgColor;
 	}
 
 	public void TakeDamage(int amount)
