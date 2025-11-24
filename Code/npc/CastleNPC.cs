@@ -19,10 +19,11 @@ public sealed class CastleNPC : Component
 	TimeUntil timeTillCloaked;
 	float timeToCloak = 3.0f;
 
-	float cloakAlpha;
+	float cloakAlpha = -1;
 
 	Color orgColor;
 	TimeUntil timeTillThaw;
+	bool isFrozen;
 
 	ModelRenderer modelRenderer;
 
@@ -43,9 +44,12 @@ public sealed class CastleNPC : Component
 		armorPoints = Statistics.ArmourValue;
 
 		IsRevealed = false;
+		isFrozen = false;
 
 		modelRenderer = GetComponent<ModelRenderer>();
-		cloakAlpha = GetComponent<ModelRenderer>().Tint.a;
+
+		orgColor = modelRenderer.Tint;
+		cloakAlpha = modelRenderer.Tint.a;
 	}
 
 	protected override void OnUpdate()
@@ -54,6 +58,9 @@ public sealed class CastleNPC : Component
 
 		if ( IsRevealed && timeTillCloaked <= 0.0f )
 			Cloak();
+
+		if ( isFrozen && timeTillThaw <= 0.0f )
+			Thaw();
 	}
 
 	void MoveToNode()
@@ -152,6 +159,8 @@ public sealed class CastleNPC : Component
 	public void Reveal()
 	{
 		timeTillCloaked = timeToCloak;
+
+		if ( IsRevealed ) return; //Already revealed, just reset timer;
 		IsRevealed = true;
 
 		modelRenderer.Tint = modelRenderer.Tint.WithAlpha( 1.0f );
@@ -169,12 +178,18 @@ public sealed class CastleNPC : Component
 		speed = 0.0f;
 
 		modelRenderer.Tint = Color.Cyan;
+		isFrozen = true;
 	}
 
 	public void Thaw()
 	{
 		speed = Statistics.Speed;
 		modelRenderer.Tint = orgColor;
+
+		if( cloakAlpha >= 0.0 && !IsRevealed )
+			modelRenderer.Tint = modelRenderer.Tint.WithAlpha( cloakAlpha );
+
+		isFrozen = false;
 	}
 
 	public void TakeDamage(int amount)
