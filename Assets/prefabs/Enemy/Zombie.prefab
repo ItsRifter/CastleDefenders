@@ -3,7 +3,7 @@
     "__guid": "16758019-1155-4cbf-bb7b-ab33193929bf",
     "__version": 1,
     "Flags": 0,
-    "Name": "dummy",
+    "Name": "zombie",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "0.5,0.5,0.5",
@@ -22,11 +22,11 @@
         "Abilities": 0,
         "ArmouredClothing": [],
         "ArmourValue": 5,
-        "CashReward": 6,
-        "Damage": 1,
-        "Description": "Generic dummy who only serves the great creators.",
-        "DisplayName": "Dummy",
-        "Health": 10,
+        "CashReward": 10,
+        "Damage": 3,
+        "Description": "A resurrected creature only to serve the enemy, although dumb but should not be underestimated.",
+        "DisplayName": "Zombie",
+        "Health": 5,
         "IsBossType": false,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
@@ -49,9 +49,26 @@
         "LodOverride": null,
         "MaterialGroup": "default",
         "MaterialOverride": null,
-        "Materials": null,
+        "Materials": {
+          "indexed": {
+            "0": "models/citizen/skin/citizen_skin01.vmat"
+          }
+        },
         "Model": "models/citizen/citizen.vmdl",
-        "Morphs": {},
+        "Morphs": {
+          "openjawL": 0.2622,
+          "openjawR": 0.38,
+          "openmouthL": 0.23,
+          "openmouthR": 0.23,
+          "eyelidbulgelower": 0.54,
+          "eyelidbulgeupper": 0,
+          "browlowererL": 0.66,
+          "browlowererR": 0.66,
+          "outerbrowraiserL": 0.73,
+          "outerbrowraiserR": 0.31390002,
+          "innerbrowraiserL": 0,
+          "innerbrowraiserR": 0
+        },
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -78,7 +95,7 @@
           "Looping": true,
           "Blending": false
         },
-        "Tint": "1,1,1,1",
+        "Tint": "0.28757,0.58605,0.18808,1",
         "UseAnimGraph": true
       },
       {
@@ -116,6 +133,30 @@
         "Static": false,
         "Surface": null,
         "SurfaceVelocity": "0,0,0"
+      },
+      {
+        "__type": "Sandbox.Dresser",
+        "__guid": "e4631d42-ba06-4a8c-9319-9a24f3b80660",
+        "__enabled": true,
+        "ApplyHeightScale": true,
+        "BodyTarget": {
+          "_type": "component",
+          "component_id": "cfd74f6c-9cca-48f6-a1a6-bfcce812d322",
+          "go": "16758019-1155-4cbf-bb7b-ab33193929bf",
+          "component_type": "SkinnedModelRenderer"
+        },
+        "Clothing": [],
+        "ManualAge": 0.5,
+        "ManualHeight": 0.5,
+        "ManualTint": 0.5,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "Source": "Manual",
+        "WorkshopItems": []
       }
     ],
     "Children": [],
