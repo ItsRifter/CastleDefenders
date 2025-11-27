@@ -6,7 +6,7 @@
     "Name": "towercannon",
     "Position": "0,0,0",
     "Rotation": "0,-0,-0.7071068,0.7071068",
-    "Scale": "1,1,1",
+    "Scale": "1.35,1.35,1.35",
     "Tags": "tower",
     "Enabled": true,
     "NetworkMode": 2,
