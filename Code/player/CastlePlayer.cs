@@ -271,12 +271,18 @@ public sealed class CastlePlayer : Component
 
 			if ( hitObject.Tags.Has( "noPlace" ) ) return false;
 
-			var sphereTrace = Scene.Trace.Sphere( 16.0f, trace.EndPosition, trace.EndPosition )
-				.WithoutTags( "Player", "Preview" )
+			var sphereTrace = Scene.Trace.Box( 48.0f, trace.EndPosition, trace.EndPosition )
+				.WithoutTags( "Player", "Preview", "nonsolid" )
 				.RunAll();
 
 			//At least one other tower is too close for placement
 			if ( sphereTrace.Count() >= 2 ) return false;
+
+			var pathTrace = Scene.Trace.Box( 24.0f, trace.EndPosition, trace.EndPosition )
+				.WithAnyTags( "Path", "nonsolid" )
+				.RunAll();
+
+			if ( pathTrace.Count() > 0 ) return false;
 		}
 
 		return true;
