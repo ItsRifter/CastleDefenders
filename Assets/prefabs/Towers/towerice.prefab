@@ -32,7 +32,7 @@
         "DisplayName": "Ice Tower",
         "ExplosionRange": 48,
         "FireRate": 0.2,
-        "FireSound": "sounds/tower_electric_fire.sound",
+        "FireSound": "sounds/tower_ice_cast.sound",
         "FireType": "Single",
         "IsRadar": false,
         "OnComponentDestroy": null,

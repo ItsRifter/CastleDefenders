@@ -32,7 +32,7 @@
         "DisplayName": "Cannon",
         "ExplosionRange": 48,
         "FireRate": 0.8,
-        "FireSound": null,
+        "FireSound": "sounds/tower_cannon_fire.sound",
         "FireType": "Area",
         "IsRadar": false,
         "OnComponentDestroy": null,

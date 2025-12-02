@@ -645,6 +645,10 @@
             "_type": "gameobject",
             "prefab": "prefabs/towers/towerelectric.prefab"
           },
+          "IcePrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/towers/towerice.prefab"
+          },
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -689,8 +693,7 @@
                   },
                   "SpawnCount": 5,
                   "SpawnInterval": 1.5,
-                  "InitialSpawnDelay": 1,
-                  "IsFinished": false
+                  "InitialSpawnDelay": 1
                 }
               ]
             },
@@ -704,8 +707,7 @@
                   },
                   "SpawnCount": 8,
                   "SpawnInterval": 1.2,
-                  "InitialSpawnDelay": 0.8,
-                  "IsFinished": false
+                  "InitialSpawnDelay": 0.8
                 }
               ]
             },
@@ -719,8 +721,7 @@
                   },
                   "SpawnCount": 10,
                   "SpawnInterval": 0.9,
-                  "InitialSpawnDelay": 0.7,
-                  "IsFinished": false
+                  "InitialSpawnDelay": 0.7
                 },
                 {
                   "Enemy": {
@@ -729,8 +730,7 @@
                   },
                   "SpawnCount": 5,
                   "SpawnInterval": 1.8,
-                  "InitialSpawnDelay": 8,
-                  "IsFinished": false
+                  "InitialSpawnDelay": 8
                 }
               ]
             }
@@ -1995,14 +1995,6 @@
             },
             "Property": "FireRate",
             "Value": 0.9
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "0abe4f84-78f4-40e8-883c-df4f9c620d9e"
-            },
-            "Property": "Upgrades",
-            "Value": []
           }
         ],
         "MovedObjects": []
@@ -2115,7 +2107,7 @@
               "IdValue": "690474fa-f7a2-4586-9650-d1339de2d9a1"
             },
             "Property": "Position",
-            "Value": "-80,256,-0.000004885155"
+            "Value": "-56.00005,256,-0.000004917383"
           }
         ],
         "MovedObjects": []
@@ -2126,6 +2118,41 @@
         "8ad20bec-0254-419b-b34f-bd707cb5558b": "7932a7b0-b497-4744-a08e-999b726d7937",
         "efc10f9a-fa6c-4f95-98b4-6e2def8c6c9b": "935c5d22-a30d-40b0-913b-416fabb1ecaa",
         "bb9b57e2-306c-4ccd-b72b-67a0c6b9d21e": "d8763170-6132-4717-8ff4-dfd4b97bec87"
+      }
+    },
+    {
+      "__guid": "a41a1d26-8bb1-4215-9100-eba252c1b75a",
+      "__version": 1,
+      "__Prefab": "prefabs/towers/towerice.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "0391eef2-8e93-4e58-b8ec-96db043f5eb1"
+            },
+            "Property": "Position",
+            "Value": "-95.99998,256,0"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "0d5af278-e41b-4e49-b977-ad60b4136289"
+            },
+            "Property": "__enabled",
+            "Value": false
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "0391eef2-8e93-4e58-b8ec-96db043f5eb1": "a41a1d26-8bb1-4215-9100-eba252c1b75a",
+        "16e3136c-6d94-498b-9b09-e7b32aad746a": "706e8bfb-db33-4143-a1eb-bd75560491b4",
+        "0d5af278-e41b-4e49-b977-ad60b4136289": "6ca53e80-e821-4394-a0d1-109c35e04bf4",
+        "9811a297-6edc-4537-b7d2-ef9c46f7c29a": "285c8f93-37a3-455d-884b-0d08d683f310",
+        "04b48c81-721c-4798-8b0b-cb9cd66f24b5": "bcbd2993-efd9-4737-804e-17a82c230be8"
       }
     },
     {

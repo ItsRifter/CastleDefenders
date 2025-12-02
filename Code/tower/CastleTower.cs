@@ -52,31 +52,36 @@ public sealed class CastleTower : Component
 
 				if ( Statistics.ChargesAttack )
 				{
-					if( chargeAttack <= 0 && isCharging )
-					{
-						chargeReady = true;
-					}
-
-					if (!chargeReady && !isCharging)
-					{
-						chargeAttack = Statistics.ChargeTime;
-						isCharging = true;
-
-						GameObject.PlaySound( Statistics.ChargeSound );
-					}
-
-					if ( chargeReady )
-					{
-						Attack();
-						chargeReady = false;
-						isCharging = false;
-					}
+					DoChargeAttack();
 				}
 				else
 				{
 					Attack();
 				}
 			}
+		}
+	}
+
+	void DoChargeAttack()
+	{
+		if ( chargeAttack <= 0 && isCharging )
+		{
+			chargeReady = true;
+		}
+
+		if ( !chargeReady && !isCharging )
+		{
+			chargeAttack = Statistics.ChargeTime;
+			isCharging = true;
+
+			GameObject.PlaySound( Statistics.ChargeSound );
+		}
+
+		if ( chargeReady )
+		{
+			Attack();
+			chargeReady = false;
+			isCharging = false;
 		}
 	}
 
@@ -175,6 +180,7 @@ public sealed class CastleTower : Component
 
 		var trace = Scene.Trace.Ray( WorldPosition + Vector3.Up * 8, target.WorldPosition + Vector3.Up * 2 )
 			.IgnoreGameObject( GameObject )
+			.WithAnyTags( "Solid", "Enemy" )
 			.UsePhysicsWorld()
 			.Run();
 
@@ -188,6 +194,8 @@ public sealed class CastleTower : Component
 		#region Area
 		if ( Statistics.FireType == TowerStats.AttackMethod.Area)
 		{
+			GameObject.PlaySound( Statistics.FireSound );
+
 			var areaTargets = new List<CastleNPC>();
 			var nearbyTraces = Scene.Trace.Sphere( Statistics.ExplosionRange, target.WorldPosition, target.WorldPosition )
 				.WithTag( "Enemy" )
@@ -207,33 +215,31 @@ public sealed class CastleTower : Component
 		#region Chained
 		else if ( Statistics.FireType == TowerStats.AttackMethod.Chained )
 		{
-			var hitTargets = new List<CastleNPC>();
-			var toHit = new Queue<CastleNPC>();
-			toHit.Enqueue( target );
+			GameObject.PlaySound( Statistics.FireSound );
 
-			while ( toHit.Count > 0 && hitTargets.Count < Statistics.ChainCount )
+			var toHit = new List<CastleNPC>();
+			toHit.Add( target );
+
+			var nearbyTraces = Scene.Trace.Sphere( Statistics.ChainRange, target.WorldPosition, target.WorldPosition )
+				.WithTag( "Enemy" )
+				.RunAll();
+
+			int totalChain = Statistics.ChainCount;
+
+			foreach ( var trace in nearbyTraces )
 			{
-				var currentTarget = toHit.Dequeue();
+				if ( totalChain <= 0 ) break;
 
-				if ( currentTarget == null || !currentTarget.IsValid ) continue;
-				if ( hitTargets.Contains( currentTarget ) ) continue;
-
-				currentTarget.TakeDamage( Statistics.Damage );
-				hitTargets.Add( currentTarget );
-
-				var nearbyTraces = Scene.Trace.Sphere( Statistics.ChainRange, currentTarget.WorldPosition, currentTarget.WorldPosition )
-					.WithTag( "Enemy" )
-					.RunAll();
-
-				foreach ( var trace in nearbyTraces )
+				var npc = trace.GameObject.GetComponent<CastleNPC>();
+				if ( npc != null && !toHit.Contains( npc ) )
 				{
-					var npc = trace.GameObject.GetComponent<CastleNPC>();
-					if ( npc != null && !hitTargets.Contains( npc ) )
-					{
-						toHit.Enqueue( npc );
-					}
+					toHit.Add( npc );
+					totalChain--;
 				}
 			}
+
+			foreach ( var enemy in toHit )
+				enemy.TakeDamage( Statistics.Damage );
 		}
 		#endregion
 		else

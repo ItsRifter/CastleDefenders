@@ -5,6 +5,7 @@ public sealed class CastleGame : Component
 {
 	public static CastleGame Instance { get; private set; }
 
+	[Header("Towers")]
 	[Property] public GameObject PistolPrefab { get; set; }
 	[Property, Title("SMG Prefab")] public GameObject SmgPrefab { get; set; }
 	[Property] public GameObject ShotgunPrefab { get; set; }
