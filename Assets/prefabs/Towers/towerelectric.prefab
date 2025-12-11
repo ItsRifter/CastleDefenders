@@ -22,7 +22,7 @@
         "Abilities": 0,
         "AddRadarRange": 0,
         "ChainCount": 1,
-        "ChainRange": 4,
+        "ChainRange": 12,
         "ChargesAttack": true,
         "ChargeSound": "sounds/tower_electric_charge.sound",
         "ChargeTime": 1.45,

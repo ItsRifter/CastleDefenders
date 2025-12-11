@@ -393,8 +393,10 @@
           "__guid": "9d9e1d19-d470-4316-b11a-41f180674174",
           "__enabled": true,
           "AngularDamping": 1,
+          "EnableImpactDamage": true,
           "Gravity": true,
           "GravityScale": 1,
+          "ImpactDamage": 0,
           "LinearDamping": 0.1,
           "Locking": {
             "X": false,
@@ -406,6 +408,7 @@
           },
           "MassCenterOverride": "0,0,36",
           "MassOverride": 500,
+          "MinImpactDamageSpeed": 500,
           "MotionEnabled": true,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
@@ -1807,14 +1810,6 @@
             },
             "Property": "Rotation",
             "Value": "0,0,-0.7071067,0.7071068"
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "ed01bf38-1687-426c-894a-969c19fba33c"
-            },
-            "Property": "Damage",
-            "Value": 1
           },
           {
             "Target": {

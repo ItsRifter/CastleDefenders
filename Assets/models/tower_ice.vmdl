@@ -22,7 +22,37 @@
 						import_filter = 
 						{
 							exclude_by_default = false
-							exception_list = [  ]
+							exception_list = 
+							[
+								"crystal1",
+								"crystal2",
+								"crystal3",
+								"crystal4",
+								"crystal",
+							]
+						}
+					},
+					{
+						_class = "RenderMeshFile"
+						filename = "models/raw/towerround_crystals.fbx"
+						import_translation = [ 0.0, 0.0, 0.0 ]
+						import_rotation = [ 0.0, 0.0, 0.0 ]
+						import_scale = 1.15
+						align_origin_x_type = "None"
+						align_origin_y_type = "None"
+						align_origin_z_type = "None"
+						parent_bone = ""
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = 
+							[
+								"crystal1",
+								"crystal2",
+								"crystal3",
+								"crystal4",
+								"towerRound_crystals",
+							]
 						}
 					},
 				]

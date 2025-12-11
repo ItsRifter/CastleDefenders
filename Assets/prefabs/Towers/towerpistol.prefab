@@ -27,7 +27,7 @@
         "ChargeSound": null,
         "ChargeTime": 1,
         "Cost": 25,
-        "Damage": 5,
+        "Damage": 1,
         "Description": "A simple tower for eliminating opponents",
         "DisplayName": "Pistol",
         "ExplosionRange": 48,
@@ -42,7 +42,26 @@
         "OnComponentStart": null,
         "OnComponentUpdate": null,
         "Range": 64,
-        "Upgrades": [],
+        "Upgrades": [
+          {
+            "Cost": 25,
+            "AddDamage": 6,
+            "IncreaseFireRate": 0,
+            "AddRange": 0,
+            "AddChainAttacks": 0,
+            "AddExplosionRadius": 0,
+            "AddFreezeDuration": 0
+          },
+          {
+            "Cost": 30,
+            "AddDamage": 2,
+            "IncreaseFireRate": 0,
+            "AddRange": 0,
+            "AddChainAttacks": 0,
+            "AddExplosionRadius": 0,
+            "AddFreezeDuration": 0
+          }
+        ],
         "UpgradeSound": null
       },
       {

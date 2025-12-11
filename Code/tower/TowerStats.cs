@@ -3,21 +3,27 @@ using System;
 
 public struct TowerUpgrade
 {
+	[Description("Cost of this upgrade")]
 	public int Cost { get; set; }
+
+	[Description("Damage to add to existing value")]
 	public int AddDamage { get; set; }
+
+	[Description("Fire rate to add to existing value")]
 	public int IncreaseFireRate { get; set; }
+
+	[Description("Range to add to existing value")]
 	public float AddRange { get; set; }
 
-	[Description("Adds an additional target for a chain attack")] 
+	[Description("Adds an additional target for a chain attack"), Category( "Special" )] 
 	public int AddChainAttacks { get; set; }
 
-	[Description("Adds an additional target for a chain attack")] 
+	[Description("Adds an additional target for a chain attack"), Category( "Special" )] 
 	public int AddExplosionRadius { get; set; }
 
-	[Description("Adds additional time to freeze duration")]
+	[Description("Adds additional time to freeze duration"), Category( "Special" )]
 	public float AddFreezeDuration { get; set; }
 }
-
 
 public sealed class TowerStats : Component
 {
@@ -67,7 +73,7 @@ public sealed class TowerStats : Component
 	[Property, ShowIf("IsRadar", true)] public float AddRadarRange { get; set; }
 
 	[Header("Upgrades")]
-	[Property, InlineEditor] public TowerUpgrade[] Upgrades { get; set; }
+	[Property, InlineEditor( Label = false )] public TowerUpgrade[] Upgrades { get; set; }
 
 	[Header( "Sounds" )]
 	[Property] public SoundEvent FireSound { get; set; }

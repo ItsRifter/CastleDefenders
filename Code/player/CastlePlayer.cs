@@ -41,7 +41,12 @@ public sealed class CastlePlayer : Component
 
 		//Tower actions
 		if ( Input.Pressed( "PrimMouse" ) )
-			TryPlacement();
+		{
+			if ( previewTower is not null && ValidPlacement() )
+				TryPlacement();
+			else
+				TryUpgrade();
+		}
 
 		if (Input.Pressed("Sell"))
 			TrySell();
@@ -288,6 +293,18 @@ public sealed class CastlePlayer : Component
 		return true;
 	}
 
+	void TryUpgrade()
+	{
+		var trace = DoTrace( "player" );
+
+		if ( !trace.Hit ) return;
+
+		CastleTower tower = trace.GameObject.GetComponent<CastleTower>();
+		if ( tower == null ) return;
+
+		tower.Upgrade(this);
+	}
+
 	GameObject GetTower()
 	{
 		switch(currentSelection)
@@ -359,7 +376,7 @@ public sealed class CastlePlayer : Component
 	public void AddMoney(int amt)
 	{
 		Money += amt;
-		Log.Info( Money );
+		Log.Info($"Added {amt} Money | {Money}" );
 	}
 
 	/// <summary>
@@ -374,6 +391,7 @@ public sealed class CastlePlayer : Component
 		if ( amt == 0 ) return;
 
 		Money -= amt;
+		Log.Info( $"Took {amt} Money | {Money}" );
 	}
 
 	/// <summary>

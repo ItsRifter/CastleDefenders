@@ -19,6 +19,10 @@ public sealed class CastleTower : Component
 
 	CastleNPC target;
 
+	public int attackDmg;
+	float fireRate;
+	float range;
+
 	protected override void OnStart()
 	{
 		lastAttack = 0;
@@ -30,6 +34,10 @@ public sealed class CastleTower : Component
 
 		canRevealCloaked = Statistics.Abilities.HasFlag( TowerStats.Ability.CanRevealHidden );
 		canSpotCloaked = Statistics.Abilities.HasFlag( TowerStats.Ability.CanSeeHidden );
+
+		attackDmg = Statistics.Damage;
+		fireRate = Statistics.FireRate;
+		range = Statistics.Range;
 	}
 
 	protected override void OnUpdate()
@@ -87,9 +95,28 @@ public sealed class CastleTower : Component
 
 	public void SetOwner(CastlePlayer player) => Owner = player;
 
+	public void Upgrade(CastlePlayer player)
+	{
+		if ( Owner != player ) return;
+		int level = Level - 1;
+
+		if ( Statistics.Upgrades.Length <= level ) return;
+
+		TowerUpgrade curUpgrade = Statistics.Upgrades[level];
+		if ( player.Money < curUpgrade.Cost ) return;
+
+		player.TakeMoney( curUpgrade.Cost );
+
+		attackDmg += curUpgrade.AddDamage;
+		fireRate += curUpgrade.IncreaseFireRate;
+		range += curUpgrade.AddRange;
+
+		Level++;
+	}
+
 	SceneTraceResult DoRangeTrace()
 	{
-		var trace = Scene.Trace.Sphere( Statistics.Range, WorldPosition, WorldPosition )
+		var trace = Scene.Trace.Sphere( range, WorldPosition, WorldPosition )
 			.WithTag( "Enemy" )
 			.Run();
 
@@ -98,7 +125,7 @@ public sealed class CastleTower : Component
 
 	IEnumerable<SceneTraceResult> DoRangeTraceList()
 	{
-		var trace = Scene.Trace.Sphere( Statistics.Range, WorldPosition, WorldPosition )
+		var trace = Scene.Trace.Sphere( range, WorldPosition, WorldPosition )
 			.WithTag( "Enemy" )
 			.RunAll();
 
@@ -171,7 +198,7 @@ public sealed class CastleTower : Component
 	{
 		if ( target == null || !target.IsValid ) return false;
 
-		return Vector3.DistanceBetween(WorldPosition, target.WorldPosition) < Statistics.Range;
+		return Vector3.DistanceBetween(WorldPosition, target.WorldPosition) < range;
 	}
 
 	bool CanSeeTarget()
@@ -209,7 +236,7 @@ public sealed class CastleTower : Component
 					areaTargets.Add( npc );
 			}
 
-			areaTargets.ForEach(npc => npc.TakeDamage( Statistics.Damage ));
+			areaTargets.ForEach(npc => npc.TakeDamage( attackDmg ));
 		}
 		#endregion
 		#region Chained
@@ -239,13 +266,13 @@ public sealed class CastleTower : Component
 			}
 
 			foreach ( var enemy in toHit )
-				enemy.TakeDamage( Statistics.Damage );
+				enemy.TakeDamage( attackDmg );
 		}
 		#endregion
 		else
 		{
 			GameObject.PlaySound( Statistics.FireSound );
-			target.TakeDamage( Statistics.Damage );
+			target.TakeDamage( attackDmg );
 		}
 
 		if( HasAbility(TowerStats.Ability.CanFreezeTargets) )
@@ -260,5 +287,5 @@ public sealed class CastleTower : Component
 		return Statistics.Abilities.HasFlag( ability );
 	}
 
-	bool CanAttack() => lastAttack > (1.0f / Statistics.FireRate);
+	bool CanAttack() => lastAttack > (1.0f / fireRate);
 }
