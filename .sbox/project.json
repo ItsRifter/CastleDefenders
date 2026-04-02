@@ -1,407 +1,462 @@
 {
   "Window.SboxSceneEditor.Dock": {
-    "Value": "{\u0022floatingWindows\u0022:[],\u0022mainWrapper\u0022:{\u0022geometry\u0022:\u0022AdnQywADAAAAAAAAAAAAAAAAB3cAAAPDAAAAAAAAAAAAAAd3AAADwwAAAAAAAAAAB4AAAAAAAAAAAAAAB3cAAAPD\u0022,\u0022splitter\u0022:{\u0022items\u0022:[{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneTreeWidget\u0022,\u0022name\u0022:\u0022Hierarchy\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022PanelInspectorWidget\u0022,\u0022name\u0022:\u0022UI Panels\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022items\u0022:[{\u0022items\u0022:[{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:scenes/minimal.scene\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:prefabs/enemy/knight.prefab\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022currentIndex\u0022:1,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MainAssetBrowser\u0022,\u0022name\u0022:\u0022Asset Browser\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022ConsoleWidget\u0022,\u0022name\u0022:\u0022Console\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MixerDock\u0022,\u0022name\u0022:\u0022Mixer\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022LibraryManagerDock\u0022,\u0022name\u0022:\u0022Library Manager\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAACggAAAgQA/////wEAAAACAA==\u0022,\u0022type\u0022:\u0022splitter\u0022},{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022Inspector\u0022,\u0022name\u0022:\u0022Inspector\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAAERQAAAigA/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAABmwAACjQA/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}},\u0022toolWindowManagerStateFormat\u0022:1}",
-    "Timeout": 1766500596,
+    "Value": "{\u0022floatingWindows\u0022:[],\u0022mainWrapper\u0022:{\u0022geometry\u0022:\u0022AdnQywADAAAAAAAAAAAAAAAAB3cAAAPDAAAAAAAAAAAAAAd3AAADwwAAAAAAAAAAB4AAAAAAAAAAAAAAB3cAAAPD\u0022,\u0022splitter\u0022:{\u0022items\u0022:[{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneTreeWidget\u0022,\u0022name\u0022:\u0022Hierarchy\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022PanelInspectorWidget\u0022,\u0022name\u0022:\u0022UI Panels\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022items\u0022:[{\u0022items\u0022:[{\u0022currentIndex\u0022:2,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:scenes/minimal.scene\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:prefabs/enemy/knight.prefab\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:scenes/gameplaytest.scene\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MainAssetBrowser\u0022,\u0022name\u0022:\u0022Asset Browser\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022ConsoleWidget\u0022,\u0022name\u0022:\u0022Console\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MixerDock\u0022,\u0022name\u0022:\u0022Mixer\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022LibraryManagerDock\u0022,\u0022name\u0022:\u0022Library Manager\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAAC1AAAAOwA/////wEAAAACAA==\u0022,\u0022type\u0022:\u0022splitter\u0022},{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022Inspector\u0022,\u0022name\u0022:\u0022Inspector\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAAEsgAAAbEA/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAABDQAABmcA/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}},\u0022toolWindowManagerStateFormat\u0022:1}",
+    "Timeout": 1777734829,
     "DeleteAt": 0
   },
   "scenes/minimal.scene.Viewport0": {
-    "Value": "{\u0022CameraPosition\u0022:\u0022-234.0745,-241.8413,225.4394\u0022,\u0022CameraRotation\u0022:\u0022-0.05448883,0.1383275,0.3624292,0.9200769\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1766500622,
+    "Value": "{\u0022CameraPosition\u0022:\u0022-449.777,-95.66799,110.0597\u0022,\u0022CameraRotation\u0022:\u00220.05791207,0.1745983,-0.3094491,0.9329538\u0022,\u0022CameraOrthoHeight\u0022:1000}",
+    "Timeout": 1777736507,
     "DeleteAt": 0
   },
   "SceneView.Viewport0.Settings": {
-    "Value": "{\u0022CameraPosition\u0022:\u0022-234.0745,-241.8413,225.4394\u0022,\u0022CameraRotation\u0022:\u0022-0.05448883,0.1383275,0.3624292,0.9200769\u0022,\u0022View\u0022:0,\u0022RenderMode\u0022:0,\u0022WireframeMode\u0022:false,\u0022EnablePostProcessing\u0022:false,\u0022EnablePrefabLighting\u0022:true,\u0022ShowSkyIn2D\u0022:true,\u0022ShowGrid\u0022:true,\u0022GridOpacity\u0022:0.2,\u0022GridAxis\u0022:0,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1766500622,
+    "Value": "{\u0022CameraPosition\u0022:\u0022-449.777,-95.66799,110.0597\u0022,\u0022CameraRotation\u0022:\u00220.05791207,0.1745983,-0.3094491,0.9329538\u0022,\u0022View\u0022:0,\u0022RenderMode\u0022:0,\u0022WireframeMode\u0022:false,\u0022EnablePostProcessing\u0022:false,\u0022EnablePrefabLighting\u0022:true,\u0022ShowSkyIn2D\u0022:true,\u0022ShowGrid\u0022:true,\u0022GridOpacity\u0022:0.2,\u0022GridAxis\u0022:0,\u0022CameraOrthoHeight\u0022:1000}",
+    "Timeout": 1777736507,
     "DeleteAt": 0
   },
   "gizmo.settings": {
     "Value": "{\u0022EditMode\u0022:\u0022position\u0022,\u0022Selection\u0022:true,\u0022ViewMode\u0022:\u00223d\u0022,\u0022GizmosEnabled\u0022:false,\u0022GizmoScale\u0022:1,\u0022GridSpacing\u0022:64,\u0022SnapToGrid\u0022:false,\u0022SnapToAngles\u0022:false,\u0022AngleSpacing\u0022:15,\u0022GlobalSpace\u0022:false,\u0022DebugActionGraphs\u0022:false}",
-    "Timeout": 1766499849,
+    "Timeout": 1777725008,
     "DeleteAt": 0
   },
   "SceneView.Layout": {
     "Value": "{\u0022Layout\u0022:0,\u0022SplitterState\u0022:[]}",
-    "Timeout": 1766500338,
+    "Timeout": 1777734498,
     "DeleteAt": 0
   },
   "expand.4004ac54-3f41-4820-b6ac-82f675fcd9c6.MoveModeWalk": {
     "Value": "false",
-    "Timeout": 1766499151,
+    "Timeout": 1777734848,
     "DeleteAt": 0
   },
   "expand.4004ac54-3f41-4820-b6ac-82f675fcd9c6.MoveModeSwim": {
     "Value": "false",
-    "Timeout": 1766499151,
+    "Timeout": 1777734848,
     "DeleteAt": 0
   },
   "expand.4004ac54-3f41-4820-b6ac-82f675fcd9c6.Dresser": {
     "Value": "false",
-    "Timeout": 1766499151,
+    "Timeout": 1777734848,
     "DeleteAt": 0
   },
   "expand.00000000-0000-0000-0000-000000000000.Bloom": {
     "Value": "false",
     "Timeout": 1766311990,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a.Tonemapping": {
     "Value": "false",
-    "Timeout": 1766495151,
+    "Timeout": 1777735494,
     "DeleteAt": 0
   },
   "expand.3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a.Sharpen": {
     "Value": "false",
-    "Timeout": 1766495151,
+    "Timeout": 1777735494,
     "DeleteAt": 0
   },
   "expand.3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a.Bloom": {
     "Value": "false",
-    "Timeout": 1766495151,
+    "Timeout": 1777735494,
     "DeleteAt": 0
   },
   "expand.80ca93ef-4609-4fa8-aea2-d442127fd31f.BoxCollider": {
     "Value": "false",
     "Timeout": 1766314659,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.236665d5-a388-46f6-96a2-fb465c80e7bc.BoxCollider": {
     "Value": "false",
     "Timeout": 1766496012,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "prefabs/enemy/knight.prefab.Viewport0": {
     "Value": "{\u0022CameraPosition\u0022:\u002272.18903,-51.0277,70.91466\u0022,\u0022CameraRotation\u0022:\u0022-0.1884059,0.07025418,0.9178408,0.3422512\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1766500622,
+    "Timeout": 1777736507,
     "DeleteAt": 0
   },
   "prefabs/towers/towersmg.prefab.Viewport0": {
     "Value": "{\u0022CameraPosition\u0022:\u0022-109.4204,-72.91949,108.2752\u0022,\u0022CameraRotation\u0022:\u0022-0.07266982,0.2369528,0.2840577,0.9262201\u0022,\u0022CameraOrthoHeight\u0022:1000}",
     "Timeout": 1766495482,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "prefabs/towers/towerpistol.prefab.Viewport0": {
     "Value": "{\u0022CameraPosition\u0022:\u0022-3.842911,-194.3907,129.5223\u0022,\u0022CameraRotation\u0022:\u0022-0.1671341,0.1852956,0.6485911,0.7190697\u0022,\u0022CameraOrthoHeight\u0022:1000}",
     "Timeout": 1766495487,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "prefabs/towers/towershotgun.prefab.Viewport0": {
     "Value": "{\u0022CameraPosition\u0022:\u0022-119.4245,-123.1123,138.2932\u0022,\u0022CameraRotation\u0022:\u0022-0.1054612,0.2524835,0.370715,0.8875248\u0022,\u0022CameraOrthoHeight\u0022:1000}",
     "Timeout": 1766496078,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.80ca93ef-4609-4fa8-aea2-d442127fd31f.ModelRenderer": {
     "Value": "false",
     "Timeout": 1766314659,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "prefabs/enemy/peasant.prefab.Viewport0": {
     "Value": "{\u0022CameraPosition\u0022:\u002281.36796,-59.30668,70.85718\u0022,\u0022CameraRotation\u0022:\u0022-0.2293512,0.06554777,0.9337484,0.2668621\u0022,\u0022CameraOrthoHeight\u0022:1000}",
     "Timeout": 1766499147,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "LocalAssetBrowser.History": {
-    "Value": "[\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\\\\sounds\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\\\\scenes\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Code\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\\\\prefabs\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\\\\prefabs\\\\Towers\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\scenes\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\sounds\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\textures\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\\\\tower\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\models\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\models\\\\raw\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\models\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\models\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\prefabs\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\prefabs\\\\Towers\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\\\\player\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\\\\npc\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\prefabs\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\prefabs\\\\Enemy\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\scenes\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\prefabs\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\prefabs\\\\Enemy\u0022]",
-    "Timeout": 1766500338,
+    "Value": "[\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\\\\sounds\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\\\\scenes\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Code\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\\\\prefabs\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\\\\prefabs\\\\Towers\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\scenes\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\sounds\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\textures\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\\\\tower\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\models\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\models\\\\raw\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\models\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\models\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\prefabs\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\prefabs\\\\Towers\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\\\\player\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\\\\npc\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\prefabs\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\prefabs\\\\Enemy\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\sounds\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\\\\UI\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\textures\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\scenes\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\\\\UI\u0022]",
+    "Timeout": 1777736482,
     "DeleteAt": 0
   },
   "LocalAssetBrowser.HistoryIdx": {
-    "Value": "28",
-    "Timeout": 1766500338,
+    "Value": "38",
+    "Timeout": 1777736482,
     "DeleteAt": 0
   },
   "expand.00000000-0000-0000-0000-000000000000.Tonemapping": {
     "Value": "false",
     "Timeout": 1766311990,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.00000000-0000-0000-0000-000000000000.Sharpen": {
     "Value": "false",
     "Timeout": 1766311990,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.00000000-0000-0000-0000-000000000000.CastlePlayer": {
     "Value": "false",
     "Timeout": 1766312490,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.00000000-0000-0000-0000-000000000000.Dresser": {
     "Value": "false",
     "Timeout": 1766312490,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.5cad617d-7dc8-4c35-807d-c59f4dcbce9e.ModelRenderer": {
     "Value": "false",
     "Timeout": 1766496016,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.022f4025-4e47-4dd1-947b-49a33b529a12.ModelRenderer": {
     "Value": "false",
     "Timeout": 1766495368,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.236665d5-a388-46f6-96a2-fb465c80e7bc.ModelRenderer": {
     "Value": "false",
     "Timeout": 1766496012,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.022f4025-4e47-4dd1-947b-49a33b529a12.BoxCollider": {
     "Value": "false",
     "Timeout": 1766495368,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "prefabs/towers/towerelectric.prefab.Viewport0": {
     "Value": "{\u0022CameraPosition\u0022:\u0022-12.47541,-116.2349,123.2387\u0022,\u0022CameraRotation\u0022:\u0022-0.2170706,0.2623937,0.5993237,0.7244591\u0022,\u0022CameraOrthoHeight\u0022:1000}",
     "Timeout": 1766496070,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.6c2d8858-02e0-49c9-972f-a1f963c732ba.ModelRenderer": {
     "Value": "false",
     "Timeout": 1766495470,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.6c2d8858-02e0-49c9-972f-a1f963c732ba.BoxCollider": {
     "Value": "false",
     "Timeout": 1766495470,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "LocalAssetBrowser.Sound File.History": {
     "Value": "[\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\\\\sounds\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\\\\sounds\\\\files\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\\\\sounds\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\\\\sounds\\\\files\u0022]",
     "Timeout": 1766316892,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "LocalAssetBrowser.Sound File.HistoryIdx": {
     "Value": "6",
     "Timeout": 1766316892,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.409328a6-ba38-4103-a5b2-0c5f0f29bb2f.ModelRenderer": {
     "Value": "false",
     "Timeout": 1766496071,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.409328a6-ba38-4103-a5b2-0c5f0f29bb2f.BoxCollider": {
     "Value": "false",
     "Timeout": 1766496071,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "LocalAssetBrowser.Sound Event.History": {
     "Value": "[\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\\\\sounds\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\\\\sounds\u0022]",
     "Timeout": 1766317036,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "LocalAssetBrowser.Sound Event.HistoryIdx": {
     "Value": "4",
     "Timeout": 1766317036,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "LocalAssetBrowser.Material.History": {
     "Value": "[\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\materials\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\materials\\\\simple\u0022,\u0022c:\\\\program files (x86)\\\\steam\\\\steamapps\\\\common\\\\sbox\\\\addons\\\\citizen\\\\assets\\\\models\\\\citizen\\\\skin\u0022]",
     "Timeout": 1766497164,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "LocalAssetBrowser.Material.HistoryIdx": {
     "Value": "4",
     "Timeout": 1766497164,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "LocalAssetBrowser.Material.ViewMode": {
     "Value": "0",
     "Timeout": 1766497169,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "LocalAssetBrowser.Material.ShowJunkFiles": {
     "Value": "false",
     "Timeout": 1766497169,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "LocalAssetBrowser.Material.HideNonAssets": {
     "Value": "false",
     "Timeout": 1766497169,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "LocalAssetBrowser.Material.ShowRecursiveFiles": {
     "Value": "false",
     "Timeout": 1766497169,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "LocalAssetBrowser.DMX File,SMD Source File,FBX Source File.History": {
     "Value": "[\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022,\u0022c:\\\\s\\u0026boxprojects\\\\castle_defenders\\\\assets\\\\models\\\\raw\u0022]",
     "Timeout": 1766495034,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "LocalAssetBrowser.DMX File,SMD Source File,FBX Source File.HistoryIdx": {
     "Value": "1",
     "Timeout": 1766495034,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "LocalAssetBrowser.DMX File,SMD Source File,FBX Source File.ViewMode": {
     "Value": "1",
     "Timeout": 1766495034,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "LocalAssetBrowser.DMX File,SMD Source File,FBX Source File.ShowJunkFiles": {
     "Value": "false",
     "Timeout": 1766495034,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "LocalAssetBrowser.DMX File,SMD Source File,FBX Source File.HideNonAssets": {
     "Value": "false",
     "Timeout": 1766495034,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "LocalAssetBrowser.DMX File,SMD Source File,FBX Source File.ShowRecursiveFiles": {
     "Value": "false",
     "Timeout": 1766495034,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.fcc494cd-be01-4f1a-b8e4-e298618ff014.WaveManager": {
     "Value": "false",
-    "Timeout": 1766495345,
+    "Timeout": 1777735675,
     "DeleteAt": 0
   },
   "expand.d898e6ba-38bd-4f6c-ba6a-303319c432d2.ModelRenderer": {
     "Value": "false",
     "Timeout": 1766496048,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.022f4025-4e47-4dd1-947b-49a33b529a12.TowerStats": {
     "Value": "false",
     "Timeout": 1766495369,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.d898e6ba-38bd-4f6c-ba6a-303319c432d2.TowerStats": {
     "Value": "false",
     "Timeout": 1766496048,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.d898e6ba-38bd-4f6c-ba6a-303319c432d2.BoxCollider": {
     "Value": "false",
     "Timeout": 1766496048,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.5538ff98-24c9-4867-b284-731bd3a58d17.BoxCollider": {
     "Value": "false",
     "Timeout": 1766498483,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.5538ff98-24c9-4867-b284-731bd3a58d17.ModelRenderer": {
     "Value": "false",
     "Timeout": 1766498483,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.5538ff98-24c9-4867-b284-731bd3a58d17.TowerStats": {
     "Value": "false",
     "Timeout": 1766498483,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.5cad617d-7dc8-4c35-807d-c59f4dcbce9e.TowerStats": {
     "Value": "false",
     "Timeout": 1766496016,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.5cad617d-7dc8-4c35-807d-c59f4dcbce9e.BoxCollider": {
     "Value": "false",
     "Timeout": 1766496016,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.6c2d8858-02e0-49c9-972f-a1f963c732ba.TowerStats": {
     "Value": "false",
     "Timeout": 1766495470,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "prefabs/towers/towerradar.prefab.Viewport0": {
     "Value": "{\u0022CameraPosition\u0022:\u00220.1504317,-120.789,136.1903\u0022,\u0022CameraRotation\u0022:\u0022-0.242477,0.2412109,0.6662,0.6627215\u0022,\u0022CameraOrthoHeight\u0022:1000}",
     "Timeout": 1766496068,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "prefabs/towers/towercannon.prefab.Viewport0": {
     "Value": "{\u0022CameraPosition\u0022:\u0022-24.46853,-52.38742,56.81323\u0022,\u0022CameraRotation\u0022:\u0022-0.1712128,0.2739974,0.501499,0.8025649\u0022,\u0022CameraOrthoHeight\u0022:1000}",
     "Timeout": 1766496349,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.44c29cfd-a075-404b-b30d-af02a6aa9cac.ModelRenderer": {
     "Value": "false",
     "Timeout": 1766496348,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.690474fa-f7a2-4586-9650-d1339de2d9a1.BoxCollider": {
     "Value": "false",
     "Timeout": 1766496063,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.690474fa-f7a2-4586-9650-d1339de2d9a1.CastleTower": {
     "Value": "false",
     "Timeout": 1766496063,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.0391eef2-8e93-4e58-b8ec-96db043f5eb1.ModelRenderer": {
     "Value": "false",
     "Timeout": 1766496069,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.0391eef2-8e93-4e58-b8ec-96db043f5eb1.BoxCollider": {
     "Value": "false",
     "Timeout": 1766496069,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.44c29cfd-a075-404b-b30d-af02a6aa9cac.BoxCollider": {
     "Value": "false",
     "Timeout": 1766496348,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.5538ff98-24c9-4867-b284-731bd3a58d17.CastleTower": {
     "Value": "false",
     "Timeout": 1766498483,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "LocalAssetBrowser.Clothing Definition.HistoryIdx": {
     "Value": "3",
     "Timeout": 1766497372,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "prefabs/enemy/splitter.prefab.Viewport0": {
     "Value": "{\u0022CameraPosition\u0022:\u002273.99783,-60.49511,59.48572\u0022,\u0022CameraRotation\u0022:\u0022-0.150477,0.05402662,0.9290692,0.3335691\u0022,\u0022CameraOrthoHeight\u0022:1000}",
     "Timeout": 1766500334,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "LocalAssetBrowser.Clothing Definition.History": {
     "Value": "[\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022,\u0022@everything\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022]",
     "Timeout": 1766497372,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "prefabs/enemy/dummy.prefab.Viewport0": {
     "Value": "{\u0022CameraPosition\u0022:\u0022-20.41289,-21.1697,43.16961\u0022,\u0022CameraRotation\u0022:\u0022-0.1140823,0.2845059,0.3542622,0.8834817\u0022,\u0022CameraOrthoHeight\u0022:1000}",
     "Timeout": 1766497127,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "LocalAssetBrowser.Clothing Definition.ViewMode": {
     "Value": "0",
     "Timeout": 1766497372,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "LocalAssetBrowser.Clothing Definition.ShowJunkFiles": {
     "Value": "false",
     "Timeout": 1766497372,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "LocalAssetBrowser.Clothing Definition.HideNonAssets": {
     "Value": "false",
     "Timeout": 1766497372,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "LocalAssetBrowser.Clothing Definition.ShowRecursiveFiles": {
     "Value": "false",
     "Timeout": 1766497372,
-    "DeleteAt": 0
+    "DeleteAt": 1775219378
   },
   "expand.16758019-1155-4cbf-bb7b-ab33193929bf.BoxCollider": {
     "Value": "false",
-    "Timeout": 1766500549,
+    "Timeout": 1777735688,
     "DeleteAt": 0
   },
   "expand.16758019-1155-4cbf-bb7b-ab33193929bf.SkinnedModelRenderer": {
     "Value": "false",
-    "Timeout": 1766500549,
+    "Timeout": 1777735688,
+    "DeleteAt": 0
+  },
+  ".Viewport0": {
+    "Value": "{\u0022CameraPosition\u0022:\u0022-1101.549,-274.3466,2.602986\u0022,\u0022CameraRotation\u0022:\u0022-0.00145151,0.5883318,0.001994986,0.8086159\u0022,\u0022CameraOrthoHeight\u0022:1000}",
+    "Timeout": 1777736469,
+    "DeleteAt": 0
+  },
+  "scenes/gameplaytest.scene.Viewport0": {
+    "Value": "{\u0022CameraPosition\u0022:\u0022-1134.876,-195.5803,81.17119\u0022,\u0022CameraRotation\u0022:\u00220.03851601,0.2574511,-0.1428574,0.9548965\u0022,\u0022CameraOrthoHeight\u0022:1000}",
+    "Timeout": 1777736507,
+    "DeleteAt": 0
+  },
+  "LocalAssetBrowser.Map.History": {
+    "Value": "[\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022]",
+    "Timeout": 1777734512,
+    "DeleteAt": 0
+  },
+  "LocalAssetBrowser.Map.HistoryIdx": {
+    "Value": "2",
+    "Timeout": 1777734512,
+    "DeleteAt": 0
+  },
+  "LocalAssetBrowser.Prefab.History": {
+    "Value": "[\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022]",
+    "Timeout": 1777734628,
+    "DeleteAt": 0
+  },
+  "LocalAssetBrowser.Prefab.HistoryIdx": {
+    "Value": "1",
+    "Timeout": 1777734628,
+    "DeleteAt": 0
+  },
+  "expand.1f236828-edca-431c-9c3a-8539ff1f295b.SkinnedModelRenderer": {
+    "Value": "false",
+    "Timeout": 1777736402,
+    "DeleteAt": 0
+  },
+  "expand.8e90bc73-a9c3-47bd-8888-84a693a4a2aa.ModelRenderer": {
+    "Value": "false",
+    "Timeout": 1777735682,
+    "DeleteAt": 0
+  },
+  "expand.8e90bc73-a9c3-47bd-8888-84a693a4a2aa.BoxCollider": {
+    "Value": "false",
+    "Timeout": 1777735684,
+    "DeleteAt": 0
+  },
+  "expand.b946e382-3f3e-480e-ab38-8f551b64913a.Bloom": {
+    "Value": "false",
+    "Timeout": 1777736499,
+    "DeleteAt": 0
+  },
+  "expand.b946e382-3f3e-480e-ab38-8f551b64913a.Tonemapping": {
+    "Value": "false",
+    "Timeout": 1777736499,
     "DeleteAt": 0
   }
 }

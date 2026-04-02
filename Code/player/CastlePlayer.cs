@@ -172,26 +172,11 @@ public sealed class CastlePlayer : Component
 
 	int GetSlotPressed()
 	{
-		if ( Input.Pressed( "Slot1" ) )
-			return 1;
-
-		if ( Input.Pressed( "Slot2" ) )
-			return 2;
-
-		if ( Input.Pressed( "Slot3" ) )
-			return 3;
-
-		if ( Input.Pressed( "Slot4" ) )
-			return 4;
-
-		if ( Input.Pressed( "Slot5" ) )
-			return 5;
-
-		if ( Input.Pressed( "Slot6" ) )
-			return 6;
-
-		if ( Input.Pressed( "Slot7" ) )
-			return 7;
+		for ( int i = 0; i < 7; i++ )
+		{
+			if ( Input.Pressed( $"Slot{i + 1}" ) )
+				return i + 1;
+		}
 
 		if ( Input.Pressed( "Holster" ) )
 			return 0;

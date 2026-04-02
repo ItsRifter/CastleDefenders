@@ -4,7 +4,15 @@
 @namespace Sandbox
 
 <root>
-	<div class="title">Tee</div>
+
+    <div class="icons">
+
+        @for (int i = 0; i < towerIcons.Length; i++)
+        {
+            <div class="icon @towerIcons[i] @(selectionIndex == i+1 ? "isSelected" : "")"></div>
+        }
+       
+    </div>
 </root>
 
 @code
@@ -13,6 +21,16 @@
     int selectionIndex = -1;
     int lastSelect = -1;
 
+    string[] towerIcons = new string[]
+    {
+        "pistol", "smg", "shotgun", "cannon", "electric", "frost", "radar"
+    };
+
+    protected override void OnStart()
+    {
+        
+    }
+
     protected override void OnUpdate()
     {
         HandleSelection();
@@ -20,13 +38,18 @@
 
     void HandleSelection()
     {
-        if (Input.Pressed("Slot1")) selectionIndex = 1;
-        if (Input.Pressed("Slot2")) selectionIndex = 2;
-        if (Input.Pressed("Slot3")) selectionIndex = 3;
-        //if (Input.Pressed("Slot4")) selectionIndex = 1;
-        //if (Input.Pressed("Slot5")) selectionIndex = 1;
+        for (int i = 1; i <= towerIcons.Length; i++)
+        {
+            if (Input.Pressed($"Slot{i}"))
+            {
+                selectionIndex = i;
+                return;
+            }
+        }
 
-        if (Input.Pressed("Holster")) selectionIndex = 0;
+        // Holster remains special
+        if (Input.Pressed("Holster"))
+            selectionIndex = 0;
     }
 
     protected override int BuildHash() => System.HashCode.Combine(selectionIndex.GetHashCode());

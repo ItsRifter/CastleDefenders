@@ -2,7 +2,7 @@
   "profiles": {
     "Editor": {
       "commandName": "Executable",
-      "executablePath": "C:\\program files (x86)\\steam\\steamapps\\common\\sbox\\sbox-dev.exe",
+      "executablePath": "../../../../Program Files (x86)/Steam/steamapps/common/sbox/sbox-dev.exe",
       "commandLineArgs": "-project \u0022C:\\S\u0026boxProjects\\castle_defenders\\castle_defenders.sbproj\u0022"
     }
   }

@@ -1,24 +1,27 @@
 PlayerStats {
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    right: 10%;
+    bottom: 16px;
     text-align: left;
-
-    > .cash {
-        position: absolute;
-        left: 45%;
-        bottom: 25%;
-        font-size: 64px;
-        //text-align: center;
-        text-shadow: 4px 4px 0px black;
-        font-family: Arial;
-        color: white;
-
-        .subtext {
-            position: absolute;
-            left: 64px;
-        }
-    }
+    text-shadow: 4px 4px 0px black;
+    font-family: Arial;
+    font-size: 64px;
+    color: white;
+    justify-content: center;
+    align-items: flex-end;
+    //> .cash {
+    //    position: absolute;
+    //    left: 45%;
+    //    bottom: 25%;
+    //    font-size: 64px;
+    //text-align: center;
+    //    text-shadow: 4px 4px 0px black;
+    //    font-family: Arial;
+    //    color: white;
+    //    .subtext {
+    //        position: absolute;
+    //        left: 64px;
+    //    }
+    //}
 }

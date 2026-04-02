@@ -2,10 +2,10 @@ using Sandbox;
 
 public sealed class PathNode : Component
 {
-	[Property] public PathNode NextNode { get; set; }
-	[Property, Title("Is starting node")] public bool IsStartNode { get; set; }
-	[Property, Title("Is last node")] public bool IsEndNode { get; set; }
-	[Property, Title("Can teleport")] public bool IsTeleporter { get; set; }
+	[Property, Description( "The next target node for NPCs to follow" )] public PathNode NextNode { get; set; }
+	[Property, Title("Starting node"), Description( "The starting node where npcs will spawn, ONLY ONE MUST EXIST" )] public bool IsStartNode { get; set; }
+	[Property, Title("Final node"), Description("The final node in the list of paths, ONLY ONE MUST EXIST")] public bool IsEndNode { get; set; }
+	[Property, Title("Can teleport"), Description( "Makes NPCs who enter this node teleport to the next" )] public bool IsTeleporter { get; set; }
 
 	protected override void DrawGizmos()
 	{
