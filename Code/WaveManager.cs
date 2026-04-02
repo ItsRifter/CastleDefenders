@@ -1,4 +1,5 @@
 using Sandbox;
+using System;
 using static Sandbox.Gizmo;
 
 public struct EnemyInfo
@@ -59,6 +60,9 @@ public sealed class WaveManager : Component
 			Log.Error("[Castle Defenders] No start node found");
 			return;
 		}
+
+		WaveDisplay.Instance.SetStatus( Wave );
+		WaveDisplay.Instance.SetWave( curWave + 1, Waves.Length );
 	}
 
 	protected override void OnUpdate()
@@ -68,6 +72,7 @@ public sealed class WaveManager : Component
 		if( lastWaveState != Wave )
 		{
 			Log.Info( $"Updating wave from {lastWaveState} to {Wave}" );
+			
 			timeSinceLastState = 0;
 			lastWaveState = Wave;
 
@@ -90,6 +95,8 @@ public sealed class WaveManager : Component
 				Wave = WaveState.Idle;
 				break;
 		}
+
+		WaveDisplay.Instance.UpdateText();
 	}
 
 	void UpdateGame()
@@ -122,7 +129,7 @@ public sealed class WaveManager : Component
 		WaveInfo waveInfo = Waves[curWave];
 
 		spawnsLeft += waveInfo.EnemyInfo.Sum( enemy => enemy.SpawnCount );
-		Log.Info( spawnsLeft );
+
 		foreach ( var enemyInfo in waveInfo.EnemyInfo )
 		{
 			SpawnEnemy( enemyInfo );

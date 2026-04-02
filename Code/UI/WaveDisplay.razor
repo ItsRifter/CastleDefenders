@@ -4,16 +4,61 @@
 @namespace Sandbox
 
 <root>
-	<div class="title">@MyStringValue</div>
+    <div>@curMessage</div>
 </root>
 
 @code
 {
+    string curMessage;
+    int curWave;
+    int maxWaves;
+    WaveManager.WaveState curState;
 
-	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
+    public static WaveDisplay Instance;
 
-	/// <summary>
-	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
-	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine( MyStringValue );
+    protected override void OnStart()
+    {
+        Instance = this;
+        curMessage = "";
+    }
+
+    public void SetStatus(WaveManager.WaveState newState) => curState = newState;
+
+    public void SetWave(int newWave, int newMaxWaves = -1)
+    {
+        curWave = newWave;
+
+        if(newMaxWaves != -1)
+            maxWaves = newMaxWaves;
+    }
+
+    public void UpdateText()
+    {
+        switch(curState)
+        {
+            case WaveManager.WaveState.Inactive:
+                curMessage = "Inactive";
+                break;
+
+            case WaveManager.WaveState.Idle:
+                curMessage = "";
+                break;
+
+            case WaveManager.WaveState.Active:
+                curMessage = $"Wave {curWave}/{maxWaves}";
+                break;
+
+            case WaveManager.WaveState.Completed:
+                curMessage = "";
+                break;
+        }
+    }
+
+    [ConCmd("TestText")]
+    public static void Test()
+    {
+        Instance.curMessage = "TEST";
+    }
+
+    protected override int BuildHash() => curMessage.GetHashCode();
 }

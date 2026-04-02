@@ -1,27 +1,27 @@
 {
   "Window.SboxSceneEditor.Dock": {
-    "Value": "{\u0022floatingWindows\u0022:[],\u0022mainWrapper\u0022:{\u0022geometry\u0022:\u0022AdnQywADAAAAAAAAAAAAAAAAB3cAAAPDAAAAAAAAAAAAAAd3AAADwwAAAAAAAAAAB4AAAAAAAAAAAAAAB3cAAAPD\u0022,\u0022splitter\u0022:{\u0022items\u0022:[{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneTreeWidget\u0022,\u0022name\u0022:\u0022Hierarchy\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022PanelInspectorWidget\u0022,\u0022name\u0022:\u0022UI Panels\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022items\u0022:[{\u0022items\u0022:[{\u0022currentIndex\u0022:2,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:scenes/minimal.scene\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:prefabs/enemy/knight.prefab\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:scenes/gameplaytest.scene\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MainAssetBrowser\u0022,\u0022name\u0022:\u0022Asset Browser\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022ConsoleWidget\u0022,\u0022name\u0022:\u0022Console\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MixerDock\u0022,\u0022name\u0022:\u0022Mixer\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022LibraryManagerDock\u0022,\u0022name\u0022:\u0022Library Manager\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAAC1AAAAOwA/////wEAAAACAA==\u0022,\u0022type\u0022:\u0022splitter\u0022},{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022Inspector\u0022,\u0022name\u0022:\u0022Inspector\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAAEsgAAAbEA/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAABDQAABmcA/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}},\u0022toolWindowManagerStateFormat\u0022:1}",
-    "Timeout": 1777734829,
+    "Value": "{\u0022floatingWindows\u0022:[],\u0022mainWrapper\u0022:{\u0022geometry\u0022:\u0022AdnQywADAAAAAAAAAAAAAAAAB3cAAAPDAAAAAAAAAAAAAAd3AAADwwAAAAAAAAAAB4AAAAAAAAAAAAAAB3cAAAPD\u0022,\u0022splitter\u0022:{\u0022items\u0022:[{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneTreeWidget\u0022,\u0022name\u0022:\u0022Hierarchy\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022PanelInspectorWidget\u0022,\u0022name\u0022:\u0022UI Panels\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022items\u0022:[{\u0022items\u0022:[{\u0022currentIndex\u0022:2,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:scenes/minimal.scene\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:prefabs/enemy/knight.prefab\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:scenes/gameplaytest.scene\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022currentIndex\u0022:1,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MainAssetBrowser\u0022,\u0022name\u0022:\u0022Asset Browser\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022ConsoleWidget\u0022,\u0022name\u0022:\u0022Console\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MixerDock\u0022,\u0022name\u0022:\u0022Mixer\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022LibraryManagerDock\u0022,\u0022name\u0022:\u0022Library Manager\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAACyAAAAPgA/////wEAAAACAA==\u0022,\u0022type\u0022:\u0022splitter\u0022},{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022Inspector\u0022,\u0022name\u0022:\u0022Inspector\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAAEggAAAfEA/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAAA/QAABncA/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}},\u0022toolWindowManagerStateFormat\u0022:1}",
+    "Timeout": 1777740751,
     "DeleteAt": 0
   },
   "scenes/minimal.scene.Viewport0": {
     "Value": "{\u0022CameraPosition\u0022:\u0022-449.777,-95.66799,110.0597\u0022,\u0022CameraRotation\u0022:\u00220.05791207,0.1745983,-0.3094491,0.9329538\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1777736507,
+    "Timeout": 1777740751,
     "DeleteAt": 0
   },
   "SceneView.Viewport0.Settings": {
     "Value": "{\u0022CameraPosition\u0022:\u0022-449.777,-95.66799,110.0597\u0022,\u0022CameraRotation\u0022:\u00220.05791207,0.1745983,-0.3094491,0.9329538\u0022,\u0022View\u0022:0,\u0022RenderMode\u0022:0,\u0022WireframeMode\u0022:false,\u0022EnablePostProcessing\u0022:false,\u0022EnablePrefabLighting\u0022:true,\u0022ShowSkyIn2D\u0022:true,\u0022ShowGrid\u0022:true,\u0022GridOpacity\u0022:0.2,\u0022GridAxis\u0022:0,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1777736507,
+    "Timeout": 1777740751,
     "DeleteAt": 0
   },
   "gizmo.settings": {
-    "Value": "{\u0022EditMode\u0022:\u0022position\u0022,\u0022Selection\u0022:true,\u0022ViewMode\u0022:\u00223d\u0022,\u0022GizmosEnabled\u0022:false,\u0022GizmoScale\u0022:1,\u0022GridSpacing\u0022:64,\u0022SnapToGrid\u0022:false,\u0022SnapToAngles\u0022:false,\u0022AngleSpacing\u0022:15,\u0022GlobalSpace\u0022:false,\u0022DebugActionGraphs\u0022:false}",
-    "Timeout": 1777725008,
+    "Value": "{\u0022EditMode\u0022:\u0022position\u0022,\u0022Selection\u0022:true,\u0022ViewMode\u0022:\u00223d\u0022,\u0022GizmosEnabled\u0022:false,\u0022GizmoScale\u0022:1,\u0022GridSpacing\u0022:64,\u0022SnapToGrid\u0022:false,\u0022SnapToAngles\u0022:false,\u0022AngleSpacing\u0022:15,\u0022GlobalSpace\u0022:false,\u0022DebugActionGraphs\u0022:false,\u0022DisabledGizmos\u0022:{}}",
+    "Timeout": 1777740751,
     "DeleteAt": 0
   },
   "SceneView.Layout": {
     "Value": "{\u0022Layout\u0022:0,\u0022SplitterState\u0022:[]}",
-    "Timeout": 1777734498,
+    "Timeout": 1777740751,
     "DeleteAt": 0
   },
   "expand.4004ac54-3f41-4820-b6ac-82f675fcd9c6.MoveModeWalk": {
@@ -71,7 +71,7 @@
   },
   "prefabs/enemy/knight.prefab.Viewport0": {
     "Value": "{\u0022CameraPosition\u0022:\u002272.18903,-51.0277,70.91466\u0022,\u0022CameraRotation\u0022:\u0022-0.1884059,0.07025418,0.9178408,0.3422512\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1777736507,
+    "Timeout": 1777740751,
     "DeleteAt": 0
   },
   "prefabs/towers/towersmg.prefab.Viewport0": {
@@ -101,12 +101,12 @@
   },
   "LocalAssetBrowser.History": {
     "Value": "[\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\\\\sounds\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\\\\scenes\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Code\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\\\\prefabs\u0022,\u0022C:\\\\Users\\\\d_tho\\\\Documents\\\\s\\u0026box projects\\\\CastleDefenders\\\\Assets\\\\prefabs\\\\Towers\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\scenes\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\sounds\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\textures\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\\\\tower\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\models\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\models\\\\raw\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\models\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\models\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\prefabs\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\prefabs\\\\Towers\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\\\\player\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\\\\npc\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\prefabs\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\prefabs\\\\Enemy\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\sounds\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\\\\UI\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\textures\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Assets\\\\scenes\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\u0022,\u0022C:\\\\S\\u0026boxProjects\\\\castle_defenders\\\\Code\\\\UI\u0022]",
-    "Timeout": 1777736482,
+    "Timeout": 1777739281,
     "DeleteAt": 0
   },
   "LocalAssetBrowser.HistoryIdx": {
     "Value": "38",
-    "Timeout": 1777736482,
+    "Timeout": 1777739281,
     "DeleteAt": 0
   },
   "expand.00000000-0000-0000-0000-000000000000.Tonemapping": {
@@ -405,13 +405,13 @@
     "DeleteAt": 0
   },
   ".Viewport0": {
-    "Value": "{\u0022CameraPosition\u0022:\u0022-1101.549,-274.3466,2.602986\u0022,\u0022CameraRotation\u0022:\u0022-0.00145151,0.5883318,0.001994986,0.8086159\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1777736469,
+    "Value": "{\u0022CameraPosition\u0022:\u0022-1318.102,-535.6677,17.68316\u0022,\u0022CameraRotation\u0022:\u0022-0.08226243,0.1691017,0.4296474,0.8831991\u0022,\u0022CameraOrthoHeight\u0022:1000}",
+    "Timeout": 1777740734,
     "DeleteAt": 0
   },
   "scenes/gameplaytest.scene.Viewport0": {
-    "Value": "{\u0022CameraPosition\u0022:\u0022-1134.876,-195.5803,81.17119\u0022,\u0022CameraRotation\u0022:\u00220.03851601,0.2574511,-0.1428574,0.9548965\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1777736507,
+    "Value": "{\u0022CameraPosition\u0022:\u0022-1318.102,-535.6677,17.68316\u0022,\u0022CameraRotation\u0022:\u0022-0.08226243,0.1691017,0.4296474,0.8831991\u0022,\u0022CameraOrthoHeight\u0022:1000}",
+    "Timeout": 1777740751,
     "DeleteAt": 0
   },
   "LocalAssetBrowser.Map.History": {
@@ -451,12 +451,12 @@
   },
   "expand.b946e382-3f3e-480e-ab38-8f551b64913a.Bloom": {
     "Value": "false",
-    "Timeout": 1777736499,
+    "Timeout": 1777736583,
     "DeleteAt": 0
   },
   "expand.b946e382-3f3e-480e-ab38-8f551b64913a.Tonemapping": {
     "Value": "false",
-    "Timeout": 1777736499,
+    "Timeout": 1777736583,
     "DeleteAt": 0
   }
 }
