@@ -31,6 +31,8 @@ public sealed class TowerStats : Component
 	[Property] public string DisplayName { get; set; } = "Basic Tower";
 	[Property] public string Description { get; set; } = "A basic tower that attacks targets";
 	[Property] public int Cost { get; set; } = 1;
+	[Property, ImageAssetPath, Description("CSS class name used to display this tower's icon in the selection UI (e.g. 'pistol', 'cannon')")]
+	public string Icon { get; set; } = "default";
 
 	[Property, Description("Is this tower a radar scanning type? this will lock the tower from performing attacks")] public bool IsRadar { get; set; } = false;
 

@@ -68,18 +68,9 @@
           "OnComponentUpdate": null,
           "PlayerPrefab": null,
           "SpawnPoints": [
-            {
-              "_type": "gameobject",
-              "go": "e7ebfb14-4f4b-4302-85cd-7682c2b0b597"
-            },
-            {
-              "_type": "gameobject",
-              "go": "d68ae6e7-0155-47cd-a8fe-0453d1c54dee"
-            },
-            {
-              "_type": "gameobject",
-              "go": "1c6bd12d-ad9b-46ca-8b01-049f89b6b0be"
-            }
+            null,
+            null,
+            null
           ],
           "StartServer": true
         }
@@ -139,40 +130,42 @@
           "__guid": "01813021-3201-43f6-81c9-f5b71255ebf0",
           "__enabled": true,
           "Flags": 0,
-          "CannonPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/towers/towercannon.prefab"
-          },
-          "ElectricPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/towers/towerelectric.prefab"
-          },
-          "IcePrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/towers/towerice.prefab"
-          },
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
-          "PistolPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/towers/towerpistol.prefab"
-          },
-          "RadarPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/towers/towerradar.prefab"
-          },
-          "ShotgunPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/towers/towershotgun.prefab"
-          },
-          "SmgPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/towers/towersmg.prefab"
-          }
+          "TowerPrefabs": [
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/towers/towerpistol.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/towers/towersmg.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/towers/towercannon.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/towers/towerelectric.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/towers/towerice.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/towers/towerradar.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/towers/towershotgun.prefab"
+            }
+          ]
         },
         {
           "__type": "WaveManager",
@@ -190,10 +183,7 @@
               "Name": "Wave 1",
               "EnemyInfo": [
                 {
-                  "Enemy": {
-                    "_type": "gameobject",
-                    "prefab": "prefabs/enemy/peasant.prefab"
-                  },
+                  "Enemy": null,
                   "SpawnCount": 5,
                   "SpawnInterval": 1.5,
                   "InitialSpawnDelay": 1
@@ -204,10 +194,7 @@
               "Name": "Wave 2",
               "EnemyInfo": [
                 {
-                  "Enemy": {
-                    "_type": "gameobject",
-                    "prefab": "prefabs/enemy/peasant.prefab"
-                  },
+                  "Enemy": null,
                   "SpawnCount": 8,
                   "SpawnInterval": 1.2,
                   "InitialSpawnDelay": 0.8
@@ -218,19 +205,13 @@
               "Name": "Wave 3",
               "EnemyInfo": [
                 {
-                  "Enemy": {
-                    "_type": "gameobject",
-                    "prefab": "prefabs/enemy/peasant.prefab"
-                  },
+                  "Enemy": null,
                   "SpawnCount": 10,
                   "SpawnInterval": 0.9,
                   "InitialSpawnDelay": 0.7
                 },
                 {
-                  "Enemy": {
-                    "_type": "gameobject",
-                    "prefab": "prefabs/enemy/knight.prefab"
-                  },
+                  "Enemy": null,
                   "SpawnCount": 5,
                   "SpawnInterval": 1.8,
                   "InitialSpawnDelay": 8
@@ -1404,7 +1385,7 @@
     "GameObjectSystems": {
       "Sandbox.Clutter.ClutterGridSystem": {
         "Storage": {
-          "$blob": "a25ef3f4-fca0-4213-96bc-5b3eab83f665"
+          "$blob": "6b0e7eba-3889-4048-822e-8ac23ee5cd5e"
         }
       },
       "Sandbox.MovieMaker.MovieRecorderSystem": {

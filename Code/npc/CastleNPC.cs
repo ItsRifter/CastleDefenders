@@ -1,5 +1,5 @@
 using Sandbox;
-using System;
+using Sandbox.Citizen;
 
 public sealed class CastleNPC : Component
 {
@@ -10,199 +10,162 @@ public sealed class CastleNPC : Component
 	public bool IsSplitted;
 	public bool IsRevealed;
 
+	[RequireComponent] public CitizenAnimationHelper AnimationHelper { get; set; }
+
 	PathNode targetNode;
 	float speed;
-
 	int armorPoints;
 	int splitCount;
 
-	TimeUntil timeTillCloaked;
-	float timeToCloak = 3.0f;
-
+	SkinnedModelRenderer modelRenderer;
+	Color orgColor;
 	float cloakAlpha = -1;
 
-	Color orgColor;
+	TimeUntil timeTillCloaked;
 	TimeUntil timeTillThaw;
 	bool isFrozen;
 
-	ModelRenderer modelRenderer;
+	const float CloakDelay = 3.0f;
 
 	protected override void OnStart()
 	{
 		Statistics = GetComponent<EnemyStats>();
+		modelRenderer = GetComponent<SkinnedModelRenderer>();
+		AnimationHelper = GetComponent<CitizenAnimationHelper>();
+		AnimationHelper?.Target = modelRenderer;
 
 		if ( IsSplitted ) return;
 
 		DisplayName = Statistics.DisplayName;
 		Health = Statistics.Health;
 		speed = Statistics.Speed;
-
-		targetNode = Scene.GetAll<PathNode>().Where( p => p.IsStartNode ).FirstOrDefault();
-		WorldPosition = targetNode.WorldPosition;
-
 		splitCount = Statistics.SplitCount;
 		armorPoints = Statistics.ArmourValue;
 
-		IsRevealed = false;
-		isFrozen = false;
-
-		modelRenderer = GetComponent<ModelRenderer>();
-
 		orgColor = modelRenderer.Tint;
 		cloakAlpha = modelRenderer.Tint.a;
+
+		targetNode = Scene.GetAll<PathNode>().Where( p => p.IsStartNode ).FirstOrDefault();
+		WorldPosition = targetNode.WorldPosition;
 	}
 
 	protected override void OnUpdate()
 	{
 		MoveToNode();
+		UpdateAnimation();
 
-		if ( IsRevealed && timeTillCloaked <= 0.0f )
+		if ( IsRevealed && timeTillCloaked <= 0 )
 			Cloak();
 
-		if ( isFrozen && timeTillThaw <= 0.0f )
+		if ( isFrozen && timeTillThaw <= 0 )
 			Thaw();
 	}
 
+	// --- Movement ---
+
 	void MoveToNode()
 	{
-		if ( targetNode == null )
-			return;
+		if ( targetNode == null ) return;
 
 		var direction = (targetNode.WorldPosition - WorldPosition).Normal;
-		var distance = speed * Time.Delta;
-		
-		WorldPosition += direction * distance;
+		WorldPosition += direction * speed * Time.Delta;
 		WorldRotation = Rotation.LookAt( direction, Vector3.Up );
 
-		if ( IsAtNode() )
+		if ( !IsAtNode() ) return;
+
+		if ( targetNode.IsEndNode )
 		{
-			if( targetNode.IsEndNode )
-			{
-				OnHitGoal();
-				return;
-			}
-
-			if ( targetNode.IsTeleporter )
-				WorldPosition = targetNode.NextNode.WorldPosition;
-
-			targetNode = GetNextNode();
+			OnHitGoal();
+			return;
 		}
-	}
 
-	PathNode GetNextNode() => targetNode.NextNode ?? null;
+		if ( targetNode.IsTeleporter )
+			WorldPosition = targetNode.NextNode.WorldPosition;
+
+		targetNode = targetNode.NextNode;
+	}
 
 	bool IsAtNode() => Vector3.DistanceBetween( WorldPosition, targetNode.WorldPosition ) < 0.1f;
 
 	void OnHitGoal()
 	{
-
+		// TODO: deal damage to castle / trigger game-over logic
 	}
 
-	void CreateSplitVariant(int i)
+	// --- Animation ---
+
+	void UpdateAnimation()
+	{
+		if ( AnimationHelper == null ) return;
+
+		var velocity = targetNode != null
+			? (targetNode.WorldPosition - WorldPosition).Normal * speed
+			: Vector3.Zero;
+
+		AnimationHelper.WithVelocity( velocity );
+		AnimationHelper.IsGrounded = true;
+	}
+
+	// --- Splitting ---
+
+	void CreateSplitVariant( int index )
 	{
 		var splitEnemy = Scene.CreateObject();
-		splitEnemy.Name = $"{GameObject.Name}_Lesser{i}";
+		splitEnemy.Name = $"{GameObject.Name}_Lesser{index}";
 		splitEnemy.Tags.Add( "Enemy" );
-
 		splitEnemy.LocalScale = GameObject.LocalScale * 0.5f;
 
 		var collider = splitEnemy.AddComponent<BoxCollider>();
 		collider.Scale = GameObject.GetComponent<BoxCollider>().Scale * 0.5f;
 
-		var npcModel = splitEnemy.AddComponent<ModelRenderer>();
-
+		var npcModel = splitEnemy.AddComponent<SkinnedModelRenderer>();
 		npcModel.Model = modelRenderer.Model;
 		npcModel.Tint = modelRenderer.Tint;
 
-		var npcComponent = splitEnemy.AddComponent<CastleNPC>();
-		npcComponent.IsSplitted = true;
-		npcComponent.DisplayName = $"Lesser {DisplayName}";
-
-		npcComponent.Statistics = Statistics;
-		npcComponent.Statistics.DisplayName = $"Lesser {Statistics.DisplayName}";
-
-		npcComponent.Health = Statistics.Health / splitCount;
-		npcComponent.speed = Statistics.Speed * 1.2f;
-
-		npcComponent.targetNode = this.targetNode;
-		npcComponent.WorldPosition = this.WorldPosition + (Vector3.Random * 10.0f).WithZ(0);
+		var npc = splitEnemy.AddComponent<CastleNPC>();
+		npc.IsSplitted = true;
+		npc.DisplayName = $"Lesser {DisplayName}";
+		npc.Statistics = Statistics;
+		npc.Health = Statistics.Health / splitCount;
+		npc.speed = Statistics.Speed * 1.2f;
+		npc.targetNode = targetNode;
+		npc.WorldPosition = WorldPosition + (Vector3.Random * 10.0f).WithZ( 0 );
 	}
+
+	// --- Combat ---
 
 	void OnDeath()
 	{
-		if( Statistics != null && HasAbility( EnemyStats.EnemyAbility.SplitsOnDeath ) && !IsSplitted )
-		{	
-			for( int i = 0; i < splitCount; i++ )
-			{
-				CreateSplitVariant(i);
-			}
+		if ( HasAbility( EnemyStats.EnemyAbility.SplitsOnDeath ) && !IsSplitted )
+		{
+			for ( int i = 0; i < splitCount; i++ )
+				CreateSplitVariant( i );
 		}
 
 		WaveManager.Instance.OnEnemyDeath( this );
 		GameObject.Destroy();
 	}
 
-	//TODO: Make armor visually break
+	// TODO: Make armor visually break
 	void BreakArmor()
 	{
 		armorPoints = 0;
-		var clothingComp = GameObject.GetComponent<Dresser>();
-		if ( clothingComp == null ) return;
+		var dresser = GameObject.GetComponent<Dresser>();
+		if ( dresser == null ) return;
 
 		foreach ( var clothing in Statistics.ArmouredClothing )
-		{
-			clothingComp.Clothing.Remove( clothing );
-			clothingComp.Apply();	
-		}
+			dresser.Clothing.Remove( clothing );
+
+		dresser.Apply();
 	}
 
-	public void Reveal()
+	public void TakeDamage( int amount )
 	{
-		timeTillCloaked = timeToCloak;
-
-		if ( IsRevealed ) return; //Already revealed, just reset timer;
-		IsRevealed = true;
-
-		modelRenderer.Tint = modelRenderer.Tint.WithAlpha( 1.0f );
-	}
-
-	public void Cloak()
-	{
-		IsRevealed = false;
-		modelRenderer.Tint = modelRenderer.Tint.WithAlpha( cloakAlpha );
-	}
-
-	public void Freeze( float duration )
-	{
-		timeTillThaw = duration;
-		speed = 0.0f;
-
-		modelRenderer.Tint = Color.Cyan;
-		isFrozen = true;
-	}
-
-	public void Thaw()
-	{
-		speed = Statistics.Speed;
-		modelRenderer.Tint = orgColor;
-
-		if( cloakAlpha >= 0.0 && !IsRevealed )
-			modelRenderer.Tint = modelRenderer.Tint.WithAlpha( cloakAlpha );
-
-		isFrozen = false;
-	}
-
-	public void TakeDamage(int amount)
-	{
-		if( Statistics != null && HasAbility( EnemyStats.EnemyAbility.Armoured ) && armorPoints > 0 )
+		if ( HasAbility( EnemyStats.EnemyAbility.Armoured ) && armorPoints > 0 )
 		{
 			armorPoints -= amount;
-			
-			if( armorPoints <= 0 )
-			{
+			if ( armorPoints <= 0 )
 				amount = -armorPoints;
-				//BreakArmor();
-			}
 			else
 				return;
 		}
@@ -213,9 +176,43 @@ public sealed class CastleNPC : Component
 			OnDeath();
 	}
 
-	public bool HasAbility(EnemyStats.EnemyAbility ability )
+	public bool HasAbility( EnemyStats.EnemyAbility ability ) =>
+		Statistics != null && Statistics.Abilities.HasFlag( ability );
+
+	// --- Stealth ---
+
+	public void Reveal()
 	{
-		if ( Statistics == null ) return false;
-		return Statistics.Abilities.HasFlag( ability );
+		timeTillCloaked = CloakDelay;
+		if ( IsRevealed ) return;
+
+		IsRevealed = true;
+		modelRenderer.Tint = modelRenderer.Tint.WithAlpha( 1.0f );
+	}
+
+	public void Cloak()
+	{
+		IsRevealed = false;
+		modelRenderer.Tint = modelRenderer.Tint.WithAlpha( cloakAlpha );
+	}
+
+	// --- Status Effects ---
+
+	public void Freeze( float duration )
+	{
+		timeTillThaw = duration;
+		speed = 0.0f;
+		isFrozen = true;
+		modelRenderer.Tint = Color.Cyan;
+	}
+
+	public void Thaw()
+	{
+		speed = Statistics.Speed;
+		isFrozen = false;
+		modelRenderer.Tint = orgColor;
+
+		if ( cloakAlpha >= 0 && !IsRevealed )
+			modelRenderer.Tint = modelRenderer.Tint.WithAlpha( cloakAlpha );
 	}
 }

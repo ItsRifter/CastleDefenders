@@ -1,5 +1,6 @@
 @using Sandbox;
 @using Sandbox.UI;
+@using System;
 @inherits PanelComponent
 @namespace Sandbox
 
@@ -7,9 +8,15 @@
 
     <div class="icons">
 
-        @for (int i = 0; i < towerIcons.Length; i++)
+        @for (int i = 0; i < towers.Count; i++)
         {
-            <div class="icon @towerIcons[i] @(selectionIndex == i+1 ? "isSelected" : "")"></div>
+            var stats = towers[i];
+            bool selected = selectionIndex == i + 1;
+            bool canAfford = LocalPlayer != null && LocalPlayer.Money >= stats.Cost;
+            <div class="icon @stats.Icon @(selected ? "isSelected" : "") @(!canAfford ? "cantAfford" : "")" >
+                <img src="@stats.Icon" />
+                <div class="cost">$@stats.Cost</div>
+            </div>
         }
        
     </div>
@@ -21,14 +28,27 @@
     int selectionIndex = -1;
     int lastSelect = -1;
 
-    string[] towerIcons = new string[]
-    {
-        "pistol", "smg", "shotgun", "cannon", "electric", "frost", "radar"
-    };
+    List<TowerStats> towers = new();
+
+    CastlePlayer LocalPlayer => Scene.GetAll<CastlePlayer>().FirstOrDefault();
 
     protected override void OnStart()
     {
-        
+        RefreshTowerList();
+    }
+
+    void RefreshTowerList()
+    {
+        towers.Clear();
+        var prefabs = CastleGame.Instance?.TowerPrefabs;
+        if ( prefabs == null ) return;
+
+        foreach ( var prefab in prefabs )
+        {
+            var stats = prefab?.GetComponent<TowerStats>();
+            if ( stats != null )
+                towers.Add( stats );
+        }
     }
 
     protected override void OnUpdate()
@@ -38,7 +58,7 @@
 
     void HandleSelection()
     {
-        for (int i = 1; i <= towerIcons.Length; i++)
+        for (int i = 1; i <= towers.Count; i++)
         {
             if (Input.Pressed($"Slot{i}"))
             {
@@ -47,10 +67,19 @@
             }
         }
 
-        // Holster remains special
         if (Input.Pressed("Holster"))
+        {
             selectionIndex = 0;
+            return;
+        }
+
+        var scroll = Input.MouseWheel.y;
+        if (scroll != 0 && towers.Count > 0)
+        {
+            int next = selectionIndex <= 0 ? 1 : selectionIndex - Math.Sign(scroll);
+            selectionIndex = ((next - 1 + towers.Count) % towers.Count) + 1;
+        }
     }
 
-    protected override int BuildHash() => System.HashCode.Combine(selectionIndex.GetHashCode());
+    protected override int BuildHash() => System.HashCode.Combine( selectionIndex, LocalPlayer?.Money ?? 0 );
 }

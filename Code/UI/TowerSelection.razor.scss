@@ -8,10 +8,9 @@ TowerSelection {
     align-items: flex-end;
 
     .icons {
-        gap: 2px;
+        gap: 12px;
         padding: 2px;
         align-items: flex-end;
-        transition: margin-bottom 100ms;
 
         .icon {
             border: 4px solid black;
@@ -19,38 +18,26 @@ TowerSelection {
             width: 128px;
             height: 128px;
             background-size: contain;
+            margin-bottom: 0px;
+            transform: scale(1);
+            transition: margin-bottom 100ms cubic-bezier(0.34, 1.56, 0.64, 1),
+                        transform 100ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+            .cost {
+                position: absolute;
+                transform: translate(-20%, -20%);
+                font-family: Arial;
+                font-size: 18px;
+                padding: 6px 6px;
+                color: white;
+                background-color: rgb(12, 152, 12);
+                box-shadow: 2px 2px 1px black;
+            }
         }
 
         .isSelected {
             margin-bottom: 32px;
-        }
-
-        .pistol {
-            background-image: url(textures/pistol.png);
-        }
-
-        .smg {
-            background-image: url(textures/smg.png);
-        }
-
-        .shotgun {
-            background-image: url(textures/shotgun.png);
-        }
-
-        .cannon {
-            background-image: url(textures/cannon.png);
-        }
-
-        .electric {
-            background-image: url(textures/electric.png);
-        }
-
-        .frost {
-            background-image: url(textures/frost.png);
-        }
-
-        .radar {
-            background-image: url(textures/radar.png);
+            transform: scale(1.08);
         }
     }
 }

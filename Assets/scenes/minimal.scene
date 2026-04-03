@@ -670,40 +670,42 @@
           "__guid": "9fd9c379-6e22-4e92-b63f-37313a316444",
           "__enabled": true,
           "Flags": 0,
-          "CannonPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/towers/towercannon.prefab"
-          },
-          "ElectricPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/towers/towerelectric.prefab"
-          },
-          "IcePrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/towers/towerice.prefab"
-          },
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
-          "PistolPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/towers/towerpistol.prefab"
-          },
-          "RadarPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/towers/towerradar.prefab"
-          },
-          "ShotgunPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/towers/towershotgun.prefab"
-          },
-          "SmgPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/towers/towersmg.prefab"
-          }
+          "TowerPrefabs": [
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/towers/towercannon.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/towers/towerelectric.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/towers/towerice.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/towers/towerpistol.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/towers/towerradar.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/towers/towershotgun.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/towers/towersmg.prefab"
+            }
+          ]
         },
         {
           "__type": "WaveManager",
@@ -2808,7 +2810,7 @@
     "GameObjectSystems": {
       "Sandbox.Clutter.ClutterGridSystem": {
         "Storage": {
-          "$blob": "00b83bfe-1fc6-466d-b18c-7f60a3f079a8"
+          "$blob": "49955225-de5b-4647-9bc9-9198af668bec"
         }
       },
       "Sandbox.MovieMaker.MovieRecorderSystem": {

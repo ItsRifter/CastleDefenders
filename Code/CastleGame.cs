@@ -6,13 +6,8 @@ public sealed class CastleGame : Component
 	public static CastleGame Instance { get; private set; }
 
 	[Header("Towers")]
-	[Property] public GameObject PistolPrefab { get; set; }
-	[Property, Title("SMG Prefab")] public GameObject SmgPrefab { get; set; }
-	[Property] public GameObject ShotgunPrefab { get; set; }
-	[Property] public GameObject CannonPrefab { get; set; }
-	[Property] public GameObject IcePrefab { get; set; }
-	[Property] public GameObject ElectricPrefab { get; set; }
-	[Property] public GameObject RadarPrefab { get; set; }
+	[Property, Description("All placeable tower prefabs, in the order they appear in the selection bar (slot 1, 2, 3...)")]
+	public List<GameObject> TowerPrefabs { get; set; } = new();
 
 	protected override void OnAwake()
 	{
