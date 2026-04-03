@@ -2,6 +2,7 @@ using Sandbox;
 using Sandbox.ModelEditor.Nodes;
 using System;
 using System.Threading;
+using static System.Net.Mime.MediaTypeNames;
 
 public sealed class CastlePlayer : Component
 {
@@ -107,10 +108,17 @@ public sealed class CastlePlayer : Component
 
 	void HandleSelections()
 	{
-		int lastSlot = GetSlotPressed();
+		if(GetSlotPressed() != -1)
+			currentSelection = GetSlotPressed();
 
-		if ( lastSlot != -1 )
-			currentSelection = lastSlot;
+		var scroll = -Input.MouseWheel.y;
+		if ( scroll != 0 && !Input.Down( "ALT" ) )
+		{
+			int towerCount = CastleGame.Instance.TowerPrefabs.Count;
+
+			int next = lastSelection <= 0 ? 1 : lastSelection - Math.Sign( scroll );
+			currentSelection = ((next - 1 + towerCount) % towerCount) + 1;
+		}
 
 		if ( lastSelection != currentSelection )
 		{
@@ -174,8 +182,8 @@ public sealed class CastlePlayer : Component
 	{
 		for ( int i = 0; i < 7; i++ )
 		{
-			if ( Input.Pressed( $"Slot{i + 1}" ) )
-				return i + 1;
+			if ( Input.Pressed( $"Slot{i}" ) )
+				return i;
 		}
 
 		if ( Input.Pressed( "Holster" ) )
@@ -207,17 +215,22 @@ public sealed class CastlePlayer : Component
 		#endregion
 
 		#region Rotation
-		float scroll = Input.MouseWheel.y;
-		
-		if(scroll != 0.0f)
-		{
-			float rotationAmount = scroll * snapAngle;
 
-			var currentYaw = previewTower.WorldRotation.Yaw();
-			var targetYaw = MathF.Round( (currentYaw + rotationAmount) / snapAngle ) * snapAngle;
+		if(Input.Down( "ALT" ))
+		{
+			float scroll = -Input.MouseWheel.y;
+		
+			if(scroll != 0.0f)
+			{
+				float rotationAmount = scroll * snapAngle;
+
+				var currentYaw = previewTower.WorldRotation.Yaw();
+				var targetYaw = MathF.Round( (currentYaw + rotationAmount) / snapAngle ) * snapAngle;
 			
-			previewTower.WorldRotation = Rotation.FromYaw( targetYaw );
+				previewTower.WorldRotation = Rotation.FromYaw( targetYaw );
+			}
 		}
+
 		#endregion
 
 		#region Valid Placements
@@ -292,34 +305,36 @@ public sealed class CastlePlayer : Component
 
 	GameObject GetTower()
 	{
-		switch(currentSelection)
-		{
-			case 1:
-				return CastleGame.Instance.PistolPrefab;
+		return CastleGame.Instance.TowerPrefabs[currentSelection-1] ?? null;
 
-			case 2:
-				return CastleGame.Instance.SmgPrefab;
+		//switch(currentSelection)
+		//{
+		//	case 1:
+		//		return CastleGame.Instance.PistolPrefab;
 
-			case 3:
-				return CastleGame.Instance.ShotgunPrefab;
+		//	case 2:
+		//		return CastleGame.Instance.SmgPrefab;
 
-			case 4:
-				return CastleGame.Instance.CannonPrefab;
+		//	case 3:
+		//		return CastleGame.Instance.ShotgunPrefab;
 
-			case 5:
-				return CastleGame.Instance.IcePrefab;
+		//	case 4:
+		//		return CastleGame.Instance.CannonPrefab;
 
-			case 6:
-				return CastleGame.Instance.ElectricPrefab;
+		//	case 5:
+		//		return CastleGame.Instance.IcePrefab;
 
-			case 7:
-				return CastleGame.Instance.RadarPrefab;
+		//	case 6:
+		//		return CastleGame.Instance.ElectricPrefab;
 
-			//case 8:
-			//	return CastleGame.Instance. Sniper; (Maybe?)
+		//	case 7:
+		//		return CastleGame.Instance.RadarPrefab;
 
-			default: return null;
-		}
+		//	//case 8:
+		//	//	return CastleGame.Instance. Sniper; (Maybe?)
+
+		//	default: return null;
+		//}
 	}
 
 	float previewDist = 128.0f;

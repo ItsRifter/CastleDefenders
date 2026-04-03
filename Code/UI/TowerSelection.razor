@@ -73,11 +73,14 @@
             return;
         }
 
-        var scroll = Input.MouseWheel.y;
-        if (scroll != 0 && towers.Count > 0)
+        if (!Input.Down("ALT"))
         {
-            int next = selectionIndex <= 0 ? 1 : selectionIndex - Math.Sign(scroll);
-            selectionIndex = ((next - 1 + towers.Count) % towers.Count) + 1;
+            var scroll = -Input.MouseWheel.y;
+            if (scroll != 0 && towers.Count > 0)
+            {
+                int next = selectionIndex <= 0 ? 1 : selectionIndex - Math.Sign(scroll);
+                selectionIndex = ((next - 1 + towers.Count) % towers.Count) + 1;
+            }
         }
     }
 
