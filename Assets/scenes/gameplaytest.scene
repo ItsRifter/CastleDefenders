@@ -147,6 +147,10 @@
             },
             {
               "_type": "gameobject",
+              "prefab": "prefabs/towers/towershotgun.prefab"
+            },
+            {
+              "_type": "gameobject",
               "prefab": "prefabs/towers/towercannon.prefab"
             },
             {
@@ -160,10 +164,6 @@
             {
               "_type": "gameobject",
               "prefab": "prefabs/towers/towerradar.prefab"
-            },
-            {
-              "_type": "gameobject",
-              "prefab": "prefabs/towers/towershotgun.prefab"
             }
           ]
         },
@@ -1385,7 +1385,7 @@
     "GameObjectSystems": {
       "Sandbox.Clutter.ClutterGridSystem": {
         "Storage": {
-          "$blob": "6b0e7eba-3889-4048-822e-8ac23ee5cd5e"
+          "$blob": "b71c34b6-582b-4430-9ea2-e0b31aaf08c5"
         }
       },
       "Sandbox.MovieMaker.MovieRecorderSystem": {

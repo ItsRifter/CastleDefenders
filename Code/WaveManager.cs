@@ -120,6 +120,8 @@ public sealed class WaveManager : Component
 	void WaveIdle()
 	{
 		curWave++;
+
+		Scene.GetAll<CastlePlayer>().ToList().ForEach( p => p.ResetVoting() );
 	}
 
 	int spawnsLeft = 0;
@@ -179,6 +181,9 @@ public sealed class WaveManager : Component
 	public void OnEnemyDeath(CastleNPC npc)
 	{
 		if ( Wave == WaveState.Inactive ) return;
+
+		int cash = npc.GetComponent<EnemyStats>()?.CashReward ?? 1;
+		Scene.GetAll<CastlePlayer>().ToList().ForEach( p => p.AddMoney( cash ) );
 
 		bool finished = spawnsLeft <= 0 && Scene.GetAll<CastleNPC>().Count() <= 1;
 

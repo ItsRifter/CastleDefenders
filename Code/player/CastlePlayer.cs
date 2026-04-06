@@ -52,12 +52,40 @@ public sealed class CastlePlayer : Component
 		if (Input.Pressed("Sell"))
 			TrySell();
 
+		if ( Input.Pressed( "Vote" ) )
+			HandleVoting();
+
 		//if(Input.Pressed("View"))
 		//	ChangeCameraMode();
 
 		//if(topdownMode)
 		//	HandleTopDownControls();
 	}
+
+	bool hasVoted = false;
+
+	void HandleVoting()
+	{
+		if ( hasVoted ) return;
+		hasVoted = true;
+		//TODO: Handle voting majority
+
+		if ( WaveManager.Instance.Wave == WaveManager.WaveState.Inactive )
+		{
+			WaveManager.Instance.Wave = WaveManager.WaveState.Idle;
+			Log.Info( "Voted to start the wave!" );
+
+			return;
+		}
+
+		if ( WaveManager.Instance.Wave == WaveManager.WaveState.Idle )
+		{
+			WaveManager.Instance.Wave = WaveManager.WaveState.Active;
+			return;
+		}
+	}
+
+	public void ResetVoting() => hasVoted = false;
 
 	void ChangeCameraMode()
 	{
